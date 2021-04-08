@@ -1,4 +1,4 @@
-export default {
+const theme = {
   font: "font-family: 'Poppins', sans-serif;",
   weight: {
     medium: "500",
@@ -13,3 +13,5 @@ export default {
     gray: "F2F2F2",
   },
 };
+
+export default theme;
