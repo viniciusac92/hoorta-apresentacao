@@ -4,10 +4,14 @@ import App from "./App";
 
 import Providers from "./providers/index";
 
+import { BrowserRouter } from "react-router-dom";
+
 ReactDOM.render(
   <React.StrictMode>
     <Providers>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Providers>
   </React.StrictMode>,
   document.getElementById("root")
