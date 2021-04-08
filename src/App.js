@@ -1,11 +1,5 @@
-import Input from "./components/atoms/Input";
-
 const App = () => {
-  return (
-    <div>
-      <Input size={"large"}></Input>
-    </div>
-  );
+  return <div>Hello React!</div>;
 };
 
 export default App;
