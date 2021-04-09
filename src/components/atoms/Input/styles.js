@@ -9,7 +9,7 @@ export const InputStyled = styled.input`
   font-family: ${theme.font};
   background-color: ${theme.color.gray};
   color: ${theme.color.black};
-
+  text-indent: 15px;
   width: ${(porps) =>
     porps.size === "small"
       ? "290px"
@@ -20,7 +20,6 @@ export const InputStyled = styled.input`
   height: ${(porps) =>
     porps.size === "small" ? "35px" : porps.size === "large" ? "45px" : null};
 
-  /* ::-webkit-input-placeholder {
-    color: ${theme.color.textGray};
-  } */
+  font-size: ${(porps) =>
+    porps.size === "small" ? "14px " : porps.size === "large" ? "16px" : null};
 `;
