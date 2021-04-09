@@ -3,6 +3,7 @@ import theme from "../../../styles/theme";
 
 export const TextStyled = styled.p`
   font-family: ${theme.font};
+  color: ${theme.color.black};
 
   font-weight: ${(props) =>
     props.weight === "medium"
