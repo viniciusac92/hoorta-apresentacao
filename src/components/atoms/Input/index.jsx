@@ -1,10 +1,7 @@
+import { forwardRef } from "react";
 import { InputStyled } from "./styles";
 
-const Input = ({ children, size }) => {
-  return (
-    <div>
-      <InputStyled size={size} placeholder="Name"></InputStyled>
-    </div>
-  );
+const Input = ({ size, ...rest }, ref) => {
+  return <InputStyled ref={ref} size={size} {...rest} />;
 };
-export default Input;
+export default forwardRef(Input);
