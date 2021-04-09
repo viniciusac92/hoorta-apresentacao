@@ -1,25 +1,38 @@
 import styled from "styled-components";
+import theme from "../../../styles/theme";
 
 export const ButtonStyled = styled.button`
   border: none;
-  border-radius: 39px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 15px;
+  border-radius: ${theme.radius};
+  box-shadow: ${theme.shadow};
+  padding: 10px;
+
   color: ${(props) =>
     props.styled === "primary"
-      ? "#F9F9F9"
-      : props.style === "second"
-      ? "#09B44D"
+      ? theme.color.white
+      : props.styled === "second"
+      ? theme.color.primary
       : null};
 
   background-color: ${(props) =>
     props.styled === "primary"
-      ? "#09B44D"
-      : props.style === "second"
-      ? "#F9F9F9"
+      ? theme.color.primary
+      : props.styled === "second"
+      ? theme.color.white
       : null};
 
-  width: ${(props) => (props.size === "normal" ? "250px" : null)};
+  font-size: ${(props) =>
+    props.size === "large" ? "20px" : props.size === "small" ? "14px" : null};
 
-  height: ${(props) => (props.size === "normal" ? "60px" : null)};
+  font-weight: ${(props) => (props.size === "large" ? "500" : null)};
+
+  width: ${(props) =>
+    props.size === "small"
+      ? "290px"
+      : props.size === "large"
+      ? "356.67px"
+      : null};
+
+  height: ${(props) =>
+    props.size === "small" ? "35px" : props.size === "large" ? "45px" : null};
 `;

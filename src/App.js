@@ -1,16 +1,18 @@
 import "./App.css";
 import Button from "./components/atoms/Button";
+import Input from "./components/atoms/Input";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Button styled={"primary"} size={"normal"}>
-          teste
+        <Input size={"large"}></Input>
+        <Button styled={"primary"} size={"small"}>
+          Entrar
         </Button>
       </header>
     </div>
   );
-}
+};
 
 export default App;
