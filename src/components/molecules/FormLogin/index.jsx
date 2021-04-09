@@ -1,25 +1,25 @@
 // React
-import { useState } from "react";
-
+import { createRef, useState } from "react";
 // API
 import API from "../../../services/api";
-
 // Helpers
 import { postLogin, getUser } from "../../../helper/user";
 import { loginSchema } from "../../../helper/FormValidation";
-
 // Dependencies
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
-
 // ContextAPI
 import { useData } from "../../../providers/UserContext";
+// Components
+import Input from "../../atoms/Input";
+import Button from "../../atoms/Button";
 
 const FormLogin = () => {
+  const ref = createRef();
   const [error, setError] = useState(null);
-  //   const history = useHistory();
+  const history = useHistory();
   const { setUserData } = useData();
   const {
     register,
@@ -42,7 +42,7 @@ const FormLogin = () => {
       });
       setUserData({ ...userInfo.data });
       reset();
-      //   history.push();
+      history.push("/dashboard");
     } catch (e) {
       console.log(e.response.data);
       if (e.response.data === "Cannot find user") {
@@ -55,12 +55,26 @@ const FormLogin = () => {
 
   return (
     <form onSubmit={handleSubmit(handleForm)}>
-      <input type="text" {...register("email")} placeholder="Email" />
+      <Input
+        ref={ref}
+        type="text"
+        placeholder="Email"
+        size="large"
+        {...register("email")}
+      />
       <p>{errors.email?.message}</p>
-      <input type="password" placeholder="Senha" {...register("password")} />
+      <Input
+        ref={ref}
+        type="password"
+        placeholder="Senha"
+        size="large"
+        {...register("password")}
+      />
       <p>{errors.password?.message}</p>
       <p>{error && error}</p>
-      <button type="submit">Enviar</button>
+      <Button type="submit" styled="primary" size="large">
+        Enviar
+      </Button>
     </form>
   );
 };
