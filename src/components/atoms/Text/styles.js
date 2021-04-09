@@ -2,6 +2,8 @@ import { styled } from "styled-components";
 import theme from "../../../styles/theme";
 
 export const TextStyled = styled.p`
+  font-family: ${theme.font};
+
   font-weight: ${(props) =>
     props.weight === "medium"
       ? theme.weight.medium
