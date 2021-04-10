@@ -32,6 +32,7 @@ const FormRegister = () => {
     try {
       await API.post(postRegister(), {
         ...data,
+        phone: "",
         address: [],
         cc: [],
         productor: false,

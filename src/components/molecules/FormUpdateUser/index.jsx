@@ -44,7 +44,7 @@ const FormUpdateUser = () => {
     } = data;
     const defaultData = {
       name: name || userData.name,
-      phone: phone || userData.phone || "",
+      phone: phone || userData.phone,
       address:
         {
           road,
