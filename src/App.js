@@ -1,13 +1,12 @@
-import Figure from "./components/atoms/Figure";
-import {FigureStyled} from "./components/atoms/Figure/style";
-
+import Tests from "./pages/Tests";
+import Routes from "./routes/routes";
 const App = () => {
-	return (
-		<div>
-			Hello React!
-			<Figure type="circle" />
-		</div>
-	);
+  return (
+    <div>
+      <Routes />
+      <Tests />
+    </div>
+  );
 };
 
 export default App;

@@ -1,8 +1,8 @@
 import { TextHeaderStyled } from "./styles";
 
-const TextHeader = ({ styled, children, size, fontWeight }) => {
+const TextHeader = ({ children, color, size, fontWeight }) => {
   return (
-    <TextHeaderStyled styled={styled} size={size} fontWeight={fontWeight}>
+    <TextHeaderStyled color={color} size={size} fontWeight={fontWeight}>
       {children}
     </TextHeaderStyled>
   );
