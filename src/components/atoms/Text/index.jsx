@@ -1,9 +1,11 @@
+import { TextStyled } from "./styles";
+
 const Text = ({ children, weigth, size }) => {
   return (
     <div>
-      <Text weigth={weigth} size={size}>
+      <TextStyled weigth={weigth} size={size}>
         {children}
-      </Text>
+      </TextStyled>
     </div>
   );
 };
