@@ -72,8 +72,8 @@ const FormLogin = () => {
       />
       <p>{errors.password?.message}</p>
       <p>{error && error}</p>
-      <Button type="submit" styled="primary" size="large">
-        Enviar
+      <Button type="submit" color="primary" size="large">
+        Entrar
       </Button>
     </form>
   );
