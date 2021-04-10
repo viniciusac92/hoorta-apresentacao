@@ -3,22 +3,20 @@ import theme from "../../../styles/theme";
 
 export const TextHeaderStyled = styled.p`
   text-align: center;
-  font-weight: ${(props) =>
-    props.fontWeight === "regular"
-      ? "200"
-      : props.fontWeight === "semi-bold"
-      ? "400"
-      : props.fontWeight === "bold"
-      ? "600"
+  font-weight: ${({ fontWeight }) =>
+    fontWeight === "medium"
+      ? theme.weight.medium
+      : fontWeight === "semiBold"
+      ? theme.weight.semiBold
       : null};
 
-  font-size: ${(props) =>
-    props.size === "large" ? "50px" : props.size === "small" ? "36px" : null};
+  font-size: ${({ size }) =>
+    size === "large" ? "50px" : size === "medium" ? "36px" : null};
 
-  color: ${(props) =>
-    props.styled === "black"
+  color: ${(color) =>
+    color === "black"
       ? theme.color.black
-      : props.styled === "white"
+      : color === "white"
       ? theme.color.white
       : null};
 `;
