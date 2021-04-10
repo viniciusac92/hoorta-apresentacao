@@ -1,8 +1,7 @@
-import {IconStyled} from "./styles";
-import exampleIcon from "../../../assets/images/icons/onlineStore.svg";
+import { IconStyled } from "./styles";
 
-const Icon = () => {
-	return <IconStyled src={exampleIcon}></IconStyled>;
+const Icon = ({ src, alt }) => {
+  return <IconStyled src={src} alt={alt} />;
 };
 
 export default Icon;
