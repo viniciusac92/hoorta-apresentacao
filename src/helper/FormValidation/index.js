@@ -15,6 +15,20 @@ export const loginSchema = yup.object().shape({
     .required(required),
 });
 
+export const registerSchema = yup.object().shape({
+  email: yup.string().email("Email inválido").required(required),
+  password: yup
+    .string()
+    .min(6, "A senha deve conter no mínimo 6 caracteres")
+    .required(required),
+  name: yup
+    .string()
+    .strict()
+    .max(20, "Máximo 10 caracteres")
+    .required(required),
+  age: yup.number().min(18, "Mínimo 18 anos").required(required),
+});
+
 export const updateUserSchema = yup.object().shape({
   name: yup.string().max(20, "Máximo 10 caracteres"),
   phone: yup.string().matches(PHONE_REGEX, {
