@@ -50,6 +50,8 @@ table {
 button{
     outline: none;
     border: 0;
+	font-family: 'Poppins', sans-serif;
+	cursor: pointer;
 }
     `;
 
