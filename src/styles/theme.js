@@ -1,5 +1,5 @@
 const theme = {
-  font: "font-family: 'Poppins', sans-serif;",
+  font: "'Poppins', sans-serif;",
   weight: {
     medium: "500",
     semiBold: "600",
@@ -11,8 +11,8 @@ const theme = {
     secondary: "#C4F8DD",
     white: "#F6F6F6",
     black: "#262626",
-    gray: "F2F2F2",
-    textGray: "9C9C9C",
+    gray: "#F2F2F2",
+    textGray: "#9C9C9C",
   },
 };
 

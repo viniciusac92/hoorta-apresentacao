@@ -3,12 +3,11 @@ import { createRef, useState } from "react";
 // API
 import API from "../../../services/api";
 // Helpers
-import { postLogin, getUser } from "../../../helper/user";
-import { loginSchema } from "../../../helper/FormValidation";
+import { postRegister } from "../../../helper/user";
+import { registerSchema } from "../../../helper/FormValidation";
 // Dependencies
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 // ContextAPI
 import { useData } from "../../../providers/UserContext";
@@ -16,39 +15,34 @@ import { useData } from "../../../providers/UserContext";
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 
-const FormLogin = () => {
+const FormRegister = () => {
   const ref = createRef();
   const [error, setError] = useState(null);
   const history = useHistory();
-  const { setUserData } = useData();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(loginSchema),
+    resolver: yupResolver(registerSchema),
   });
 
   const handleForm = async (data) => {
     try {
-      const response = await API.post(postLogin(), data);
-      localStorage.setItem("token", JSON.stringify(response.data.accessToken));
-      const { sub } = jwt_decode(response.data.accessToken); // Id
-      const userInfo = await API.get(getUser(sub), {
-        headers: {
-          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
-        },
+      await API.post(postRegister(), {
+        ...data,
+        address: [],
+        cc: [],
+        productor: false,
+        shoppingCount: 0,
       });
-      setUserData({ ...userInfo.data });
       reset();
-      // history.push("/dashboard");
+      // history.push("/login");
     } catch (e) {
       console.log(e);
-      if (e.response.data === "Cannot find user") {
-        setError("Usuário não encontrado");
-      } else if (e.response.data === "Incorrect password") {
-        setError("Senha incorreta");
+      if (e.response.data === "Email already exists") {
+        setError("Email já cadastrado");
       }
     }
   };
@@ -71,12 +65,28 @@ const FormLogin = () => {
         {...register("password")}
       />
       <p>{errors.password?.message}</p>
+      <Input
+        ref={ref}
+        type="text"
+        placeholder="Nome"
+        size="large"
+        {...register("name")}
+      />
+      <p>{errors.name?.message}</p>
+      <Input
+        ref={ref}
+        type="number"
+        placeholder="Idade"
+        size="large"
+        {...register("age")}
+      />
+      <p>{errors.age?.message}</p>
       <p>{error && error}</p>
       <Button type="submit" color="primary" size="large">
-        Entrar
+        Cadastrar
       </Button>
     </form>
   );
 };
 
-export default FormLogin;
+export default FormRegister;
