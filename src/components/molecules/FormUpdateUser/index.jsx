@@ -13,6 +13,8 @@ import { useData } from "../../../providers/UserContext";
 // Components
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
+import Text from "../../atoms/Text";
+import { StyledForm } from "./styles";
 
 const FormUpdateUser = () => {
   const ref = createRef();
@@ -27,11 +29,43 @@ const FormUpdateUser = () => {
   });
 
   const handleForm = async (data) => {
-    const { name, phone } = data;
+    const {
+      name,
+      phone,
+      road,
+      number,
+      city,
+      state,
+      cep,
+      cc_number,
+      expiration,
+      cvv,
+      owner,
+    } = data;
     const defaultData = {
       name: name || userData.name,
       phone: phone || userData.phone || "",
+      address:
+        {
+          road,
+          number,
+          city,
+          state,
+          cep,
+        } ||
+        userData.address ||
+        [],
+      cc:
+        {
+          cc_number,
+          expiration,
+          cvv,
+          owner,
+        } ||
+        userData.cc ||
+        [],
     };
+
     try {
       const response = await API.patch(patchUser(userData.id), defaultData, {
         headers: {
@@ -46,7 +80,7 @@ const FormUpdateUser = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleForm)}>
+    <StyledForm onSubmit={handleSubmit(handleForm)}>
       <Input
         type="text"
         ref={ref}
@@ -63,10 +97,92 @@ const FormUpdateUser = () => {
         {...register("phone")}
       />
       <p>{errors.phone?.message}</p>
+      <div className="addressContainer">
+        <Text weigth="medium" size="small">
+          Endereço
+        </Text>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar Endereço"
+          size="large"
+          {...register("road")}
+        />
+        <p>{errors.address?.message}</p>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar Número"
+          size="large"
+          {...register("number")}
+        />
+        <p>{errors.number?.message}</p>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar Cidade"
+          size="large"
+          {...register("city")}
+        />
+        <p>{errors.city?.message}</p>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar Estado"
+          size="large"
+          {...register("state")}
+        />
+        <p>{errors.state?.message}</p>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar CEP"
+          size="large"
+          {...register("cep")}
+        />
+        <p>{errors.cep?.message}</p>
+      </div>
+      <div className="ccContainer">
+        <Text className="subtitle" weigth="medium" size="small">
+          Dados do Cartão
+        </Text>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar Número"
+          size="large"
+          {...register("cc_number")}
+        />
+        <p>{errors.cc_number?.message}</p>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar Validade"
+          size="large"
+          {...register("expiration")}
+        />
+        <p>{errors.expiration?.message}</p>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar CVV"
+          size="large"
+          {...register("cvv")}
+        />
+        <p>{errors.cvv?.message}</p>
+        <Input
+          type="text"
+          ref={ref}
+          placeholder="Alterar Titular"
+          size="large"
+          {...register("owner")}
+        />
+        <p>{errors.owner?.message}</p>
+      </div>
       <Button type="submit" color="primary">
-        Atualizar Dados
+        Atualizar
       </Button>
-    </form>
+    </StyledForm>
   );
 };
 
