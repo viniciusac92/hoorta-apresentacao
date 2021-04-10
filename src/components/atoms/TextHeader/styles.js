@@ -13,10 +13,12 @@ export const TextHeaderStyled = styled.p`
   font-size: ${({ size }) =>
     size === "large" ? "50px" : size === "medium" ? "36px" : null};
 
-  color: ${(color) =>
+  color: ${({ color }) =>
     color === "black"
       ? theme.color.black
       : color === "white"
       ? theme.color.white
+      : color === "primary"
+      ? theme.color.primary
       : null};
 `;
