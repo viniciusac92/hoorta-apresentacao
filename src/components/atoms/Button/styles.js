@@ -28,7 +28,6 @@ export const ButtonStyled = styled.button`
   box-shadow: ${theme.shadow};
   padding: 10px;
   line-height: ${({ size }) => size === "large" && "54px"};
-  cursor: pointer;
 
   color: ${({ color }) => handleColorTypes("text", color)};
 
