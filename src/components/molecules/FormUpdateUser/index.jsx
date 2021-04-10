@@ -63,7 +63,7 @@ const FormUpdateUser = () => {
         {...register("phone")}
       />
       <p>{errors.phone?.message}</p>
-      <Button type="submit" styled="primary" size="large">
+      <Button type="submit" color="primary">
         Atualizar Dados
       </Button>
     </form>
