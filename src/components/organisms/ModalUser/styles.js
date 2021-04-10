@@ -8,8 +8,11 @@ export const StyledModal = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 
+  width: 80%;
+
   position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   padding: 2rem;
   outline: none;
@@ -17,9 +20,21 @@ export const StyledModal = styled.div`
   background-color: ${color.white};
   box-shadow: ${shadow};
   border-radius: ${radius};
+
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: 800px) {
+    max-width: 600px;
+  }
 `;
 
 export const EditButton = styled.button`
   background: none;
-  clip-path: view-box;
+  display: flex;
+  height: 100%;
 `;
