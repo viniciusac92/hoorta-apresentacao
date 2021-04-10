@@ -1,8 +1,11 @@
-import Routes from "./routes/routes";
+import Figure from "./components/atoms/Figure";
+import {FigureStyled} from "./components/atoms/Figure/style";
+
 const App = () => {
 	return (
 		<div>
-			<Routes />
+			Hello React!
+			<Figure type="circle" />
 		</div>
 	);
 };
