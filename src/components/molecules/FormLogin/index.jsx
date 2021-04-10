@@ -42,9 +42,9 @@ const FormLogin = () => {
       });
       setUserData({ ...userInfo.data });
       reset();
-      history.push("/dashboard");
+      // history.push("/dashboard");
     } catch (e) {
-      console.log(e.response.data);
+      console.log(e);
       if (e.response.data === "Cannot find user") {
         setError("Usuário não encontrado");
       } else if (e.response.data === "Incorrect password") {
