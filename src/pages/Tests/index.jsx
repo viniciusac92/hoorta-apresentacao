@@ -1,4 +1,5 @@
 import Button from "../../components/atoms/Button";
+import Figure from "../../components/atoms/Figure";
 import Input from "../../components/atoms/Input";
 
 import FormLogin from "../../components/molecules/FormLogin";

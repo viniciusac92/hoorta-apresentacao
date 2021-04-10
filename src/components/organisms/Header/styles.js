@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const HeaderStyled = styled.div`
-  margin: 0 auto;
-  padding: 50px 120px;
+  margin: 30px 0 30px 5%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
+  max-width: 1115px;
 `;
