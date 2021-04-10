@@ -15,7 +15,7 @@ const Meet = () => {
         Na porta da sua casa!
       </Text>
       <div>
-        <Button styled="primary">Conhecer</Button>
+        <Button color="primary">Conhecer</Button>
       </div>
     </MeetStyled>
   );
