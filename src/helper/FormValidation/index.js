@@ -3,6 +3,8 @@ import * as yup from "yup";
 // REGEX
 const PHONE_REGEX = /^\([1-9]{2}\) [9]{1}[6-9]{1}[0-9]{3}\-[0-9]{4}$/;
 
+const CNPJ_REGEX = /[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/;
+
 // Error Messages
 const required = "Campo obrigatório";
 
@@ -35,4 +37,16 @@ export const updateUserSchema = yup.object().shape({
     message: "Número inválido, formato requerido: (11) 9111-1111",
     excludeEmptyString: true,
   }),
+});
+
+export const registerStore = yup.object().shape({
+  businessNames: yup.string().required(required),
+  registeredName: yup.string().required(required),
+  cnpj: yup
+    .number()
+    .matches(PHONE_REGEX, {
+      message: "Número inválido, formato requerido: (XX.XXX.XXX/0001-XX",
+    })
+    .required(required),
+  description: yup.string().required(required),
 });
