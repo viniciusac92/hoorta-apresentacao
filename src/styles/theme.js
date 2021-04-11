@@ -1,6 +1,7 @@
 const theme = {
   font: "'Poppins', sans-serif;",
   weight: {
+    regular: "400",
     medium: "500",
     semiBold: "600",
   },

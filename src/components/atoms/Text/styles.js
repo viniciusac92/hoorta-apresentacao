@@ -6,8 +6,8 @@ export const TextStyled = styled.p`
   color: ${theme.color.black};
 
   font-weight: ${(props) =>
-    props.weight === "medium"
-      ? theme.weight.medium
+    props.weight === "regular"
+      ? theme.weight.regular
       : props.weigth === "semiBold"
       ? theme.weight.medium
       : null};
