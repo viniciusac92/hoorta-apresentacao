@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router-dom";
 // Junia Update
 // Pages
 import Tests from "../pages/Tests";
+import Dashboard from "../pages/Dashboard";
 
 const Routes = () => {
   return (
@@ -18,9 +19,7 @@ const Routes = () => {
         register
       </Route>
 
-      <Route exact path="/dashboard">
-        dashboard
-      </Route>
+      <Route exact path="/dashboard" component={Dashboard} />
 
       <Route exact path="/store/:id">
         store
