@@ -5,13 +5,13 @@ const HomeInfoStyled = styled.div`
   transform: translateX(calc(45vw - 20px));
   display: flex;
   flex-direction: column;
-  margin: 50px 0;
+  margin-top: 200px;
 `;
 
 HomeInfoStyled.Container = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 40px 0;
+  margin: 20px 0;
 `;
 
 HomeInfoStyled.Wrap = styled.div`
