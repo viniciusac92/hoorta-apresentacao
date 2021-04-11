@@ -12,6 +12,7 @@ import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 // ContextAPI
 import { useData } from "../../../providers/UserContext";
+import { useStores } from "../../../providers/StoresContext";
 // Components
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
@@ -21,6 +22,7 @@ const FormLogin = () => {
   const [error, setError] = useState(null);
   const history = useHistory();
   const { setUserData } = useData();
+  const { getAllStores } = useStores();
   const {
     register,
     handleSubmit,
@@ -42,7 +44,8 @@ const FormLogin = () => {
       });
       setUserData({ ...userInfo.data });
       reset();
-      // history.push("/dashboard");
+      getAllStores();
+      history.push("/dashboard");
     } catch (e) {
       console.log(e);
       if (e.response.data === "Cannot find user") {
