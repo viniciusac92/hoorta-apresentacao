@@ -1,10 +1,16 @@
-import { yupResolver } from "@hookform/resolvers/yup";
+//React
 import { createRef } from "react";
-import { useForm } from "react-hook-form";
-import { registerSchema } from "../../../helper/FormValidation";
-import { postStore } from "../../../helper/stores";
+//API
 import API from "../../../services/api";
+//Dependencias
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+//Helpers
+import { registerStoreSchema } from "../../../helper/FormValidation";
+import { postStore } from "../../../helper/stores";
+//Components
 import Input from "../../atoms/Input";
+import Button from "../../atoms/Button";
 
 const FormRegisterStore = () => {
   const ref = createRef();
@@ -13,12 +19,13 @@ const FormRegisterStore = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({ resolver: yupResolver(registerSchema) });
+  } = useForm({ resolver: yupResolver(registerStoreSchema) });
 
   const handleForm = async (data) => {
     try {
       await API.post(postStore(), {
         ...data,
+        rating: [],
       });
       reset();
     } catch (e) {
@@ -35,7 +42,7 @@ const FormRegisterStore = () => {
         size="large"
         {...register("businessName")}
       />
-
+      <p>{errors.businessName?.message}</p>
       <Input
         ref={ref}
         type="text"
@@ -43,7 +50,7 @@ const FormRegisterStore = () => {
         size="large"
         {...register("registeredName")}
       />
-
+      <p>{errors.registeredName?.message}</p>
       <Input
         ref={ref}
         type="text"
@@ -51,14 +58,18 @@ const FormRegisterStore = () => {
         size="large"
         {...register("cnpj")}
       />
-
+      <p>{errors.cnpj?.message}</p>
       <Input
         ref={ref}
         type="text"
-        placeholder="descrição"
+        placeholder="Descreva sua loja!"
         size="large"
         {...register("description")}
       />
+      <p>{errors.description?.message}</p>
+      <Button type="submit" color="primary" size="large">
+        Cadastrar
+      </Button>
     </form>
   );
 };
