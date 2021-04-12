@@ -3,17 +3,23 @@ import Text from "../Text";
 import Icon from "../Icon";
 import { StyledAnchor, CardContainer, Rating, InfoContainer } from "./styles";
 import ratingIcon from "../../../assets/images/icons/rating.svg";
+import { useHistory } from "react-router";
+import { getOneStore } from "../../../helper/stores";
 
-const StoreCard = ({
-  userId,
-  businessName,
-  registeredName,
-  description,
-  rating,
-}) => {
+const StoreCard = ({ store }) => {
+  const history = useHistory();
+  const {
+    userId,
+    id,
+    businessName,
+    registeredName,
+    description,
+    rating,
+  } = store;
+
   return (
     <CardContainer>
-      <StyledAnchor onClick={() => console.log("clicou")}>
+      <StyledAnchor to={{ pathname: `store/${id}` }}>
         <Rating>
           <Icon src={ratingIcon} alt="Ícone de Avaliação" /> 5.0
         </Rating>
