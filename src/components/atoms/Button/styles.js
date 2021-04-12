@@ -27,18 +27,18 @@ export const ButtonStyled = styled.button`
   border-radius: ${theme.radius};
   box-shadow: ${theme.shadow};
   padding: 10px;
-  line-height: ${({ size }) => size === "large" && "54px"};
-
   color: ${({ color }) => handleColorTypes("text", color)};
-
   background-color: ${({ color }) => handleColorTypes("background", color)};
-
-  font-size: ${({ size }) => (size === "large" ? "36px" : "20px")};
-
   font-weight: ${({ size }) =>
     size === "large" ? theme.weight.medium : theme.weight.semiBold};
+  line-height: ${({ size }) => size === "large" && "34px"};
+  font-size: ${({ size }) => (size === "large" ? "30px" : "20px")};
+  width: ${({ size }) => (size === "large" ? "300px" : "356.67px")};
+  height: ${({ size }) => (size === "large" ? "91px" : "45px")};
 
-  width: ${({ size }) => (size === "large" ? "319px" : "356.67px")};
-
-  height: ${({ size }) => (size === "large" ? "81px" : "45px")};
+  @media screen and (min-width: 780px) {
+    line-height: ${({ size }) => size === "large" && "54px"};
+    font-size: ${({ size }) => (size === "large" ? "36px" : "20px")};
+    width: ${({ size }) => (size === "large" ? "320px" : "356.67px")};
+  }
 `;
