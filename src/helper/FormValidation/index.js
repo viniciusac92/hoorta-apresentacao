@@ -50,3 +50,8 @@ export const registerStoreSchema = yup.object().shape({
     .required(required),
   description: yup.string().required(required),
 });
+
+export const updateStoreSchema = yup.object().shape({
+  businessName: yup.string(),
+  description: yup.string(),
+});
