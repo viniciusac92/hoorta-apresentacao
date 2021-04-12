@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 // Pages
 import Tests from "../pages/Tests";
 import Dashboard from "../pages/Dashboard";
+import Store from "../pages/Store";
 
 const Routes = () => {
   return (
@@ -21,9 +22,7 @@ const Routes = () => {
 
       <Route exact path="/dashboard" component={Dashboard} />
 
-      <Route exact path="/store/:id">
-        store
-      </Route>
+      <Route exact path="/store/:id" component={Store} />
 
       <Route exact path="/store/profile/:id">
         store - profile
