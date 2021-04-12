@@ -15,7 +15,37 @@ import ListProducts from "../../components/molecules/ListProducts";
 const Tests = () => {
 	return (
 		<div>
-			<ListProducts />
+			<Header />
+			<Figure type="square">
+				<Picture
+					image={heartImage}
+					width={["218px", "437px"]}
+					height={["206px", "412px"]}
+					top={["30px"]}
+					left={["-40px", "-130px"]}
+					position={["relative"]}
+				/>
+			</Figure>
+			<Meet />
+			<Figure type="rectangle">
+				<Picture
+					image={vegetablePack}
+					width={["305px"]}
+					height={["444px"]}
+					top={["100px"]}
+					left={["85px"]}
+					position={["relative"]}
+				/>
+			</Figure>
+			<HomeInfo />
+			<Picture
+				image={footerPicture}
+				width={["320px", "444px"]}
+				height={["155px", "215px"]}
+				position={["relative", "absolute"]}
+				top={["0px", "calc(100% - 215px)"]}
+				left={["0", "0"]}
+			/>
 		</div>
 	);
 };

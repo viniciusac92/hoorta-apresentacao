@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 export const TextHeaderStyled = styled.p`
-  text-align: ${({ align }) => align || "center"};
+  text-align: center;
   font-weight: ${({ fontWeight }) =>
     fontWeight === "medium"
       ? theme.weight.medium
@@ -21,4 +21,8 @@ export const TextHeaderStyled = styled.p`
       : color === "primary"
       ? theme.color.primary
       : null};
+
+  @media screen and (min-width: 780px) {
+    text-align: ${({ align }) => align || "center"};
+  }
 `;
