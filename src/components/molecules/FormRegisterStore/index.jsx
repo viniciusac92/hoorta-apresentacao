@@ -36,7 +36,7 @@ const FormRegisterStore = () => {
     try {
       await API.post(
         postStore(),
-        { ...data, rating: [], userId: userData.id },
+        { userId: userData.id, ...data, rating: [] },
         {
           headers: { Authorization: `Bearer ${token}` },
         }

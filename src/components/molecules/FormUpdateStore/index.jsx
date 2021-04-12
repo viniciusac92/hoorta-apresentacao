@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { updateUserSchema } from "../../../helper/FormValidation";
 import { patchStore } from "../../../helper/stores";
 import { useStores } from "../../../providers/StoresContext";
+import { useData } from "../../../providers/UserContext";
 import API from "../../../services/api";
 import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
@@ -24,14 +25,14 @@ const FormUpdateStore = () => {
       businessName: businessName || userStore.businessName,
       description: description || userStore.description,
     };
+    console.log(defaultData);
     try {
-      const response = await API.patch(patchStore(userStore.id), defaultData, {
+      const response = await API.patch(patchStore(1), defaultData, {
         headers: {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
         },
       });
       setUserStore(response.data);
-      console.log("res", response.data);
       reset();
     } catch (e) {
       console.log(e);
