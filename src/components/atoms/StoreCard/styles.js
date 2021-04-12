@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import card_placeholder from "../../../assets/images/card_placeholder.png";
 import theme from "../../../styles/theme";
+import { Link } from "react-router-dom";
 
 export const CardContainer = styled.div`
   height: 160px;
@@ -14,7 +15,9 @@ export const CardContainer = styled.div`
   color: ${theme.color.gray};
 `;
 
-export const StyledAnchor = styled.a`
+export const StyledAnchor = styled(Link)`
+  text-decoration: none;
+  color: inherit;
   width: 100%;
   height: 100%;
 

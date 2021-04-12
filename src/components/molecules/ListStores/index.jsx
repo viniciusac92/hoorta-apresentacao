@@ -6,12 +6,7 @@ const ListStores = () => {
   return (
     <div>
       {listStores.map((store, index) => (
-        <StoreCard
-          key={index}
-          userId={store.userId}
-          businessName={store.businessName}
-          description={store.description}
-        />
+        <StoreCard key={index} store={store} />
       ))}
     </div>
   );

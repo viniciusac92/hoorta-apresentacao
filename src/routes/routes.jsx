@@ -3,9 +3,10 @@ import {Switch, Route} from "react-router-dom";
 // Pages
 import Tests from "../pages/Tests";
 import Dashboard from "../pages/Dashboard";
+import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Home from "../pages/Home";
+import Store from "../pages/Store";
 import Cart from "../pages/Cart";
 
 const Routes = () => {
@@ -19,9 +20,7 @@ const Routes = () => {
 
 			<Route exact path="/dashboard" component={Dashboard} />
 
-			<Route exact path="/store/:id">
-				store
-			</Route>
+			<Route exact path="/store/:id" component={Store} />
 
 			<Route exact path="/store/profile/:id">
 				store - profile

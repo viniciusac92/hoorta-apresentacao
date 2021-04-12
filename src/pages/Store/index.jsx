@@ -1,33 +1,31 @@
-import Button from "../../components/atoms/Button";
-import Figure from "../../components/atoms/Figure";
-import Input from "../../components/atoms/Input";
-import Picture from "../../components/atoms/Picture";
-import FormLogin from "../../components/molecules/FormLogin";
-import HeaderNavBar from "../../components/molecules/HeaderNavBar";
-import Meet from "../../components/molecules/Meet";
-import Header from "../../components/organisms/Header";
-import HomeInfo from "../../components/organisms/HomeInfo";
-import heartImage from "../../assets/images/heartImage.png";
-import vegetablePack from "../../assets/images/vegetablePack.png";
-import footerPicture from "../../assets/images/footerPicture.png";
-import StoreSection from "../../components/organisms/StoresSection";
+import {useEffect} from "react";
+import {useParams} from "react-router";
+import {getOneStore} from "../../helper/stores";
+import {useStores} from "../../providers/StoresContext";
+import API from "../../services/api";
 
 const Store = () => {
-	return (
-		<div>
-			<Header />
+	const {id} = useParams();
+	const {storeData, setStoreData} = useStores();
 
-			<StoreSection />
+	const getStoreData = async (id) => {
+		try {
+			const response = await API.get(getOneStore(id), {
+				headers: {
+					Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+				},
+			});
+			setStoreData(response.data);
+		} catch (e) {
+			console.log(e);
+		}
+	};
 
-			<Picture
-				image={footerPicture}
-				width="444px"
-				height="215px"
-				position="absolute"
-				top="100%"
-			/>
-		</div>
-	);
+	useEffect(() => {
+		getStoreData(id);
+	}, []);
+
+	return <div>{console.log(storeData)}</div>;
 };
 
 export default Store;

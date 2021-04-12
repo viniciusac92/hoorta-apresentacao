@@ -8,6 +8,7 @@ const StoresContext = createContext();
 // Contexto das Lojas, estados globais devem ser feitos aqui.
 export const StoresProvider = ({ children }) => {
   const [listStores, setListStores] = useState([]);
+  const [storeData, setStoreData] = useState(null);
 
   const getAllStores = async () => {
     try {
@@ -22,10 +23,16 @@ export const StoresProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {}, [listStores]);
-
   return (
-    <StoresContext.Provider value={{ getAllStores, listStores, setListStores }}>
+    <StoresContext.Provider
+      value={{
+        getAllStores,
+        listStores,
+        setListStores,
+        storeData,
+        setStoreData,
+      }}
+    >
       {children}
     </StoresContext.Provider>
   );
