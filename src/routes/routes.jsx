@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
 import Store from "../pages/Store";
+import Cart from "../pages/Cart";
 
 const Routes = () => {
 	return (
@@ -27,9 +28,7 @@ const Routes = () => {
 				store - profile
 			</Route>
 
-			<Route exact path="/cart">
-				cart
-			</Route>
+			<Route exact path="/cart" component={Cart} />
 
 			<Route exact path="/profile">
 				profile
