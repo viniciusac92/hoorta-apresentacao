@@ -14,6 +14,8 @@ import {useData} from "../../../providers/UserContext";
 // Components
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
+import Text from "../../atoms/Text";
+// Styles
 import FormStyled from "./styles";
 
 const FormRegister = () => {
@@ -51,6 +53,9 @@ const FormRegister = () => {
 
 	return (
 		<FormStyled onSubmit={handleSubmit(handleForm)}>
+			<Text weigth="semiBold" size="large">
+				Registro
+			</Text>
 			<Input
 				ref={ref}
 				type="text"
