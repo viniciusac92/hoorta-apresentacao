@@ -53,7 +53,7 @@ const FormRegisterStore = () => {
       <Input
         ref={ref}
         type="text"
-        placeholder="Nome da empresa"
+        placeholder="Nome da Loja"
         size="large"
         {...register("businessName")}
       />
@@ -61,7 +61,7 @@ const FormRegisterStore = () => {
       <Input
         ref={ref}
         type="text"
-        placeholder="Nome da loja"
+        placeholder="Razão Social"
         size="large"
         {...register("registeredName")}
       />
