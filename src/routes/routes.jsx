@@ -5,13 +5,12 @@ import Tests from "../pages/Tests";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Home from "../pages/Home";
 
 const Routes = () => {
 	return (
 		<Switch>
-			<Route exact path="/">
-				Home
-			</Route>
+			<Route exact path="/" component={Home} />
 
 			<Route exact path="/login" component={Login} />
 
