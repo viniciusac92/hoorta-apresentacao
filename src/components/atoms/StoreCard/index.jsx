@@ -1,13 +1,16 @@
 import TextHeader from "../TextHeader";
 import Text from "../Text";
 import Icon from "../Icon";
-import { StyledAnchor, CardContainer, Rating, InfoContainer } from "./styles";
+import {
+  CardContainer,
+  RatingMobile,
+  RatingDesktop,
+  InfoContainer,
+} from "./styles";
+import { Link } from "react-router-dom";
 import ratingIcon from "../../../assets/images/icons/rating.svg";
-import { useHistory } from "react-router";
-import { getOneStore } from "../../../helper/stores";
 
 const StoreCard = ({ store }) => {
-  const history = useHistory();
   const {
     userId,
     id,
@@ -19,15 +22,20 @@ const StoreCard = ({ store }) => {
 
   return (
     <CardContainer>
-      <StyledAnchor to={{ pathname: `store/${id}` }}>
-        <Rating>
+      <Link to={{ pathname: `store/${id}` }}>
+        <RatingMobile>
           <Icon src={ratingIcon} alt="Ícone de Avaliação" /> 5.0
-        </Rating>
+        </RatingMobile>
         <InfoContainer>
+          <RatingDesktop>
+            <Icon src={ratingIcon} alt="Ícone de Avaliação" /> 5.0
+          </RatingDesktop>
           <TextHeader>{businessName}</TextHeader>
-          <Text>{description}</Text>
+          <div className="descriptionContainer">
+            <Text>{description}</Text>
+          </div>
         </InfoContainer>
-      </StyledAnchor>
+      </Link>
     </CardContainer>
   );
 };
