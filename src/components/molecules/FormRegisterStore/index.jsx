@@ -1,10 +1,13 @@
 //React
-import { createRef } from "react";
+import { createRef, useState } from "react";
 //API
 import API from "../../../services/api";
+//ContextAPI
+import { useData } from "../../../providers/UserContext";
 //Dependencias
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useHistory } from "react-router";
 //Helpers
 import { registerStoreSchema } from "../../../helper/FormValidation";
 import { postStore } from "../../../helper/stores";
@@ -13,6 +16,13 @@ import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 
 const FormRegisterStore = () => {
+  const [token] = useState(() => {
+    const sessionToken = localStorage.getItem("token") || "";
+    return JSON.parse(sessionToken);
+  });
+  const history = useHistory();
+  const { userData } = useData();
+
   const ref = createRef();
   const {
     register,
@@ -22,12 +32,17 @@ const FormRegisterStore = () => {
   } = useForm({ resolver: yupResolver(registerStoreSchema) });
 
   const handleForm = async (data) => {
+    console.log(data);
     try {
-      await API.post(postStore(), {
-        ...data,
-        rating: [],
-      });
+      await API.post(
+        postStore(),
+        { ...data, rating: [], userId: userData.id },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       reset();
+      history.push("/perfil");
     } catch (e) {
       console.log(e);
     }
