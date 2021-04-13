@@ -11,11 +11,12 @@ import DashboardHeader from "../../components/organisms/DashboardHeader";
 import StoreSection from "../../components/organisms/StoresSection";
 import {GridContainer} from "./styles";
 import {getProducts} from "../../helper/products";
+import {useProducts} from "../../providers/ProductsContext";
 
 const Store = () => {
 	const {id} = useParams();
 	const {storeData, setStoreData} = useStores();
-	const {productsData, setProductsData} = useStores();
+	const {productsData, setProductsData} = useProducts();
 
 	const getStoreData = async (id) => {
 		try {
@@ -26,14 +27,20 @@ const Store = () => {
 			});
 
 			setStoreData(response.data);
+		} catch (e) {
+			console.log(e);
+		}
+	};
 
-			const productsResponse = await API.get(`/products/?userId=1`, {
+	const getStoreProductsData = async (id) => {
+		try {
+			const productsResponse = await API.get(getProducts(`${1}`, id), {
 				headers: {
 					Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
 				},
 			});
 
-			setProductsData(productsResponse.data);
+			setProductsData([...productsData, productsResponse.data]);
 		} catch (e) {
 			console.log(e);
 		}
@@ -41,6 +48,7 @@ const Store = () => {
 
 	useEffect(() => {
 		getStoreData(id);
+		getStoreProductsData(id);
 	}, []);
 
 	console.log(storeData);
