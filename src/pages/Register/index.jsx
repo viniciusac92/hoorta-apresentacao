@@ -11,40 +11,41 @@ import footerPicture from "../../assets/images/footerPicture.png";
 import FormRegister from "../../components/molecules/FormRegister";
 
 const Register = () => {
-	return (
-		<div>
-			<Header />
-			<FormRegister />
-			<Figure type="square">
-				<Picture
-					image={heartImage}
-					width="437px"
-					height="412px"
-					top="30px"
-					left="-130px"
-					position="relative"
-				/>
-			</Figure>
-			<Figure type="rectangle">
-				<Picture
-					image={vegetablePack}
-					width="305px"
-					height="444px"
-					top="100px"
-					left="85px"
-					position="relative"
-				/>
-			</Figure>
-			<Picture
-				image={footerPicture}
-				width="444px"
-				height="215px"
-				position="absolute"
-				top="100%"
-			/>
-			<HomeInfo />
-		</div>
-	);
+  return (
+    <div>
+      <Header />
+      <FormRegister />
+      <Figure type="square">
+        <Picture
+          image={heartImage}
+          width="437px"
+          height="412px"
+          top="30px"
+          left="-130px"
+          position="relative"
+        />
+      </Figure>
+      <Figure type="rectangle">
+        <Picture
+          image={vegetablePack}
+          width="305px"
+          height="444px"
+          top="100px"
+          left="85px"
+          position="relative"
+        />
+      </Figure>
+      <Picture
+        image={footerPicture}
+        width="444px"
+        height="215px"
+        position="absolute"
+        top="100%"
+        left="0"
+      />
+      <HomeInfo />
+    </div>
+  );
 };
 
 export default Register;

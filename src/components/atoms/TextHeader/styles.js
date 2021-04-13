@@ -2,7 +2,6 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 export const TextHeaderStyled = styled.p`
-  text-align: center;
   font-weight: ${({ fontWeight }) =>
     fontWeight === "medium"
       ? theme.weight.medium

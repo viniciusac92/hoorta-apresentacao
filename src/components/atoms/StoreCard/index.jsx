@@ -6,6 +6,7 @@ import {
   RatingMobile,
   RatingDesktop,
   InfoContainer,
+  Time,
 } from "./styles";
 import { Link } from "react-router-dom";
 import ratingIcon from "../../../assets/images/icons/rating.svg";
@@ -30,7 +31,8 @@ const StoreCard = ({ store }) => {
           <RatingDesktop>
             <Icon src={ratingIcon} alt="Ícone de Avaliação" /> 5.0
           </RatingDesktop>
-          <TextHeader>{businessName}</TextHeader>
+          <TextHeader fontWeight={"semiBold"}>{businessName}</TextHeader>
+          <Time>40 - 60 min</Time>
           <div className="descriptionContainer">
             <Text>{description}</Text>
           </div>
