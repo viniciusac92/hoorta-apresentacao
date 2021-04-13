@@ -11,6 +11,7 @@ import { useHistory } from "react-router";
 //Helpers
 import { registerStoreSchema } from "../../../helper/FormValidation";
 import { postStore } from "../../../helper/stores";
+import { patchUser } from "../../../helper/user";
 //Components
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
@@ -36,7 +37,14 @@ const FormRegisterStore = () => {
     try {
       await API.post(
         postStore(),
-        { userId: userData.id, ...data, rating: [] },
+        { ...data, userId: userData.id, rating: [] },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      await API.patch(
+        patchUser(userData.id),
+        { productor: true },
         {
           headers: { Authorization: `Bearer ${token}` },
         }

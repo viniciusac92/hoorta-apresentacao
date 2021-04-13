@@ -1,4 +1,8 @@
-import SideBarStyled from "./";
+import {
+  SideBarStyled,
+  SideBarStyledContainer,
+  SideBarStyledWrap,
+} from "./style";
 import Logo from "../../atoms/Logo";
 import Icon from "../../atoms/Icon";
 import Link from "../../atoms/Link";
@@ -19,17 +23,17 @@ const Sidebar = ({ isProductor }) => {
 
   return (
     <SideBarStyled>
-      <SideBarStyled.Container>
+      <SideBarStyledContainer>
         <Logo />
-        <SideBarStyled.Wrap>
+        <SideBarStyledWrap>
           {links.map(({ icon, text }, key) => (
-            <>
-              <Icon key={key} src={icon} />
-              <Link key={key}>{text}</Link>
-            </>
+            <div key={key} className="IconWrap">
+              <Icon src={icon} />
+              <Link>{text}</Link>
+            </div>
           ))}
-        </SideBarStyled.Wrap>
-      </SideBarStyled.Container>
+        </SideBarStyledWrap>
+      </SideBarStyledContainer>
     </SideBarStyled>
   );
 };
