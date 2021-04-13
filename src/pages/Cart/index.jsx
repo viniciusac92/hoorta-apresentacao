@@ -8,18 +8,19 @@ import vegetablePack from "../../assets/images/vegetablePack.png";
 import footerPicture from "../../assets/images/footerPicture.png";
 
 const Cart = () => {
-	return (
-		<div>
-			<Header />
-			<Picture
-				image={footerPicture}
-				width="444px"
-				height="215px"
-				position="absolute"
-				top="100%"
-			/>
-		</div>
-	);
+  return (
+    <div>
+      <Header />
+      <Picture
+        image={footerPicture}
+        width={["320px", "444px"]}
+        height={["155px", "215px"]}
+        position={["relative", "absolute"]}
+        top={["0px", "calc(100% - 215px)"]}
+        left={["-37"]}
+      />
+    </div>
+  );
 };
 
 export default Cart;
