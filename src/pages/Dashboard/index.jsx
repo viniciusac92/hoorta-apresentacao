@@ -1,22 +1,13 @@
-<<<<<<< HEAD
-import CardPerfil from "../../components/molecules/CardPerfil";
-=======
 import DashboardHeader from "../../components/organisms/DashboardHeader";
->>>>>>> 5ea2469bbe48d0cd5882543b56b8954501b6a9e5
 import StoreSection from "../../components/organisms/StoresSection";
 import Meet from "../../components/molecules/Meet";
 import { GridContainer } from "./styles";
+import FormRegisterStore from "../../components/molecules/FormRegisterStore";
 
 const Dashboard = () => {
   return (
-<<<<<<< HEAD
-    <div>
-      DashBoard
-      {/* <StoreSection /> */}
-      <CardPerfil />
-    </div>
-=======
     <GridContainer>
+      <FormRegisterStore />
       <div className="SidebarContainer">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error quam
@@ -32,7 +23,6 @@ const Dashboard = () => {
         <StoreSection />
       </div>
     </GridContainer>
->>>>>>> 5ea2469bbe48d0cd5882543b56b8954501b6a9e5
   );
 };
 
