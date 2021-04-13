@@ -26,7 +26,6 @@ const ListProducts = () => {
 
 	return (
 		<div>
-			<Header />
 			{products.map((product, index) => (
 				<ProductCard size="large" key={index}>
 					<div>
@@ -59,14 +58,6 @@ const ListProducts = () => {
 					</div>
 				</ProductCard>
 			))}
-			<Picture
-				image={footerPicture}
-				width={["320px", "444px"]}
-				height={["155px", "215px"]}
-				position={["relative", "absolute"]}
-				top={["0px", "calc(100% - 215px)"]}
-				left={["0", "0"]}
-			/>
 		</div>
 	);
 };
