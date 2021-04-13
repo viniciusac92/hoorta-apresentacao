@@ -3,7 +3,8 @@ import Hortifruti from "../../../assets/images/hortifruti.jpg";
 import theme from "../../../styles/theme";
 
 export const CardContainer = styled.div`
-  margin: 40px auto;
+  height: 160px;
+  margin: 30px 20px;
   border-radius: 39px;
   background-image: url(${Hortifruti});
   background-position: left;
@@ -84,6 +85,13 @@ export const InfoContainer = styled.div`
 
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
 
   p:first-child {
     font-weight: ${theme.weight.semiBold};
@@ -130,4 +138,5 @@ export const Time = styled.div`
   font-size: 16px;
   color: #f9f9f9;
   margin-top: 10px;
+  width: 100%;
 `;
