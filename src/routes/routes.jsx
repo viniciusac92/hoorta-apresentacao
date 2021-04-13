@@ -1,4 +1,4 @@
-import {Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 // Junia Update
 // Pages
 import Tests from "../pages/Tests";
@@ -10,30 +10,30 @@ import Store from "../pages/Store";
 import Cart from "../pages/Cart";
 
 const Routes = () => {
-	return (
-		<Switch>
-			<Route exact path="/" component={Home} />
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
 
-			<Route exact path="/login" component={Login} />
+      <Route exact path="/login" component={Login} />
 
-			<Route exact path="/register" component={Register} />
+      <Route exact path="/register" component={Register} />
 
-			<Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/dashboard" component={Dashboard} />
 
-			<Route exact path="/store/:id" component={Store} />
+      <Route exact path="/store/:id" component={Store} />
 
-			<Route exact path="/store/profile/:id">
-				store - profile
-			</Route>
+      <Route exact path="/store/profile/:id">
+        store - profile
+      </Route>
 
-			<Route exact path="/cart" component={Cart} />
+      <Route exact path="/cart" component={Cart} />
 
-			<Route exact path="/profile">
-				profile
-			</Route>
+      <Route exact path="/profile">
+        profile
+      </Route>
 
-			<Route exact path="/tests" component={Tests} />
-		</Switch>
-	);
+      <Route exact path="/tests" component={Tests} />
+    </Switch>
+  );
 };
 export default Routes;

@@ -41,7 +41,7 @@ const Login = () => {
 				height="215px"
 				position="absolute"
 				top="100%"
-				left={["0"]}
+				left="0"
 			/>
 			<HomeInfo />
 		</div>
