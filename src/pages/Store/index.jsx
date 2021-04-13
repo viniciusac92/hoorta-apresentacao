@@ -10,7 +10,6 @@ import footerPicture from "../../assets/images/footerPicture.png";
 import DashboardHeader from "../../components/organisms/DashboardHeader";
 import StoreSection from "../../components/organisms/StoresSection";
 import {GridContainer} from "./styles";
-import {getProducts} from "../../helper/products";
 import {useProducts} from "../../providers/ProductsContext";
 
 const Store = () => {
@@ -34,13 +33,18 @@ const Store = () => {
 
 	const getStoreProductsData = async (id) => {
 		try {
-			const productsResponse = await API.get(getProducts(`${1}`, id), {
-				headers: {
-					Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
-				},
-			});
+			const productsResponse = await API.get(
+				`/products?userId=1&storeId=${id}`,
+				{
+					headers: {
+						Authorization: `Bearer ${JSON.parse(
+							localStorage.getItem("token")
+						)}`,
+					},
+				}
+			);
 
-			setProductsData([...productsData, productsResponse.data]);
+			setProductsData(productsResponse.data);
 		} catch (e) {
 			console.log(e);
 		}
@@ -71,7 +75,7 @@ const Store = () => {
 
 				<Header />
 
-				<ListProducts />
+				<ListProducts productsData={productsData} />
 
 				<Picture
 					image={footerPicture}
