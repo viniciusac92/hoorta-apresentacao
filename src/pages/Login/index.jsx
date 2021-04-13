@@ -11,40 +11,41 @@ import footerPicture from "../../assets/images/footerPicture.png";
 import FormLogin from "../../components/molecules/FormLogin";
 
 const Login = () => {
-  return (
-    <div>
-      <Header />
-      <FormLogin />
-      <Figure type="square">
-        <Picture
-          image={heartImage}
-          width="437px"
-          height="412px"
-          top="30px"
-          left="-130px"
-          position="relative"
-        />
-      </Figure>
-      <Figure type="rectangle">
-        <Picture
-          image={vegetablePack}
-          width="305px"
-          height="444px"
-          top="100px"
-          left="85px"
-          position="relative"
-        />
-      </Figure>
-      <Picture
-        image={footerPicture}
-        width="444px"
-        height="215px"
-        position="absolute"
-        top="100%"
-      />
-      <HomeInfo />
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+			<FormLogin />
+			<Figure type="square">
+				<Picture
+					image={heartImage}
+					width={["218px", "437px"]}
+					height={["206px", "412px"]}
+					top={["30px"]}
+					left={["-40px", "-130px"]}
+					position={["relative"]}
+				/>
+			</Figure>
+			<Figure type="rectangle">
+				<Picture
+					image={vegetablePack}
+					width={["305px"]}
+					height={["444px"]}
+					top={["100px"]}
+					left={["85px"]}
+					position={["relative"]}
+				/>
+			</Figure>
+			<HomeInfo />
+			<Picture
+				image={footerPicture}
+				width={["320px", "444px"]}
+				height={["155px", "215px"]}
+				position={["relative", "absolute"]}
+				top={["0px", "calc(100% - 215px)"]}
+				left={["-37px"]}
+			/>
+		</div>
+	);
 };
 
 export default Login;
