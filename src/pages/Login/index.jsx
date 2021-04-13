@@ -35,15 +35,15 @@ const Login = () => {
 					position={["relative"]}
 				/>
 			</Figure>
-			<HomeInfo />
 			<Picture
 				image={footerPicture}
 				width={["320px", "444px"]}
 				height={["155px", "215px"]}
 				position={["relative", "absolute"]}
 				top={["0px", "calc(100% - 215px)"]}
-				left={["-37px"]}
+				left={["0", "0"]}
 			/>
+			<HomeInfo />
 		</div>
 	);
 };
