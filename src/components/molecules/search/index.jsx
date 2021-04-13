@@ -9,7 +9,7 @@ const Search = () => {
   const ref = createRef();
   return (
     <SearchContainer>
-      <Input size="small" ref={ref} placeholder="O que você está procurando?" />
+      <Input size="small" ref={ref} placeholder="Buscar..." />
       <Button color="primary">
         <Icon src={SearchIcon} alt="Barra de Busca" />
       </Button>

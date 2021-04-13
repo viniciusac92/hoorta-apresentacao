@@ -1,8 +1,10 @@
 import MeetStyled from "./style";
 import Button from "../../atoms/Button";
 import Text from "../../atoms/Text";
+import { useHistory } from "react-router";
 
 const Meet = () => {
+  const history = useHistory();
   return (
     <MeetStyled>
       <Text weigth="semiBold" size="large">
@@ -15,7 +17,11 @@ const Meet = () => {
         Na porta da sua casa!
       </Text>
       <MeetStyled.ButtonWrap>
-        <Button color="primary" size="large">
+        <Button
+          onClick={() => history.push("/login")}
+          color="primary"
+          size="large"
+        >
           Conhecer
         </Button>
       </MeetStyled.ButtonWrap>
