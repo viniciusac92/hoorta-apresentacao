@@ -2,12 +2,10 @@ import DashboardHeader from "../../components/organisms/DashboardHeader";
 import StoreSection from "../../components/organisms/StoresSection";
 import Meet from "../../components/molecules/Meet";
 import { GridContainer } from "./styles";
-import FormRegisterStore from "../../components/molecules/FormRegisterStore";
 
 const Dashboard = () => {
   return (
     <GridContainer>
-      <FormRegisterStore />
       <div className="SidebarContainer">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error quam
