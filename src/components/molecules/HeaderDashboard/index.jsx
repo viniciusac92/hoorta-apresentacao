@@ -14,8 +14,10 @@ const HeaderDashboard = () => {
   return (
     <HeaderContainer>
       <div className="backContainer">
-        <Icon src={BackIcon} alt="Botão Voltar" />
-        <Logout onClick={handleLogout}>Voltar</Logout>
+        <Logout onClick={handleLogout}>
+          <Icon src={BackIcon} alt="Botão Voltar" />
+          <p>Voltar</p>
+        </Logout>
       </div>
       <Link to="/about">Sobre nós</Link>
       <Link to="/contact">Contato</Link>

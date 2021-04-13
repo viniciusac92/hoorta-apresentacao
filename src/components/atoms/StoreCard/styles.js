@@ -25,7 +25,7 @@ export const CardContainer = styled.div`
   @media screen and (min-width: 800px) {
     height: 340px;
 
-    width: 1000px;
+    max-width: 1000px;
     a {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;

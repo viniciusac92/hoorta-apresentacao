@@ -6,7 +6,7 @@ const ListStores = () => {
   const { listStores } = useStores();
   return (
     <List>
-      <div className="teste">
+      <div>
         <TextHeader size={"large"}>Produtores</TextHeader>
       </div>
       {listStores.map((store, index) => (

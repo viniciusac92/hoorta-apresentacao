@@ -3,13 +3,12 @@ import theme from "../../../styles/theme";
 
 export const HeaderContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  margin: 0 2rem;
   justify-content: center;
   align-items: center;
-  width: 100%;
 
   div {
-    margin: 0 3rem;
+    margin: 0 1rem;
   }
 
   .backContainer {
@@ -24,12 +23,18 @@ export const HeaderContainer = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    width: 25%;
-
     div {
       margin: 0;
     }
-    div a:first-child {
+    a:first-child {
+      display: none;
+    }
+
+    .backContainer a {
+      display: inline;
+    }
+
+    .backContainer p {
       display: none;
     }
   }
@@ -41,7 +46,4 @@ export const Logout = styled.a`
   cursor: pointer;
   color: inherit;
   font-weight: ${theme.weight.semiBold};
-
-  @media screen and (max-width: 800px) {
-  }
 `;

@@ -3,31 +3,35 @@ import styled from "styled-components";
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
-
+  justify-content: center;
+  width: 25rem;
   button {
-    width: fit-content;
-    height: 35px;
+    width: 3rem;
+    height: 37px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    right: 60px;
-    top: 2px;
     border-radius: 0 39px 39px 0;
   }
 
+  input {
+    margin: 0;
+    width: 100%;
+    border-radius: 39px 0 0 39px;
+  }
+
   img {
-    width: 20px;
+    width: 1rem;
   }
 
   @media screen and (max-width: 800px) {
     input {
       width: 100%;
-      height: 40px;
+      height: 30px;
     }
 
     button {
-      top: 4px;
+      height: 30px;
     }
 
     img {
