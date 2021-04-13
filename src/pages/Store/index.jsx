@@ -1,6 +1,5 @@
 import {useEffect} from "react";
 import {useParams} from "react-router";
-import ListProducts from "../../components/molecules/ListProducts";
 import {getOneStore} from "../../helper/stores";
 import {useStores} from "../../providers/StoresContext";
 import API from "../../services/api";
