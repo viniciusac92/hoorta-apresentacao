@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 export const ImgStyled = styled.div`
-	/* border-radius: ${theme.radius} 0px 0px ${theme.radius}; */
+	border-radius: ${theme.radius} 0px 0px ${theme.radius};
 	background-size: contain;
 	background-image: ${({image}) => `url(${image})`};
 	background-repeat: no-repeat;
