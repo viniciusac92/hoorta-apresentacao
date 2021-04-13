@@ -6,21 +6,35 @@ const CardCartStyled = styled.div`
   max-width: 620px;
   height: 280px;
   border-radius: ${theme.radius};
-  background-color: ${theme.color.grayDark};
+  background-color: ${theme.color.gray};
+  box-shadow: ${theme.shadow};
   display: flex;
+  justify-content: space-around;
 `;
 
 CardCartStyled.Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
 `;
 
-CardCartStyled.Amount = styled.h1`
+CardCartStyled.Amount = styled.p`
   font-size: 48px;
   font-weight: ${theme.weight.regular};
-  padding: 30px;
+`;
+
+CardCartStyled.Text = styled.p`
+  font-size: ${({ highlight }) => (highlight ? "36px" : "18px")};
+  padding: 10px 0;
+  text-align: left;
+  color: ${({ highlight }) => !highlight && theme.color.textGray};
+  font-weight: ${({ highlight }) => !highlight && theme.weight.semiBold};
+`;
+
+CardCartStyled.Price = styled.p`
+  font-size: 36px;
+  padding: 10px 0;
+  font-weight: ${theme.weight.semiBold};
 `;
 
 export default CardCartStyled;

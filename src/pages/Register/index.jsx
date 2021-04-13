@@ -42,7 +42,7 @@ const Register = () => {
         height={["155px", "215px"]}
         position={["relative", "absolute"]}
         top={["0px", "calc(100% - 215px)"]}
-        left={["0", "0"]}
+        left={["-37px"]}
       />
     </div>
   );

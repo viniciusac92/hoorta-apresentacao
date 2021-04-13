@@ -1,6 +1,6 @@
 import CardCartStyled from "./style";
-import Text from "../../atoms/Text";
 import Icon from "../../atoms/Icon";
+import closeIcon from "../../../assets/images/icons/close.svg";
 
 const CardCart = ({ amount, price, productName, productorName }) => {
   return (
@@ -9,12 +9,12 @@ const CardCart = ({ amount, price, productName, productorName }) => {
         <CardCartStyled.Amount>{amount} X</CardCartStyled.Amount>
       </CardCartStyled.Wrap>
       <CardCartStyled.Wrap>
-        <Text>{productName}</Text>
-        <Text>{productorName}</Text>
-        <Text>R${price}</Text>
+        <CardCartStyled.Text highlight>{productName}</CardCartStyled.Text>
+        <CardCartStyled.Text>{productorName}</CardCartStyled.Text>
+        <CardCartStyled.Price>R$ {price}</CardCartStyled.Price>
       </CardCartStyled.Wrap>
       <CardCartStyled.Wrap>
-        <Icon />
+        <Icon src={closeIcon} isRadius />
       </CardCartStyled.Wrap>
     </CardCartStyled>
   );
