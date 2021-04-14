@@ -66,7 +66,7 @@ const Store = () => {
 				<DashboardHeader />
 			</div>
 			<div className="SectionContainer">
-				<ProductsSection productsData={productsData} />
+				<ProductsSection productsData={productsData} currentStoreId={id} />
 
 				<Picture
 					image={footerPicture}

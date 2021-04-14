@@ -16,13 +16,16 @@ import ButtonCount from "../../molecules/ButtonCount";
 import TextHeader from "../../atoms/TextHeader";
 import Link from "../../atoms/Link";
 
-const ProductsSection = ({productsData}) => {
+const ProductsSection = ({productsData, currentStoreId}) => {
 	const productImg = [{img: alface}, {img: TomateCereja}, {img: Abobora}];
 
 	return (
 		<ProductsList>
 			<TextHeader size={"large"}>Nome da Loja</TextHeader>
-			<Link size="large" color="primary" to="/store/profile/1">
+			<Link
+				size="large"
+				color="primary"
+				to={`/store/profile/${currentStoreId}`}>
 				Conheça mais sobre o produtor
 			</Link>
 			{productsData &&
