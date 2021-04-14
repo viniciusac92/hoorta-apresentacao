@@ -2,6 +2,7 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 export const TextStyled = styled.p`
+  height: 100%;
   font-family: ${theme.font};
   color: ${theme.color.black};
 

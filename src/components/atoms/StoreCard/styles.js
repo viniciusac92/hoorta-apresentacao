@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import card_placeholder from "../../../assets/images/card_placeholder.png";
+import Hortifruti from "../../../assets/images/hortifruti.jpg";
 import theme from "../../../styles/theme";
 
 export const CardContainer = styled.div`
   height: 160px;
-  margin: 20px;
+  margin: 30px 20px;
   border-radius: 39px;
-  background-image: url(${card_placeholder});
-  background-position: center;
+  background-image: url(${Hortifruti});
+  background-position: left;
   background-size: cover;
   overflow: hidden;
   color: ${theme.color.gray};
@@ -43,7 +43,6 @@ export const RatingMobile = styled.div`
   height: 30px;
   background: ${theme.color.primary};
   border-radius: 39px;
-
   position: relative;
   bottom: 65px;
   left: 15px;
@@ -67,6 +66,7 @@ export const RatingDesktop = styled.div`
   height: 30px;
   background: ${theme.color.primary};
   border-radius: 39px;
+  margin: 20px;
 
   img {
     margin: 0;
@@ -85,7 +85,13 @@ export const InfoContainer = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
 
   p:first-child {
     font-weight: ${theme.weight.semiBold};
@@ -101,23 +107,36 @@ export const InfoContainer = styled.div`
 
   @media screen and (min-width: 800px) {
     height: 100%;
-
     flex-direction: column;
 
     p:first-child {
-      padding: 0 1.5rem;
+      padding: 0rem 1.5rem;
     }
 
     .descriptionContainer {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
-      overflow-y: auto;
+      max-height: 200px;
+      margin-top: 10px;
+      overflow-y: scroll;
+      text-align: center;
+    }
+    .descriptionContainer::-webkit-scrollbar {
+      display: none;
     }
 
     p:last-child {
       display: inline;
     }
   }
+`;
+
+export const Time = styled.div`
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  color: #f9f9f9;
+  margin-top: 10px;
+  width: 100%;
 `;

@@ -10,6 +10,7 @@ import HomeInfo from "../../components/organisms/HomeInfo";
 import heartImage from "../../assets/images/heartImage.png";
 import vegetablePack from "../../assets/images/vegetablePack.png";
 import footerPicture from "../../assets/images/footerPicture.png";
+import { Container } from "./styles";
 
 const Home = () => {
   return (
@@ -43,7 +44,7 @@ const Home = () => {
         height={["155px", "215px"]}
         position={["relative", "absolute"]}
         top={["0px", "calc(100% - 215px)"]}
-        left={["0", "0"]}
+        left={["-37px"]}
       />
     </div>
   );
