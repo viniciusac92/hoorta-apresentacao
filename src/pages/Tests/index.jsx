@@ -8,30 +8,12 @@ import Meet from "../../components/molecules/Meet";
 import { GridContainer } from "./styles";
 import ListProducts from "../../components/organisms/ListProducts";
 import AppBar from "../../components/organisms/Appbar/AppBar";
+import MenuDashboard from "../../components/template/MenuDashboard";
 
 const Tests = () => {
   return (
     <div>
-      <GridContainer>
-        <div className="SidebarContainer">
-          <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error quam
-            similique aliquam quibusdam aut! Dignissimos maiores sapiente,
-            consequatur veritatis ratione id officiis odit necessitatibus sed,
-            pariatur doloribus corrupti, provident saepe!
-          </div>
-        </div>
-        <div className="HeaderContainer">
-          <DashboardHeader />
-        </div>
-        <div className="SectionContainer">
-          <StoreSection></StoreSection>
-          <Header />
-
-          <ListProducts />
-        </div>
-      </GridContainer>
-      <AppBar />
+      <MenuDashboard />
     </div>
   );
 };
