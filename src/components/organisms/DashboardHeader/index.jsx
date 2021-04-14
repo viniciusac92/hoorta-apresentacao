@@ -1,5 +1,5 @@
 import HeaderDashboard from "../../molecules/HeaderDashboard";
-import Search from "../../molecules/search";
+import Search from "../../molecules/Search";
 import { HeaderContainer } from "./styles";
 
 const DashboardHeader = () => {
