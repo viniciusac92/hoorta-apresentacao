@@ -6,7 +6,7 @@ export const CardInfoStyled = styled.div`
   height: 164px;
   box-shadow: ${theme.shadow.on};
   background-color: ${theme.color.gray};
-  margin: 0 5%;
+  margin: 16px 5%;
   display: flex;
   flex-direction: column;
 `;

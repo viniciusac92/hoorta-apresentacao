@@ -39,7 +39,7 @@ CardStyled.Icon = styled.div`
 
 CardStyled.Image = styled.div`
   text-align: center;
-  margin-top: -56px;
+  margin-top: -77px;
 
   img {
     height: 130px;
