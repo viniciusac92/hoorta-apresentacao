@@ -1,6 +1,6 @@
-import CardProfile from "../../molecules/CardProfile";
+import CardProfileMobile from "../../molecules/CarProfileMobile";
 
 const UserProfileInfo = () => {
-  return <CardProfile />;
+  return <CardProfileMobile />;
 };
 export default UserProfileInfo;

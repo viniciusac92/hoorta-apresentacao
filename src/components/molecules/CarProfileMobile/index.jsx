@@ -4,8 +4,9 @@ import Woman from "../../../assets/images/perfil/imgPerfil.jpg";
 import Text from "../../atoms/Text";
 import Icon from "../../atoms/Icon";
 import IconEdit from "../../../assets/images/icons/editPencil.svg";
+import CardInfoUserProfile from "../../atoms/CardInfoUserProfile";
 
-const CardProfile = () => {
+const CardProfileMobile = () => {
   const { userData } = useData();
 
   const text = [
@@ -41,14 +42,15 @@ const CardProfile = () => {
       <CardStyled.Image>
         <img src={Woman} alt="imagePerfil" />
       </CardStyled.Image>
-      {/* <CardStyled.Container>
-          {text.map(({ dice }, key) => (
-            <Text key={key} size="small">
+
+      <CardInfoUserProfile>
+        {text.map(({ dice }, key) => (
+          <Text key={key} size="small">
             {dice}
-            </Text>
-            ))}
-          </CardStyled.Container> */}
+          </Text>
+        ))}
+      </CardInfoUserProfile>
     </div>
   );
 };
-export default CardProfile;
+export default CardProfileMobile;

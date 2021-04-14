@@ -10,21 +10,15 @@ export const CardStyled = styled.div`
   background-size: cover;
   overflow: hidden;
   background-position: center;
-
-  p {
-    /* margin-top: 9px; */
-  }
 `;
 
 CardStyled.Background = styled.div`
-  /* display: flex; */
   background-color: #09b44dc7;
   height: 100%;
   width: 100%;
 `;
 
 CardStyled.Title = styled.div`
-  /* margin: 16px 0 0 20px; */
   padding-top: 60px;
   text-align: center;
 
@@ -37,7 +31,10 @@ CardStyled.Icon = styled.div`
   position: absolute;
   right: 0;
   top: -3px;
-  /* margin: 0px 0 0 322px; */
+
+  img {
+    width: 20px;
+  }
 `;
 
 CardStyled.Image = styled.div`
@@ -51,24 +48,4 @@ CardStyled.Image = styled.div`
   }
 `;
 
-CardStyled.Container = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  width: 483px; */
-  /* flex-wrap: wrap;
-  margin: 55px 0 0 190px;
-  position: absolute; */
-`;
-
-/* height: 93px; */
-
-// - para desktop
-// height: 203px;
-//   width: 56vw;
-//   margin: 20px;
-//   border-radius: ${theme.radius};
-//   background-position: center;
-//   background-size: cover;
-//   background-image: url(${card_placeholder});
-//   overflow: hidden;
-//   color: ${theme.color.white};
+CardStyled.Container = styled.div``;
