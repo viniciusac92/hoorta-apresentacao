@@ -42,3 +42,9 @@ export const ContainerInfoStyled = styled.div`
 	flex-direction: column;
 	justify-content: space-around;
 `;
+
+export const TopContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+`;

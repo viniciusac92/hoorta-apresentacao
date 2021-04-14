@@ -12,6 +12,7 @@ import StoreSection from "../../components/organisms/StoresSection";
 import {GridContainer} from "./styles";
 import {useProducts} from "../../providers/ProductsContext";
 import Sidebar from "../../components/molecules/SideBar";
+import MenuDashboard from "../../components/template/MenuDashboard";
 
 const Store = () => {
 	const {id} = useParams();
@@ -60,24 +61,9 @@ const Store = () => {
 	}, [storeData]);
 
 	return (
-		<GridContainer>
-			<Sidebar />
-			<div className="HeaderContainer">
-				<DashboardHeader />
-			</div>
-			<div className="SectionContainer">
-				<ProductsSection productsData={productsData} currentStoreId={id} />
-
-				<Picture
-					image={footerPicture}
-					width={["320px", "444px"]}
-					height={["155px", "215px"]}
-					position={["relative", "absolute"]}
-					top={["0px", "calc(100% - 215px)"]}
-					left={["0", "0"]}
-				/>
-			</div>
-		</GridContainer>
+		<MenuDashboard>
+			<ProductsSection productsData={productsData} currentStoreId={id} />
+		</MenuDashboard>
 	);
 };
 
