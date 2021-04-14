@@ -19,14 +19,18 @@ export const CardStyled = styled.div`
   }
 `;
 
-CardStyled.BackgroundG = styled.div`
+CardStyled.Background = styled.div`
   display: flex;
   background-color: #09b44dc7;
   width: 100%;
+`;
 
-  div {
-    margin: 10px;
-  }
+CardStyled.Title = styled.div`
+  margin: 9px 0 0 20px;
+`;
+
+CardStyled.Icon = styled.div`
+  margin: 0px 0 0 322px;
 `;
 
 CardStyled.Image = styled.img`
@@ -37,11 +41,9 @@ CardStyled.Image = styled.img`
 CardStyled.Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 584px;
-  height: 117px;
+  width: 483px;
+  height: 93px;
   flex-wrap: wrap;
-
-  div {
-    margin: 0px;
-  }
+  margin: 65px 0 0 190px;
+  position: absolute;
 `;
