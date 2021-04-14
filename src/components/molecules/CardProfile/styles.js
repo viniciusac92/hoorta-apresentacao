@@ -3,8 +3,8 @@ import theme from "../../../styles/theme";
 import card_placeholder from "../../../assets/images/card_placeholder.png";
 
 export const CardStyled = styled.div`
-  height: 170px;
-  width: 62vw;
+  height: 203px;
+  width: 56vw;
   margin: 20px;
   border-radius: ${theme.radius};
   background-position: center;
@@ -26,7 +26,7 @@ CardStyled.Background = styled.div`
 `;
 
 CardStyled.Title = styled.div`
-  margin: 9px 0 0 20px;
+  margin: 16px 0 0 20px;
 `;
 
 CardStyled.Icon = styled.div`
@@ -34,7 +34,7 @@ CardStyled.Icon = styled.div`
 `;
 
 CardStyled.Image = styled.img`
-  height: 174px;
+  height: 207px;
   width: 170px;
 `;
 
@@ -44,6 +44,6 @@ CardStyled.Container = styled.div`
   width: 483px;
   height: 93px;
   flex-wrap: wrap;
-  margin: 65px 0 0 190px;
+  margin: 84px 0 0 190px;
   position: absolute;
 `;
