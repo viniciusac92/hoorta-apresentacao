@@ -6,11 +6,17 @@ import HomeInfo from "../../components/organisms/HomeInfo";
 import heartImage from "../../assets/images/heartImage.png";
 import vegetablePack from "../../assets/images/vegetablePack.png";
 import footerPicture from "../../assets/images/footerPicture.png";
+import MenuDashboard from "../../components/template/MenuDashboard";
+import TextHeader from "../../components/atoms/TextHeader";
 
 const Cart = () => {
   return (
     <div>
-      <Header />
+      <MenuDashboard>
+        <TextHeader size="medium" align="left">
+          Carrinho
+        </TextHeader>
+      </MenuDashboard>
       <Picture
         image={footerPicture}
         width={["320px", "444px"]}
