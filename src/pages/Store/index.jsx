@@ -4,7 +4,7 @@ import {getOneStore} from "../../helper/stores";
 import {useStores} from "../../providers/StoresContext";
 import API from "../../services/api";
 import Picture from "../../components/atoms/Picture";
-import ListProducts from "../../components/molecules/ListProducts";
+import ListProducts from "../../components/organisms/ListProducts";
 import Header from "../../components/organisms/Header";
 import footerPicture from "../../assets/images/footerPicture.png";
 import DashboardHeader from "../../components/organisms/DashboardHeader";
@@ -34,7 +34,7 @@ const Store = () => {
 	const getStoreProductsData = async (id) => {
 		try {
 			const productsResponse = await API.get(
-				`/products?userId=1&storeId=${id}`,
+				`/products?userId=${storeData.userId}&storeId=${id}`,
 				{
 					headers: {
 						Authorization: `Bearer ${JSON.parse(
@@ -52,8 +52,11 @@ const Store = () => {
 
 	useEffect(() => {
 		getStoreData(id);
-		getStoreProductsData(id);
 	}, []);
+
+	useEffect(() => {
+		getStoreProductsData(id);
+	}, [storeData]);
 
 	console.log(storeData);
 	console.log(productsData);
