@@ -7,7 +7,7 @@ export const SideBarStyled = styled.div`
 
   width: 100%;
   height: 100%;
-  box-shadow: ${theme.shadow};
+  box-shadow: ${theme.shadow.under};
 
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ const CardCartStyled = styled.div`
   height: 280px;
   border-radius: ${theme.radius};
   background-color: ${theme.color.gray};
-  box-shadow: ${theme.shadow};
+  box-shadow: ${theme.shadow.under};
   display: flex;
   justify-content: space-around;
 `;

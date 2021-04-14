@@ -2,34 +2,44 @@ import { useData } from "../../../providers/UserContext";
 import { CardStyled } from "./styles";
 import Woman from "../../../assets/images/perfil/imgPerfil.jpg";
 import Text from "../../atoms/Text";
+import Icon from "../../atoms/Icon";
+import IconEdit from "../../../assets/images/icons/editPencil.svg";
 
-const CardPerfil = () => {
+const CardProfile = () => {
   const { userData } = useData();
+
+  const text = [
+    { dice: [userData.address.road, " - ", userData.address.number] },
+    { dice: [userData.address.city, " - ", userData.address.state] },
+    { dice: userData.address.cep },
+    { dice: userData.email },
+    { dice: userData.phone },
+  ];
 
   return (
     <CardStyled>
-      <CardStyled.BackgroundG>
+      <CardStyled.Background>
         <CardStyled.Image src={Woman} alt="imagePerfil" />
-        <div>
+
+        <CardStyled.Title>
           <Text size="medium" weigth="semiBold">
             {userData.name} - {userData.age}
           </Text>
-          <CardStyled.Container>
-            <Text size="small">
-              {userData.address.road} -{userData.address.number}
+        </CardStyled.Title>
+
+        <CardStyled.Icon>
+          <Icon src={IconEdit} alt="" />
+        </CardStyled.Icon>
+
+        <CardStyled.Container>
+          {text.map(({ dice }, key) => (
+            <Text key={key} size="small">
+              {dice}
             </Text>
-            <Text size="small">
-              {userData.address.city} -{userData.address.state}
-            </Text>
-            <Text size="small">CEP: {userData.address.cep}</Text>
-            <div>
-              <Text size="small">{userData.email}</Text>
-              <Text size="small">{userData.phone}</Text>
-            </div>
-          </CardStyled.Container>
-        </div>
-      </CardStyled.BackgroundG>
+          ))}
+        </CardStyled.Container>
+      </CardStyled.Background>
     </CardStyled>
   );
 };
-export default CardPerfil;
+export default CardProfile;
