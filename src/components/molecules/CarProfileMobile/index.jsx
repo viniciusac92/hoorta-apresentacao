@@ -14,6 +14,7 @@ const CardProfile = () => {
     { dice: "87020220" },
     { dice: "junia@mail.com" },
     { dice: "(44) 00000-0000" },
+
     // { dice: [userData.address.road, " - ", userData.address.number] },
     // { dice: [userData.address.city, " - ", userData.address.state] },
     // { dice: userData.address.cep },
@@ -22,29 +23,32 @@ const CardProfile = () => {
   ];
 
   return (
-    <CardStyled>
-      <CardStyled.Background>
-        <CardStyled.Image src={Woman} alt="imagePerfil" />
+    <div>
+      <CardStyled>
+        <CardStyled.Background>
+          <CardStyled.Title>
+            <Text size="medium" weigth="semiBold">
+              Junia - 26
+            </Text>
 
-        <CardStyled.Title>
-          <Text size="medium" weigth="semiBold">
-            Junia - 25
-          </Text>
-        </CardStyled.Title>
+            <CardStyled.Icon>
+              <Icon src={IconEdit} alt="" />
+            </CardStyled.Icon>
+          </CardStyled.Title>
+        </CardStyled.Background>
+      </CardStyled>
 
-        <CardStyled.Icon>
-          <Icon src={IconEdit} alt="" />
-        </CardStyled.Icon>
-
-        <CardStyled.Container>
+      <CardStyled.Image>
+        <img src={Woman} alt="imagePerfil" />
+      </CardStyled.Image>
+      {/* <CardStyled.Container>
           {text.map(({ dice }, key) => (
             <Text key={key} size="small">
-              {dice}
+            {dice}
             </Text>
-          ))}
-        </CardStyled.Container>
-      </CardStyled.Background>
-    </CardStyled>
+            ))}
+          </CardStyled.Container> */}
+    </div>
   );
 };
 export default CardProfile;

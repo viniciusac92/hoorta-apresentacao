@@ -41,9 +41,9 @@ CardStyled.Image = styled.img`
 CardStyled.Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 483px;
-  height: 93px;
+  /* width: 483px;
+  height: 93px; */
   flex-wrap: wrap;
-  margin: 84px 0 0 190px;
+  margin: 53px 0 0 190px;
   position: absolute;
 `;
