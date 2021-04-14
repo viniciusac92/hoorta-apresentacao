@@ -6,6 +6,7 @@ import {
 	TitleDivStyled,
 	BottomContainer,
 	ContainerInfoStyled,
+	TopContainer,
 } from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
 import alface from "../../../assets/images/products/alface.jpg";
@@ -48,11 +49,12 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 								top={["1px"]}
 								left={["0px"]}
 								position={["relative"]}
+								isRadius={["true"]}
 							/>
 						</div>
 						<ContainerInfoStyled>
 							<div>
-								<div>
+								<TopContainer>
 									<TitleDivStyled>
 										<TextProduct weigth="semiBold" size="large" color="primary">
 											{product.info.name}
@@ -67,7 +69,7 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 										/>
 									</TitleDivStyled>
 									<Icon src={threeDots} />
-								</div>
+								</TopContainer>
 								<TextProduct>{product.info.description}</TextProduct>
 								<TextProduct weigth="semiBold">
 									R$ {product.info.price}
