@@ -10,7 +10,7 @@ import Button from "../../atoms/Button";
 import ButtonCount from "../../molecules/ButtonCount";
 
 const ListProducts = ({productsData}) => {
-	const productImg = [alface, TomateCereja, Abobora];
+	const productImg = [{img: alface}, {img: TomateCereja}, {img: Abobora}];
 
 	return (
 		<div>
