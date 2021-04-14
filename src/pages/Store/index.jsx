@@ -4,13 +4,14 @@ import {getOneStore} from "../../helper/stores";
 import {useStores} from "../../providers/StoresContext";
 import API from "../../services/api";
 import Picture from "../../components/atoms/Picture";
-import ListProducts from "../../components/organisms/ListProducts";
+import ProductsSection from "../../components/organisms/ProductsSection";
 import Header from "../../components/organisms/Header";
 import footerPicture from "../../assets/images/footerPicture.png";
 import DashboardHeader from "../../components/organisms/DashboardHeader";
 import StoreSection from "../../components/organisms/StoresSection";
 import {GridContainer} from "./styles";
 import {useProducts} from "../../providers/ProductsContext";
+import Sidebar from "../../components/molecules/SideBar";
 
 const Store = () => {
 	const {id} = useParams();
@@ -58,27 +59,14 @@ const Store = () => {
 		getStoreProductsData(id);
 	}, [storeData]);
 
-	console.log(storeData);
-	console.log(productsData);
 	return (
 		<GridContainer>
-			<div className="SidebarContainer">
-				<div>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error quam
-					similique aliquam quibusdam aut! Dignissimos maiores sapiente,
-					consequatur veritatis ratione id officiis odit necessitatibus sed,
-					pariatur doloribus corrupti, provident saepe!
-				</div>
-			</div>
+			<Sidebar />
 			<div className="HeaderContainer">
 				<DashboardHeader />
 			</div>
 			<div className="SectionContainer">
-				<StoreSection />
-
-				<Header />
-
-				<ListProducts productsData={productsData} />
+				<ProductsSection productsData={productsData} currentStoreId={id} />
 
 				<Picture
 					image={footerPicture}
