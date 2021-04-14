@@ -38,4 +38,8 @@ export const SearchContainer = styled.div`
       width: 20px;
     }
   }
+
+  @media screen and (max-width: 1308px) {
+    max-width: 20rem;
+  }
 `;

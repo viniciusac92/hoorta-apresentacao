@@ -3,12 +3,12 @@ import theme from "../../../styles/theme";
 
 export const HeaderContainer = styled.div`
   display: flex;
-  margin: 0 2rem;
+  margin-right: 2rem;
   justify-content: center;
   align-items: center;
 
   div {
-    margin: 0 1rem;
+    margin-right: 2.75rem;
   }
 
   .backContainer {
@@ -19,7 +19,13 @@ export const HeaderContainer = styled.div`
 
   img {
     width: 16px;
-    padding: 0 10px;
+    padding: 0 10px 0 0;
+  }
+
+  @media screen and (max-width: 1308px) {
+    div {
+      margin-right: 1.5rem;
+    }
   }
 
   @media screen and (max-width: 800px) {
