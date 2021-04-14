@@ -30,11 +30,11 @@ const CardProfile = () => {
           <Text size="medium" weigth="semiBold">
             Junia - 25
           </Text>
-        </CardStyled.Title>
 
-        <CardStyled.Icon>
-          <Icon src={IconEdit} alt="" />
-        </CardStyled.Icon>
+          <CardStyled.Icon>
+            <Icon src={IconEdit} alt="" />
+          </CardStyled.Icon>
+        </CardStyled.Title>
 
         <CardStyled.Container>
           {text.map(({ dice }, key) => (

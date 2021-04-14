@@ -3,15 +3,14 @@ import theme from "../../../styles/theme";
 import card_placeholder from "../../../assets/images/card_placeholder.png";
 
 export const CardStyled = styled.div`
-  height: 203px;
-  width: 56vw;
+  /* height: 203px; */
+  width: 47vw;
   margin: 20px;
   border-radius: ${theme.radius};
   background-position: center;
   background-size: cover;
   background-image: url(${card_placeholder});
   overflow: hidden;
-  color: ${theme.color.white};
 
   p {
     margin-top: 9px;
@@ -26,11 +25,15 @@ CardStyled.Background = styled.div`
 `;
 
 CardStyled.Title = styled.div`
-  margin: 16px 0 0 20px;
+  position: absolute;
+  margin: 10px 0 0 189px;
 `;
 
 CardStyled.Icon = styled.div`
-  margin: 0px 0 0 322px;
+  margin: -35px 0 0 393px;
+  img {
+    width: 20px;
+  }
 `;
 
 CardStyled.Image = styled.img`
@@ -39,11 +42,11 @@ CardStyled.Image = styled.img`
 `;
 
 CardStyled.Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   /* width: 483px;
   height: 93px; */
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin: 53px 0 0 190px;
   position: absolute;
 `;
