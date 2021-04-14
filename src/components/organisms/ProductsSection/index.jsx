@@ -9,7 +9,7 @@ import Abobora from "../../../assets/images/products/abobora.jpg";
 import Button from "../../atoms/Button";
 import ButtonCount from "../../molecules/ButtonCount";
 
-const ListProducts = ({productsData}) => {
+const ProductsSection = ({productsData}) => {
 	const productImg = [{img: alface}, {img: TomateCereja}, {img: Abobora}];
 
 	return (
@@ -17,7 +17,6 @@ const ListProducts = ({productsData}) => {
 			{productsData &&
 				productsData.map((product, index) => (
 					<ProductCard size="large" key={index}>
-						{console.log(product.info.name.toString())}
 						<div>
 							<Picture
 								image={TomateCereja}
@@ -59,4 +58,4 @@ const ListProducts = ({productsData}) => {
 	);
 };
 
-export default ListProducts;
+export default ProductsSection;
