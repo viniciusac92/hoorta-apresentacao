@@ -7,7 +7,7 @@ import EditPencilIcon from "../../../assets/images/icons/editPencil.svg";
 import Close from "../../../assets/images/icons/close.svg";
 import FormRegisterProduct from "../../molecules/FormRegisterProduct";
 
-const ModalCreateProduct = () => {
+const ModalCreateProduct = ({ currentStoreId }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => setIsOpen(!isOpen);
@@ -22,7 +22,7 @@ const ModalCreateProduct = () => {
           <Icon src={Close} alt="Botão Fechar" />
         </EditButton>
       </div>
-      <FormRegisterProduct />
+      <FormRegisterProduct currentStoreId={currentStoreId} />
     </StyledModal>
   );
 

@@ -25,6 +25,7 @@ export const GridContainer = styled.div`
   .SectionContainer {
     grid-area: Section;
     padding-left: 7vw;
+    overflow-y: auto;
   }
 
   @media screen and (max-width: 768px) {

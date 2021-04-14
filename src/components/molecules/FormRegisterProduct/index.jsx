@@ -1,5 +1,5 @@
 // React
-import { createRef } from "react";
+import { createRef, useEffect } from "react";
 // API
 import API from "../../../services/api";
 // Helpers
@@ -9,16 +9,16 @@ import { registerProductSchema } from "../../../helper/FormValidation";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 // ContextAPI
-import {
-  productsData,
-  setProductsData,
-} from "../../../providers/ProductsContext";
+import { useProducts } from "../../../providers/ProductsContext";
+import { useData } from "../../../providers/UserContext";
 // Components
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 import { StyledForm } from "./styles";
 
-const FormRegisterProduct = () => {
+const FormRegisterProduct = ({ currentStoreId }) => {
+  const { userData } = useData();
+  const { productsData, setProductsData } = useProducts();
   const ref = createRef();
   const {
     register,
@@ -30,10 +30,11 @@ const FormRegisterProduct = () => {
   });
 
   const handleForm = async (data) => {
+    const info = { ...data };
     try {
       const response = await API.post(
         postProduct(),
-        { ...data },
+        { info, storeId: currentStoreId, userId: userData.id },
         {
           headers: {
             Authorization: `Bearer ${JSON.parse(
@@ -42,9 +43,11 @@ const FormRegisterProduct = () => {
           },
         }
       );
-
+      setProductsData([...productsData, response.data]);
       reset();
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
