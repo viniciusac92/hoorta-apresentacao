@@ -25,7 +25,7 @@ const handleColorTypes = (type, color) => {
 export const ButtonStyled = styled.button`
   border: none;
   border-radius: ${theme.radius};
-  box-shadow: ${theme.shadow};
+  box-shadow: ${theme.shadow.under};
   padding: 10px;
   color: ${({ color }) => handleColorTypes("text", color)};
   background-color: ${({ color }) => handleColorTypes("background", color)};

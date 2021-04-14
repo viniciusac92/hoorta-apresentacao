@@ -6,7 +6,10 @@ const theme = {
     semiBold: "600",
   },
   radius: "39px",
-  shadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.25)",
+  shadow: {
+    under: "0px 2px 4px 0px rgba(0, 0, 0, 0.25)",
+    on: "0px 2px 10px 0px rgb(0 0 0 / 25%)",
+  },
   color: {
     primary: "#09B44D",
     secondary: "#C4F8DD",
@@ -15,6 +18,7 @@ const theme = {
     gray: "#F2F2F2",
     grayDark: "#E2E2E2",
     textGray: "#9C9C9C",
+    light: "#FFFFFF",
   },
 };
 
