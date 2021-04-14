@@ -1,19 +1,30 @@
 import Picture from "../../atoms/Picture";
 import ProductCard from "../../atoms/ProductCard";
 import TextProduct from "../../atoms/TextProduct";
-import {TitleDivStyled, BottomContainer, ContainerInfoStyled} from "./styles";
+import {
+	ProductsList,
+	TitleDivStyled,
+	BottomContainer,
+	ContainerInfoStyled,
+} from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
 import alface from "../../../assets/images/products/alface.jpg";
 import TomateCereja from "../../../assets/images/products/tomateCereja.jpg";
 import Abobora from "../../../assets/images/products/abobora.jpg";
 import Button from "../../atoms/Button";
 import ButtonCount from "../../molecules/ButtonCount";
+import TextHeader from "../../atoms/TextHeader";
+import Link from "../../atoms/Link";
 
 const ProductsSection = ({productsData}) => {
 	const productImg = [{img: alface}, {img: TomateCereja}, {img: Abobora}];
 
 	return (
-		<div>
+		<ProductsList>
+			<TextHeader size={"large"}>Nome da Loja</TextHeader>
+			<Link size="large" color="primary" to="/store/profile/1">
+				Conheça mais sobre o produtor
+			</Link>
 			{productsData &&
 				productsData.map((product, index) => (
 					<ProductCard size="large" key={index}>
@@ -54,7 +65,7 @@ const ProductsSection = ({productsData}) => {
 						</ContainerInfoStyled>
 					</ProductCard>
 				))}
-		</div>
+		</ProductsList>
 	);
 };
 
