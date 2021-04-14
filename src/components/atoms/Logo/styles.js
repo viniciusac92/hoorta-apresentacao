@@ -6,6 +6,6 @@ export const LogoStyled = styled.img`
   max-width: 168px;
 
   @media screen and (min-width: 780px) {
-    max-width: 100%;
+    max-width: 363px;
   }
 `;

@@ -3,10 +3,10 @@ import theme from "../../../styles/theme";
 
 export const SideBarStyled = styled.div`
   grid-area: Sidebar;
-  box-shadow: ${theme.shadow};
+  box-shadow: ${theme.shadow.under};
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
   box-shadow: ${theme.shadow.under};
 
   display: flex;
@@ -22,7 +22,6 @@ export const SideBarStyledContainer = styled.div`
   height: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   img {
     width: 80%;
@@ -32,16 +31,16 @@ export const SideBarStyledContainer = styled.div`
 `;
 
 export const SideBarStyledWrap = styled.div`
-  height: 100%;
+  height: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 5rem;
+  justify-content: space-between;
 
   .IconWrap {
     display: flex;
     align-items: center;
-    height: calc(70% / 5);
     width: 50%;
     margin: 0 auto;
 
@@ -49,8 +48,6 @@ export const SideBarStyledWrap = styled.div`
       width: 1.5rem;
       margin: 0px 10px;
       padding: 1rem;
-      background-color: ${theme.color.grayDark};
-      border-radius: 50%;
     }
 
     a {
