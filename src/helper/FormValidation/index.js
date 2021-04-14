@@ -55,3 +55,9 @@ export const updateStoreSchema = yup.object().shape({
   businessName: yup.string(),
   description: yup.string(),
 });
+
+export const registerProductSchema = yup.object().shape({
+  name: yup.string().required(required),
+  price: yup.number().required(required),
+  description: yup.string().required(required),
+});
