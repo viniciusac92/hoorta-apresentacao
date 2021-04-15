@@ -3,14 +3,17 @@ import Button from "../../atoms/Button";
 import CardProfile from "../../molecules/CardProfile";
 import CardProfileMobile from "../../molecules/CarProfileMobile";
 import InfoCC from "../../molecules/InfoCC";
+import { useMediaQuery } from "react-responsive";
 
 import { ContainerStyled } from "./styles";
 const UserProfileInfo = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
+
   return (
     <ContainerStyled>
-      {/* <CardProfileMobile /> */}
-
-      <CardProfile />
+      {isMobile ? <CardProfileMobile /> : <CardProfile />}
 
       <ContainerStyled.Text>
         <InfoCC />
