@@ -11,14 +11,19 @@ import favoritesIcon from "../../../assets/images/icons/heart.svg";
 import carIcon from "../../../assets/images/icons/shoppingCart.svg";
 import profileIcon from "../../../assets/images/icons/profile.svg";
 import storeIcon from "../../../assets/images/icons/store.svg";
+import { useData } from "../../../providers/UserContext";
+import { getUserStore } from "../../../helper/stores";
+import { useEffect } from "react";
 
-const Sidebar = ({ isProductor }) => {
+const Sidebar = () => {
+  const { userData } = useData();
+
   const links = [
-    { icon: homeIcon, text: "Home", path: "/" },
+    { icon: homeIcon, text: "Home", path: "/dashboard" },
     { icon: favoritesIcon, text: "Favoritos", path: "/profile" },
     { icon: carIcon, text: "Carrinho", path: "/cart" },
     { icon: profileIcon, text: "Perfil", path: "/profile" },
-    { icon: storeIcon, text: "Minha Loja", path: `/store/id` },
+    { icon: storeIcon, text: "Minha Loja", path: `/store/${userData.storeId}` },
   ];
 
   return (
