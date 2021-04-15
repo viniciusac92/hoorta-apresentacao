@@ -8,6 +8,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Store from "../pages/Store";
 import Cart from "../pages/Cart";
+import StoreProfile from "../pages/StoreProfile";
+import UserProfile from "../pages/UserProfile";
 
 const Routes = () => {
   return (
@@ -22,15 +24,11 @@ const Routes = () => {
 
       <Route exact path="/store/:id" component={Store} />
 
-      <Route exact path="/store/profile/:id">
-        store - profile
-      </Route>
+      <Route exact path="/store/profile/:id" component={StoreProfile} />
 
       <Route exact path="/cart" component={Cart} />
 
-      <Route exact path="/profile">
-        profile
-      </Route>
+      <Route exact path="/profile" component={UserProfile} />
 
       <Route exact path="/tests" component={Tests} />
     </Switch>
