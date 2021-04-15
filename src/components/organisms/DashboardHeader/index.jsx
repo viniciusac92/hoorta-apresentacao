@@ -1,12 +1,12 @@
 import HeaderDashboard from "../../molecules/HeaderDashboard";
-import Search from "../../molecules/Search";
+// import Search from "../../molecules/Search";
 import { HeaderContainer } from "./styles";
 
 const DashboardHeader = () => {
   return (
     <HeaderContainer>
       <HeaderDashboard />
-      <Search />
+      {/* <Search /> */}
     </HeaderContainer>
   );
 };

@@ -29,11 +29,11 @@ const CardProfile = () => {
         <CardStyled.Title>
           <Text size="medium" weigth="semiBold">
             Junia - 25
-          </Text>
-
-          <CardStyled.Icon>
+            {/* {[userData.name, " - ", userData.age]} */}
+            {/* <CardStyled.Icon> */}
             <Icon src={IconEdit} alt="" />
-          </CardStyled.Icon>
+            {/* </CardStyled.Icon> */}
+          </Text>
         </CardStyled.Title>
 
         <CardStyled.Container>

@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import Store from "../pages/Store";
 import Cart from "../pages/Cart";
 import UserProfileInfo from "../components/organisms/UserProfileInfo";
+import Profile from "../pages/Profile";
 
 const Routes = () => {
   return (
@@ -30,7 +31,7 @@ const Routes = () => {
       <Route exact path="/cart" component={Cart} />
 
       <Route exact path="/profile">
-        <UserProfileInfo />
+        <Profile />
       </Route>
 
       <Route exact path="/tests" component={Tests} />

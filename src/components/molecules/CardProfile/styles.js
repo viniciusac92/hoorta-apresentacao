@@ -4,7 +4,7 @@ import card_placeholder from "../../../assets/images/card_placeholder.png";
 
 export const CardStyled = styled.div`
   /* height: 203px; */
-  width: 47vw;
+  width: 50vw;
   margin: 20px;
   border-radius: ${theme.radius};
   background-position: center;
@@ -27,14 +27,21 @@ CardStyled.Background = styled.div`
 CardStyled.Title = styled.div`
   position: absolute;
   margin: 10px 0 0 189px;
-`;
 
-CardStyled.Icon = styled.div`
-  margin: -35px 0 0 393px;
   img {
+    position: absolute;
+    margin: -10px 0 0 321px;
     width: 20px;
   }
+
+  @media (max-width: 1024px) {
+    img {
+      margin: -10px 0 0 139px;
+    }
+  }
 `;
+
+CardStyled.Icon = styled.div``;
 
 CardStyled.Image = styled.img`
   height: 207px;
