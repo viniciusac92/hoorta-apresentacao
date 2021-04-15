@@ -4,25 +4,34 @@ import CardProfile from "../../molecules/CardProfile";
 import CardProfileMobile from "../../molecules/CarProfileMobile";
 import InfoCC from "../../molecules/InfoCC";
 import { useMediaQuery } from "react-responsive";
-
 import { ContainerStyled } from "./styles";
+
 const UserProfileInfo = () => {
+  const isDesktop = useMediaQuery({
+    minWidth: 769,
+  });
+
   const isMobile = useMediaQuery({
-    query: "(max-width: 768px)",
+    maxWidth: 768,
   });
 
   return (
     <ContainerStyled>
-      {isMobile ? <CardProfileMobile /> : <CardProfile />}
+      {isMobile && <CardProfileMobile />}
+      {isDesktop && <CardProfile />}
 
       <ContainerStyled.Text>
         <InfoCC />
-        <Link>Quer vender seus produtos? Então, torne-se um vendedor!</Link>
+        <Button color="primary" size="large">
+          Sair
+        </Button>
       </ContainerStyled.Text>
 
-      <Button color="primary" size="large">
-        Sair
-      </Button>
+      <ContainerStyled.Register>
+        <Link to="/">
+          Quer vender seus produtos? Então, torne-se um vendedor!
+        </Link>
+      </ContainerStyled.Register>
     </ContainerStyled>
   );
 };

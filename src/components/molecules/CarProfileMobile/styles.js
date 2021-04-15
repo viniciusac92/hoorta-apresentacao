@@ -33,7 +33,7 @@ CardStyled.Icon = styled.div`
   top: -3px;
 
   img {
-    width: 20px;
+    width: 28px;
   }
 `;
 
