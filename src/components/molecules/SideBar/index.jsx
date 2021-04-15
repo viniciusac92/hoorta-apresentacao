@@ -23,7 +23,11 @@ const Sidebar = () => {
 		{icon: favoritesIcon, text: "Favoritos", path: "/profile"},
 		{icon: carIcon, text: "Carrinho", path: "/cart"},
 		{icon: profileIcon, text: "Perfil", path: "/profile"},
-		{icon: storeIcon, text: "Minha Loja", path: `/store/${userData.storeId}`},
+		{
+			icon: storeIcon,
+			text: "Minha Loja",
+			path: `/store/1`,
+		},
 	];
 
 	return (
