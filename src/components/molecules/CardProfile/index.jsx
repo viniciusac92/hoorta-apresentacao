@@ -26,17 +26,12 @@ const CardProfile = () => {
       <CardStyled.Background>
         <CardStyled.Image src={Woman} alt="imagePerfil" />
 
-        <CardStyled.Title>
+        <CardStyled.Container>
           <Text size="medium" weigth="semiBold">
             Junia - 25
-            {/* {[userData.name, " - ", userData.age]} */}
-            {/* <CardStyled.Icon> */}
             <Icon src={IconEdit} alt="" />
-            {/* </CardStyled.Icon> */}
           </Text>
-        </CardStyled.Title>
 
-        <CardStyled.Container>
           {text.map(({ dice }, key) => (
             <Text key={key} size="small">
               {dice}

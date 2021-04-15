@@ -3,8 +3,8 @@ import theme from "../../../styles/theme";
 import card_placeholder from "../../../assets/images/card_placeholder.png";
 
 export const CardStyled = styled.div`
-  /* height: 203px; */
-  width: 50vw;
+  height: 220px;
+  width: 48vw;
   margin: 20px;
   border-radius: ${theme.radius};
   background-position: center;
@@ -19,41 +19,27 @@ export const CardStyled = styled.div`
 `;
 
 CardStyled.Background = styled.div`
-  display: flex;
   background-color: #09b44dc7;
   width: 100%;
+  height: 100%;
 `;
 
-CardStyled.Title = styled.div`
-  position: absolute;
-  margin: 10px 0 0 189px;
+CardStyled.Container = styled.div`
+  margin: -226px 0 0 190px;
 
   img {
-    position: absolute;
     margin: -10px 0 0 321px;
     width: 20px;
   }
 
   @media (max-width: 1024px) {
     img {
-      margin: -10px 0 0 139px;
+      margin: -12px 0 0 124px;
     }
   }
 `;
 
-CardStyled.Icon = styled.div``;
-
 CardStyled.Image = styled.img`
-  height: 207px;
+  height: 225px;
   width: 170px;
-`;
-
-CardStyled.Container = styled.div`
-  /* display: flex;
-  flex-direction: column; */
-  /* width: 483px;
-  height: 93px; */
-  /* flex-wrap: wrap; */
-  margin: 53px 0 0 190px;
-  position: absolute;
 `;

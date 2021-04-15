@@ -1,3 +1,4 @@
+import Link from "../../atoms/Link";
 import Button from "../../atoms/Button";
 import CardProfile from "../../molecules/CardProfile";
 import CardProfileMobile from "../../molecules/CarProfileMobile";
@@ -11,12 +12,14 @@ const UserProfileInfo = () => {
 
       <CardProfile />
 
-      <ContainerStyled.infos>
+      <ContainerStyled.Text>
         <InfoCC />
-        <Button color="primary" size="large">
-          Sair
-        </Button>
-      </ContainerStyled.infos>
+        <Link>Quer vender seus produtos? Então, torne-se um vendedor!</Link>
+      </ContainerStyled.Text>
+
+      <Button color="primary" size="large">
+        Sair
+      </Button>
     </ContainerStyled>
   );
 };
