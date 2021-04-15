@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import theme from "../../../styles/theme";
 
 export const IconStyled = styled.img`
-  max-width: 44px;
-  margin: 0 auto;
-  padding: 15px;
+	max-width: 44px;
+	margin: 0 auto;
+	padding: 15px;
+	display: ${({display}) => display[1]};
+
+	@media screen and (min-width: 800px) {
+		display: ${({display}) => display[0]};
+	}
 `;
