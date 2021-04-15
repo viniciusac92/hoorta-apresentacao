@@ -15,13 +15,13 @@ const ButtonCount = () => {
 			<ButtonLess
 				size="large"
 				onClick={() => number > 0 && setNumber(number - 1)}>
-				<Icon src={minus} />
+				<Icon src={minus} display={["block"]} />
 			</ButtonLess>
 			<Text size="medium" weigth="semiBold">
 				{number}
 			</Text>
 			<ButtonMore size="large" onClick={() => setNumber(number + 1)}>
-				<Icon src={plus} />
+				<Icon src={plus} display={["block"]} />
 			</ButtonMore>
 		</ButtonCountContainer>
 	);

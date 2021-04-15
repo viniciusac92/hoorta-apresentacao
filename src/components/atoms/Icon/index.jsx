@@ -1,7 +1,13 @@
-import { IconStyled } from "./styles";
+import {IconStyled} from "./styles";
 
-const Icon = ({ src, alt, isRadius }) => {
-  return <IconStyled src={src} alt={alt} isRadus={isRadius}></IconStyled>;
+const Icon = ({src, alt, display, isRadius}) => {
+	return (
+		<IconStyled
+			src={src}
+			alt={alt}
+			display={display}
+			isRadus={isRadius}></IconStyled>
+	);
 };
 
 export default Icon;
