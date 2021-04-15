@@ -8,6 +8,8 @@ import vegetablePack from "../../assets/images/vegetablePack.png";
 import footerPicture from "../../assets/images/footerPicture.png";
 import MenuDashboard from "../../components/template/MenuDashboard";
 import TextHeader from "../../components/atoms/TextHeader";
+import Icon from "../../components/atoms/Icon";
+import cartIcon from "../../assets/images/icons/shoppingCart.svg";
 
 const Cart = () => {
   return (
@@ -15,6 +17,7 @@ const Cart = () => {
       <MenuDashboard>
         <TextHeader size="medium" align="left">
           Carrinho
+          <Icon src={cartIcon} />
         </TextHeader>
       </MenuDashboard>
       <Picture

@@ -9,11 +9,12 @@ import { GridContainer } from "./styles";
 import ListProducts from "../../components/organisms/ListProducts";
 import AppBar from "../../components/organisms/Appbar/AppBar";
 import MenuDashboard from "../../components/template/MenuDashboard";
+import CartInfo from "../../components/molecules/CartInfo";
 
 const Tests = () => {
   return (
     <div>
-      <MenuDashboard />
+      <CartInfo />
     </div>
   );
 };
