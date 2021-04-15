@@ -9,31 +9,32 @@ import truck from "../../../assets/images/icons/truck.svg";
 import food from "../../../assets/images/icons/food.svg";
 
 const HomeInfo = () => {
-  const infos = [
-    { icon: leaf, text: "100% Orgânico" },
-    {
-      icon: heart,
-      text: "Alimentos frescos",
-    },
-    { icon: box, text: "Proximidade ao produtor" },
-    { icon: truck, text: "Entrega agendada" },
-    { icon: food, text: "Praticidade e saúde" },
-  ];
+	const infos = [
+		{icon: leaf, text: "100% Orgânico"},
+		{
+			icon: heart,
+			text: "Alimentos frescos",
+		},
+		{icon: box, text: "Proximidade ao produtor"},
+		{icon: truck, text: "Entrega agendada"},
+		{icon: food, text: "Praticidade e saúde"},
+	];
 
-  return (
-    <HomeInfoStyled>
-      <TextHeader size="medium" align="left">
-        O que temos de bom?
-      </TextHeader>
-      <HomeInfoStyled.Container>
-        {infos.map(({ icon, text }, key) => (
-          <HomeInfoStyled.Wrap>
-            <Icon key={key} src={icon} /> <Text key={key}>{text}</Text>
-          </HomeInfoStyled.Wrap>
-        ))}
-      </HomeInfoStyled.Container>
-    </HomeInfoStyled>
-  );
+	return (
+		<HomeInfoStyled>
+			<TextHeader size="medium" align="left">
+				O que temos de bom?
+			</TextHeader>
+			<HomeInfoStyled.Container>
+				{infos.map(({icon, text}, key) => (
+					<HomeInfoStyled.Wrap>
+						<Icon key={key} src={icon} display={["block"]} />{" "}
+						<Text key={key}>{text}</Text>
+					</HomeInfoStyled.Wrap>
+				))}
+			</HomeInfoStyled.Container>
+		</HomeInfoStyled>
+	);
 };
 
 export default HomeInfo;
