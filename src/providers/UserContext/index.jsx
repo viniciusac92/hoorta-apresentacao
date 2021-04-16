@@ -7,11 +7,9 @@ export const UserProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
 
   const checkOwner = (store) => {
-    console.log(userData.storeId === store);
-    console.log(userData.storeId);
-    console.log(parseInt(store));
     return userData.storeId === parseInt(store);
   };
+
   return (
     <UserContext.Provider value={{ userData, setUserData, checkOwner }}>
       {children}
