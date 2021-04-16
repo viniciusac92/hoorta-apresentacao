@@ -1,7 +1,12 @@
 import MenuDashboard from "../../components/template/MenuDashboard";
+import RegisterStoreSection from "../../components/organisms/RegisterStoreSection";
 
 const RegisterStore = () => {
-  return <MenuDashboard></MenuDashboard>;
+  return (
+    <MenuDashboard>
+      <RegisterStoreSection />
+    </MenuDashboard>
+  );
 };
 
 export default RegisterStore;
