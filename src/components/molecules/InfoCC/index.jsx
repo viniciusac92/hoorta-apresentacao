@@ -7,11 +7,11 @@ const InfoCC = () => {
   const { userData } = useData();
 
   const infos = [
-    { dice: "Nome: Junia" },
-    { dice: "Número: 5252 4545 2323 0101" },
+    // { dice: "Nome: Junia" },
+    // { dice: "Número: 5252 4545 2323 0101" },
 
-    // { dice: ["Nome: ", userData.owner] },
-    // { dice: ["Número: ", userData.cc.cc_number] },
+    { dice: ["Nome: ", userData.owner] },
+    { dice: ["Número: ", userData.cc.cc_number] },
     // { dice: ["Validade: ", userData.cc.expiration] },
     // { dice: ["CVV", userData.cc.cvv] },
   ];
@@ -22,8 +22,8 @@ const InfoCC = () => {
         <Text size="large" weigth="semiBold">
           Dados do cartão
         </Text>
-        <Text size="small">Nome: Junia Nunes</Text>
-        <Text size="small">Número: 5252 4545 2323 0101</Text>
+        <Text size="small">{userData.ower}</Text>
+        <Text size="small">{userData.cc.cc_number}</Text>
       </CardInfoUserProfile>
     </InfosCCStyled>
   );

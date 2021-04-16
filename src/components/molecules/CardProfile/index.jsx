@@ -6,20 +6,14 @@ import Icon from "../../atoms/Icon";
 import IconEdit from "../../../assets/images/icons/editPencil.svg";
 
 const CardProfile = () => {
-  //   const { userData } = useData();
+  const { userData } = useData();
 
   const infos = [
-    { dice: ["Rua Bragança", " - ", "135, apto 401"] },
-    { dice: ["Maringá", " - ", "PR"] },
-    { dice: "87020220" },
-    { dice: "junia@mail.com" },
-    { dice: "(44) 00000-0000" },
-
-    // { dice: [userData.address.road, " - ", userData.address.number] },
-    // { dice: [userData.address.city, " - ", userData.address.state] },
-    // { dice: userData.address.cep },
-    // { dice: userData.email },
-    // { dice: userData.phone },
+    { dice: [userData.address.road, " - ", userData.address.number] },
+    { dice: [userData.address.city, " - ", userData.address.state] },
+    { dice: userData.address.cep },
+    { dice: userData.email },
+    { dice: userData.phone },
   ];
 
   return (
@@ -29,11 +23,8 @@ const CardProfile = () => {
 
         <CardStyled.Container>
           <Text size="mediumPlus" weigth="semiBold">
-            Junia - 26
-            {/* {userData.name} - {userData.age} */}
+            {userData.name} - {userData.age}
           </Text>
-
-          {/* <Icon src={IconEdit} alt="" display={["block", "block"]} /> */}
 
           {infos.map(({ dice }, key) => (
             <Text key={key} size="medium">

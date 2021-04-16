@@ -26,21 +26,6 @@ CardStyled.Background = styled.div`
 
 CardStyled.Container = styled.div`
   margin: -268px 0 0 196px;
-
-  /* p:not(:first-child) {
-    font-size: 22px;
-  } */
-
-  /* img {
-    margin: -49px 0 0 581px;
-    width: 28px;
-  }
-
-  @media (max-width: 1024px) {
-    img {
-      margin: -49px 0 0 335px;
-    }
-  } */
 `;
 
 CardStyled.Image = styled.img`

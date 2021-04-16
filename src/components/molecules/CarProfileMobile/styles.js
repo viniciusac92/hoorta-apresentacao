@@ -31,16 +31,6 @@ CardStyled.Title = styled.div`
   }
 `;
 
-// CardStyled.Icon = styled.div`
-//   position: absolute;
-//   right: 0;
-//   top: -3px;
-
-//   img {
-//     width: 28px;
-//   }
-// `;
-
 CardStyled.Image = styled.div`
   text-align: center;
   margin-top: -105px;
