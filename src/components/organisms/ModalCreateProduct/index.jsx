@@ -19,7 +19,7 @@ const ModalCreateProduct = ({currentStoreId}) => {
 					Cadastrar Produto
 				</TextHeader>
 				<EditButton onClick={toggleModal}>
-					<Icon src={Close} alt="Botão Fechar" display={["block"]} />
+					<Icon src={Close} alt="Botão Fechar" display={["block", "block"]} />
 				</EditButton>
 			</div>
 			<FormRegisterProduct currentStoreId={currentStoreId} />
@@ -32,7 +32,7 @@ const ModalCreateProduct = ({currentStoreId}) => {
 				<Icon
 					src={EditPencilIcon}
 					alt="Cadastrar Produto"
-					display={["block"]}
+					display={["block", "block"]}
 				/>
 			</EditButton>
 			<Modal

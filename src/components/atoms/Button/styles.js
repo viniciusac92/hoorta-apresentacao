@@ -22,6 +22,35 @@ const handleColorTypes = (type, color) => {
 	}
 };
 
+const handleSizeTypes = (size) => {
+	switch (size) {
+		case "large":
+			return {
+				width: "300px",
+				height: "91px",
+				fontSize: "30px",
+				lineHeight: "34px",
+				weight: theme.weight.semiBold,
+			};
+		case "medium":
+			return {
+				width: "100%",
+				height: "110px",
+				fontSize: "18px",
+				lineHeight: "34px",
+				weight: theme.weight.semiBold,
+			};
+		case "small":
+			return {
+				width: "355px",
+				height: "45px",
+				fontSize: "20px",
+				lineHeight: "34px",
+				weight: theme.weight.medium,
+			};
+	}
+};
+
 export const ButtonStyled = styled.button`
 	border: none;
 	border-radius: ${theme.radius};
@@ -29,17 +58,14 @@ export const ButtonStyled = styled.button`
 	padding: 10px;
 	color: ${({color}) => handleColorTypes("text", color)};
 	background-color: ${({color}) => handleColorTypes("background", color)};
-	font-weight: ${({size}) =>
-		size === "large" ? theme.weight.medium : theme.weight.semiBold};
-	line-height: ${({size}) => size === "large" && "34px"};
-	font-size: ${({size}) => (size === "large" ? "36px" : "0.8rem")};
-	width: ${({size}) => (size === "large" ? "320px" : "9rem")};
-	height: ${({size}) => (size === "large" ? "91px" : "2.4rem")};
-
+	width: ${({size}) => handleSizeTypes(size).width};
+	height: ${({size}) => handleSizeTypes(size).height};
+	font-size: ${({size}) => handleSizeTypes(size).fontSize};
+	line-height: ${({size}) => handleSizeTypes(size).lineHeight};
+	font-weight: ${({size}) => handleSizeTypes(size).weight};
 	@media screen and (min-width: 780px) {
 		line-height: ${({size}) => size === "large" && "54px"};
-		font-size: ${({size}) => (size === "large" ? "30px" : "20px")};
-		width: ${({size}) => (size === "large" ? "300px" : "227px")};
-		height: ${({size}) => (size === "large" ? "91px" : "3rem")};
+		font-size: ${({size}) => (size === "large" ? "36px" : "20px")};
+		width: ${({size}) => (size === "large" ? "320px" : "356.67px")};
 	}
 `;
