@@ -33,7 +33,6 @@ const FormRegisterStore = () => {
   } = useForm({ resolver: yupResolver(registerStoreSchema) });
 
   const handleForm = async (data) => {
-    console.log(data);
     try {
       await API.post(
         postStore(),
