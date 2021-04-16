@@ -53,6 +53,7 @@ const Store = () => {
 		getStoreProductsData(id);
 	}, [storeData]);
 
+	console.log(productsData);
 	return (
 		<MenuDashboard>
 			<ProductsSection productsData={productsData} currentStoreId={id} />

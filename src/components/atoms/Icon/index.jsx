@@ -6,7 +6,7 @@ const Icon = ({src, alt, display, isRadius}) => {
 			src={src}
 			alt={alt}
 			display={display}
-			isRadus={isRadius}></IconStyled>
+			isRadius={isRadius}></IconStyled>
 	);
 };
 
