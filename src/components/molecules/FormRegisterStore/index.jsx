@@ -49,7 +49,7 @@ const FormRegisterStore = () => {
         }
       );
       reset();
-      history.push("/perfil");
+      history.push("/profile");
     } catch (e) {
       console.log(e);
     }
