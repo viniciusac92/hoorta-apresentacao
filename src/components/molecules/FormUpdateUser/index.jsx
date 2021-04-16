@@ -78,7 +78,7 @@ const FormUpdateUser = () => {
       console.log(e);
     }
   };
-
+  console.log(userData);
   return (
     <StyledForm onSubmit={handleSubmit(handleForm)}>
       <Input
