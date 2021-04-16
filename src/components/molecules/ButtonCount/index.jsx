@@ -5,26 +5,38 @@ import plus from "../../../assets/images/icons/plus.svg";
 import minus from "../../../assets/images/icons/minus.svg";
 import Text from "../../atoms/Text";
 import ButtonCountContainer from "./styles";
-import {useState} from "react";
+import { useState, useEffect } from "react";
 
-const ButtonCount = () => {
-	const [number, setNumber] = useState(0) || 0;
+const ButtonCount = ({ children, amountOfProduct, setAmountOfProduct }) => {
+  const [amount, setAmount] = useState(1);
 
-	return (
-		<ButtonCountContainer>
-			<ButtonLess
-				size="large"
-				onClick={() => number > 0 && setNumber(number - 1)}>
-				<Icon src={minus} display={["block"]} />
-			</ButtonLess>
-			<Text size="medium" weigth="semiBold">
-				{number}
-			</Text>
-			<ButtonMore size="large" onClick={() => setNumber(number + 1)}>
-				<Icon src={plus} display={["block"]} />
-			</ButtonMore>
-		</ButtonCountContainer>
-	);
+  useEffect(() => {
+    amountOfProduct === 1 && setAmount(amountOfProduct);
+  }, [amountOfProduct]);
+
+  const handleAmountAdd = () => {
+    setAmount(amount + 1);
+    setAmountOfProduct(amountOfProduct + 1);
+  };
+
+  const handleAmountSub = () => {
+    amount >= 1 && setAmount(amount - 1);
+    setAmountOfProduct(amountOfProduct + 1);
+  };
+
+  return (
+    <ButtonCountContainer>
+      <ButtonLess size="large" onClick={handleAmountSub}>
+        <Icon src={minus} display={["block"]} />
+      </ButtonLess>
+      <Text size="medium" weigth="semiBold">
+        {amount}
+      </Text>
+      <ButtonMore size="large" onClick={handleAmountAdd}>
+        <Icon src={plus} display={["block"]} />
+      </ButtonMore>
+    </ButtonCountContainer>
+  );
 };
 
 export default ButtonCount;
