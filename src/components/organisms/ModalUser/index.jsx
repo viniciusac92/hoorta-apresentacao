@@ -19,7 +19,7 @@ const ModalUser = () => {
 					Atualizar Dados
 				</TextHeader>
 				<EditButton onClick={toggleModal}>
-					<Icon src={Close} alt="Botão Fechar" display={["block"]} />
+					<Icon src={Close} alt="Botão Fechar" display={["block", "block"]} />
 				</EditButton>
 			</div>
 			<FormUpdateUser />
@@ -29,7 +29,11 @@ const ModalUser = () => {
 	return (
 		<>
 			<EditButton onClick={toggleModal}>
-				<Icon src={EditPencilIcon} alt="Editar Perfil" display={["block"]} />
+				<Icon
+					src={EditPencilIcon}
+					alt="Editar Perfil"
+					display={["block", "block"]}
+				/>
 			</EditButton>
 			<Modal
 				open={isOpen}
