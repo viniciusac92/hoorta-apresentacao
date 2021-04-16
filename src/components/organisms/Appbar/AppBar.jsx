@@ -8,10 +8,10 @@ import profileIcon from "../../../assets/images/icons/profile.svg";
 const AppBar = () => {
 	return (
 		<AppBarStyled>
-			<Icon src={homeIcon} display={["block"]} />
-			<Icon src={favoriteIcon} display={["block"]} />
-			<Icon src={cartIcon} display={["block"]} />
-			<Icon src={profileIcon} display={["block"]} />
+			<Icon src={homeIcon} display={["block", "block"]} />
+			<Icon src={favoriteIcon} display={["block", "block"]} />
+			<Icon src={cartIcon} display={["block", "block"]} />
+			<Icon src={profileIcon} display={["block", "block"]} />
 		</AppBarStyled>
 	);
 };

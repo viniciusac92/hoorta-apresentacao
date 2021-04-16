@@ -7,6 +7,7 @@ import {
 	BottomContainerStyled,
 	ContainerInfoStyled,
 	TopContainerStyled,
+	ProductCardStyled,
 } from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
 import alface from "../../../assets/images/products/alface.jpg";
@@ -15,7 +16,6 @@ import Abobora from "../../../assets/images/products/abobora.jpg";
 import threeDots from "../../../assets/images/icons/threeDots.svg";
 import Button from "../../atoms/Button";
 import ButtonCount from "../../molecules/ButtonCount";
-import TextHeader from "../../atoms/TextHeader";
 import Link from "../../atoms/Link";
 import Icon from "../../atoms/Icon";
 import ModalCreateProduct from "../ModalCreateProduct";
@@ -29,7 +29,7 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 			console.log(e);
 		}
 	};
-
+	console.log(productsData);
 	return (
 		<ProductsListStyled>
 			<div>
@@ -49,7 +49,7 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 
 			{productsData &&
 				productsData.map((product, index) => (
-					<ProductCard size={"large"} key={index}>
+					<ProductCardStyled size={"large"} key={index}>
 						<ContainerInfoStyled>
 							<div>
 								<TopContainerStyled>
@@ -69,12 +69,16 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 											position={["relative"]}
 										/>
 									</TitleDivStyled>
-									<Icon src={threeDots} display={["block", "none"]} />
+									<Icon
+										src={threeDots}
+										display={["block", "block"]}
+										height={["3vw", "6vw"]}
+									/>
 								</TopContainerStyled>
 								<TextProduct size={"medium"} color={"black"}>
 									{product.info.description}
 								</TextProduct>
-								<TextProduct weigth={"semiBold"}>
+								<TextProduct size={"medium"} weigth={"semiBold"}>
 									R$ {product.info.price}
 								</TextProduct>
 							</div>
@@ -85,7 +89,7 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 								</Button>
 							</BottomContainerStyled>
 						</ContainerInfoStyled>
-					</ProductCard>
+					</ProductCardStyled>
 				))}
 		</ProductsListStyled>
 	);

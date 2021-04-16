@@ -28,7 +28,7 @@ const HomeInfo = () => {
 			<HomeInfoStyled.Container>
 				{infos.map(({icon, text}, key) => (
 					<HomeInfoStyled.Wrap>
-						<Icon key={key} src={icon} display={["block"]} />{" "}
+						<Icon key={key} src={icon} display={["block", "block"]} />{" "}
 						<Text key={key}>{text}</Text>
 					</HomeInfoStyled.Wrap>
 				))}

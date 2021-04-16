@@ -11,7 +11,11 @@ const Search = () => {
 		<SearchContainer>
 			<Input size="small" ref={ref} placeholder="Buscar..." />
 			<Button color="primary">
-				<Icon src={SearchIcon} alt="Barra de Busca" display={["block"]} />
+				<Icon
+					src={SearchIcon}
+					alt="Barra de Busca"
+					display={["block", "block"]}
+				/>
 			</Button>
 		</SearchContainer>
 	);

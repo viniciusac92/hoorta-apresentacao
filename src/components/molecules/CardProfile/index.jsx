@@ -9,11 +9,11 @@ const CardProfile = () => {
 	const {userData} = useData();
 
 	const text = [
-		{dice: [userData.address.road, " - ", userData.address.number]},
-		{dice: [userData.address.city, " - ", userData.address.state]},
-		{dice: userData.address.cep},
-		{dice: userData.email},
-		{dice: userData.phone},
+		{dice: ["Rua Bragança", " - ", "135, apto 401"]},
+		{dice: ["Maringá", " - ", "PR"]},
+		{dice: "87020220"},
+		{dice: "junia@mail.com"},
+		{dice: "(44) 00000-0000"},
 	];
 
 	return (
@@ -23,12 +23,12 @@ const CardProfile = () => {
 
 				<CardStyled.Title>
 					<Text size="medium" weigth="semiBold">
-						{userData.name} - {userData.age}
+						Junia - 18
 					</Text>
 				</CardStyled.Title>
 
 				<CardStyled.Icon>
-					<Icon src={IconEdit} alt="" display={["block"]} />
+					<Icon src={IconEdit} alt="" display={["block", "block"]} />
 				</CardStyled.Icon>
 
 				<CardStyled.Container>
