@@ -9,7 +9,7 @@ import Register from "../pages/Register";
 import RegisterStore from "../pages/RegisterStore";
 import Store from "../pages/Store";
 import Cart from "../pages/Cart";
-import UserProfileInfo from "../components/organisms/UserProfileInfo";
+import Favorites from "../pages/Favorites";
 import Profile from "../pages/Profile";
 import StoreProfile from "../pages/StoreProfile";
 
@@ -25,6 +25,8 @@ const Routes = () => {
       <Route exact path="/register-store" component={RegisterStore} />
 
       <Route exact path="/dashboard" component={Dashboard} />
+
+      <Route exact path="/favorites" component={Favorites} />
 
       <Route exact path="/store/:id" component={Store} />
 
