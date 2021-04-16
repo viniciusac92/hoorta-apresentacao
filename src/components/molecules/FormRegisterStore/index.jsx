@@ -33,7 +33,6 @@ const FormRegisterStore = () => {
   } = useForm({ resolver: yupResolver(registerStoreSchema) });
 
   const handleForm = async (data) => {
-    console.log(data);
     try {
       await API.post(
         postStore(),
@@ -50,7 +49,7 @@ const FormRegisterStore = () => {
         }
       );
       reset();
-      history.push("/perfil");
+      history.push("/profile");
     } catch (e) {
       console.log(e);
     }

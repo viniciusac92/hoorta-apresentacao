@@ -5,8 +5,10 @@ import CardProfileMobile from "../../molecules/CarProfileMobile";
 import InfoCC from "../../molecules/InfoCC";
 import { useMediaQuery } from "react-responsive";
 import { ContainerStyled } from "./styles";
+import { useData } from "../../../providers/UserContext";
 
 const UserProfileInfo = () => {
+  const { userData } = useData();
   const isDesktop = useMediaQuery({
     minWidth: 769,
   });
@@ -28,9 +30,13 @@ const UserProfileInfo = () => {
       </ContainerStyled.Text>
 
       <ContainerStyled.Register>
-        <Link to="/">
-          Quer vender seus produtos? Então, torne-se um vendedor!
-        </Link>
+        {userData.productor ? (
+          <div>Excluir Loja</div>
+        ) : (
+          <Link to="/register-store">
+            Quer vender seus produtos? Então, torne-se um vendedor!
+          </Link>
+        )}
       </ContainerStyled.Register>
     </ContainerStyled>
   );

@@ -25,7 +25,6 @@ const FormUpdateStore = () => {
       businessName: businessName || userStore.businessName,
       description: description || userStore.description,
     };
-    console.log(defaultData);
     try {
       const response = await API.patch(patchStore(1), defaultData, {
         headers: {
