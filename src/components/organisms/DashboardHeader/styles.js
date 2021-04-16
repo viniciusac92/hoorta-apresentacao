@@ -10,5 +10,6 @@ export const HeaderContainer = styled.div`
   @media screen and (max-width: 800px) {
     justify-content: space-between;
     align-items: center;
+    width: 90vw;
   }
 `;

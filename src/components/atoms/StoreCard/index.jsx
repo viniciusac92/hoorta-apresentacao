@@ -25,14 +25,18 @@ const StoreCard = ({ store }) => {
     <CardContainer>
       <Link to={{ pathname: `store/${id}` }}>
         <RatingMobile>
-          <Icon src={ratingIcon} display={["block"]} alt="Ícone de Avaliação" />{" "}
+          <Icon
+            src={ratingIcon}
+            display={["block", "block"]}
+            alt="Ícone de Avaliação"
+          />{" "}
           5.0
         </RatingMobile>
         <InfoContainer>
           <RatingDesktop>
             <Icon
               src={ratingIcon}
-              display={["block"]}
+              display={["block", "block"]}
               alt="Ícone de Avaliação"
             />{" "}
             5.0

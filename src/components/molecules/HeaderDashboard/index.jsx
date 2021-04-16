@@ -14,7 +14,11 @@ const HeaderDashboard = () => {
     <HeaderContainer>
       <div className="backContainer">
         <Logout onClick={handleLogout}>
-          <Icon src={BackIcon} alt="Botão Voltar" display={["block"]} />
+          <Icon
+            src={BackIcon}
+            alt="Botão Voltar"
+            display={["block", "block"]}
+          />
           <p>Voltar</p>
         </Logout>
       </div>

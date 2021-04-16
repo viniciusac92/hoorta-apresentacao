@@ -9,5 +9,10 @@ export const LinkStyled = styled.a`
 	text-decoration: none;
 
 	font-size: ${(props) =>
-		props.size === "small" ? "12px" : props.size === "large" ? "16px" : null};
+		props.size === "small" ? "1.5vw" : props.size === "large" ? "3vw" : null};
+
+	@media screen and (min-width: 800px) {
+		font-size: ${(props) =>
+			props.size === "small" ? "12px" : props.size === "large" ? "16px" : null};
+	}
 `;

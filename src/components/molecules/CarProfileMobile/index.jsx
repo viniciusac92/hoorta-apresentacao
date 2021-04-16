@@ -24,16 +24,16 @@ const CardProfileMobile = () => {
   ];
 
   return (
-    <div>
+    <CardStyled.Container>
       <CardStyled>
         <CardStyled.Background>
           <CardStyled.Title>
-            <Text size="medium" weigth="semiBold">
+            <Text size="mediumPlus" weigth="semiBold">
               Junia - 26
             </Text>
 
             <CardStyled.Icon>
-              <Icon src={IconEdit} alt="" />
+              <Icon src={IconEdit} alt="" display={["block", "block"]} />
             </CardStyled.Icon>
           </CardStyled.Title>
         </CardStyled.Background>
@@ -50,7 +50,7 @@ const CardProfileMobile = () => {
           </Text>
         ))}
       </CardInfoUserProfile>
-    </div>
+    </CardStyled.Container>
   );
 };
 export default CardProfileMobile;

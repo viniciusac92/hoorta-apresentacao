@@ -179,7 +179,7 @@ const FormUpdateUser = () => {
         />
         <p>{errors.owner?.message}</p>
       </div>
-      <Button type="submit" color="primary">
+      <Button type="submit" color="primary" size="medium">
         Atualizar
       </Button>
     </StyledForm>
