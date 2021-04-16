@@ -4,7 +4,7 @@ import card_placeholder from "../../../assets/images/card_placeholder.png";
 
 export const CardStyled = styled.div`
   width: 100%;
-  height: 31vh;
+  height: 22vh;
   border-radius: 0px 0 100% 100%;
   background-image: url(${card_placeholder});
   background-size: cover;
@@ -31,23 +31,23 @@ CardStyled.Title = styled.div`
   }
 `;
 
-CardStyled.Icon = styled.div`
-  position: absolute;
-  right: 0;
-  top: -3px;
+// CardStyled.Icon = styled.div`
+//   position: absolute;
+//   right: 0;
+//   top: -3px;
 
-  img {
-    width: 28px;
-  }
-`;
+//   img {
+//     width: 28px;
+//   }
+// `;
 
 CardStyled.Image = styled.div`
   text-align: center;
-  margin-top: -77px;
+  margin-top: -105px;
 
   img {
-    height: 130px;
-    width: 130px;
+    height: 182px;
+    width: 182px;
     border-radius: 100%;
   }
 `;

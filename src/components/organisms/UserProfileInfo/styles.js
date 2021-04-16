@@ -27,3 +27,13 @@ ContainerStyled.Register = styled.div`
   font-size: 25px;
   text-align: center;
 `;
+
+ContainerStyled.IconModal = styled.div`
+  position: absolute;
+  right: 58px;
+
+  @media (max-width: 1024px) {
+    position: absolute;
+    right: 20px;
+  }
+`;

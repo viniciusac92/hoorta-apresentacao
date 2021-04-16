@@ -10,4 +10,5 @@ export const CardInfoStyled = styled.div`
   margin: 16px 5%;
   display: flex;
   flex-direction: column;
+  padding: 15px 25px;
 `;

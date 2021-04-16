@@ -32,9 +32,9 @@ const CardProfileMobile = () => {
               Junia - 26
             </Text>
 
-            <CardStyled.Icon>
+            {/* <CardStyled.Icon>
               <Icon src={IconEdit} alt="" display={["block", "block"]} />
-            </CardStyled.Icon>
+            </CardStyled.Icon> */}
           </CardStyled.Title>
         </CardStyled.Background>
       </CardStyled>

@@ -33,7 +33,7 @@ const CardProfile = () => {
             {/* {userData.name} - {userData.age} */}
           </Text>
 
-          <Icon src={IconEdit} alt="" display={["block", "block"]} />
+          {/* <Icon src={IconEdit} alt="" display={["block", "block"]} /> */}
 
           {infos.map(({ dice }, key) => (
             <Text key={key} size="medium">

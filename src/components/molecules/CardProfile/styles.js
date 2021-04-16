@@ -31,7 +31,7 @@ CardStyled.Container = styled.div`
     font-size: 22px;
   } */
 
-  img {
+  /* img {
     margin: -49px 0 0 581px;
     width: 28px;
   }
@@ -40,7 +40,7 @@ CardStyled.Container = styled.div`
     img {
       margin: -49px 0 0 335px;
     }
-  }
+  } */
 `;
 
 CardStyled.Image = styled.img`

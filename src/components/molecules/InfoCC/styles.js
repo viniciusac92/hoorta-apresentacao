@@ -10,4 +10,16 @@ export const InfosCCStyled = styled.div`
     font-size: 30px;
     align-self: center;
   }
+
+  @media (max-width: 1024px) {
+    p:nth-child(1) {
+      font-size: 26px;
+      text-align: center;
+    }
+
+    p {
+      padding: 12px 2px;
+      font-size: 16px;
+    }
+  }
 `;
