@@ -9,10 +9,11 @@ import { useHistory } from "react-router";
 import Icon from "../../atoms/Icon";
 import IconEdit from "../../../assets/images/icons/editPencil.svg";
 import ModalUser from "../ModalUser";
+import { useData } from "../../../providers/UserContext";
 
 const UserProfileInfo = () => {
   const history = useHistory();
-
+  const { userData } = useData();
   const isDesktop = useMediaQuery({
     minWidth: 769,
   });
@@ -41,9 +42,13 @@ const UserProfileInfo = () => {
       </ContainerStyled.Text>
 
       <ContainerStyled.Register>
-        <Link to="/">
-          Quer vender seus produtos? Então, torne-se um vendedor!
-        </Link>
+        {userData.productor ? (
+          <div>Excluir Loja</div>
+        ) : (
+          <Link to="/register-store">
+            Quer vender seus produtos? Então, torne-se um vendedor!
+          </Link>
+        )}
       </ContainerStyled.Register>
     </ContainerStyled>
   );

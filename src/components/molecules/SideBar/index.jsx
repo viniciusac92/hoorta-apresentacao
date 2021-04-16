@@ -12,8 +12,6 @@ import carIcon from "../../../assets/images/icons/shoppingCart.svg";
 import profileIcon from "../../../assets/images/icons/profile.svg";
 import storeIcon from "../../../assets/images/icons/store.svg";
 import { useData } from "../../../providers/UserContext";
-import { getUserStore } from "../../../helper/stores";
-import { useEffect } from "react";
 
 const Sidebar = () => {
   const { userData } = useData();
@@ -23,10 +21,10 @@ const Sidebar = () => {
     { icon: favoritesIcon, text: "Favoritos", path: "/profile" },
     { icon: carIcon, text: "Carrinho", path: "/cart" },
     { icon: profileIcon, text: "Perfil", path: "/profile" },
-    {
+    userData.productor && {
       icon: storeIcon,
       text: "Minha Loja",
-      path: `/store/1`,
+      path: `/store/${userData.storeId}`,
     },
   ];
 

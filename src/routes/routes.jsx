@@ -6,12 +6,12 @@ import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import RegisterStore from "../pages/RegisterStore";
 import Store from "../pages/Store";
 import Cart from "../pages/Cart";
 import UserProfileInfo from "../components/organisms/UserProfileInfo";
 import Profile from "../pages/Profile";
 import StoreProfile from "../pages/StoreProfile";
-import UserProfile from "../pages/UserProfile";
 
 const Routes = () => {
   return (
@@ -21,6 +21,8 @@ const Routes = () => {
       <Route exact path="/login" component={Login} />
 
       <Route exact path="/register" component={Register} />
+
+      <Route exact path="/register-store" component={RegisterStore} />
 
       <Route exact path="/dashboard" component={Dashboard} />
 
