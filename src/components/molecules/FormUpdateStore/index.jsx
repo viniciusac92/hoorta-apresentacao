@@ -59,7 +59,7 @@ const FormUpdateStore = () => {
       />
       <p>{errors.description?.message}</p>
 
-      <Button type="submit" color="primary">
+      <Button type="submit" color="primary" size="medium">
         Atualizar
       </Button>
     </form>

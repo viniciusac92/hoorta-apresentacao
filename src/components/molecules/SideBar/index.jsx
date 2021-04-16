@@ -26,7 +26,7 @@ const Sidebar = () => {
 		{
 			icon: storeIcon,
 			text: "Minha Loja",
-			path: `/store/${userData?.storeId || 0}`,
+			path: `/store/1`,
 		},
 	];
 
@@ -37,7 +37,7 @@ const Sidebar = () => {
 				<SideBarStyledWrap>
 					{links.map(({icon, text, path}, key) => (
 						<div key={key} className="IconWrap">
-							<Icon src={icon} display={["block"]} />
+							<Icon src={icon} display={["block", "block"]} />
 							<Link to={path}>{text}</Link>
 						</div>
 					))}
