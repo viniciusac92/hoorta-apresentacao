@@ -30,11 +30,7 @@ const Routes = () => {
 
       <Route exact path="/cart" component={Cart} />
 
-<<<<<<< HEAD
       <Route exact path="/profile" component={Profile} />
-=======
-			<Route exact path="/profile" component={Profile} />
->>>>>>> 1d249fbefaed3bda6274c98adb2358cc8f657dae
 
       <Route exact path="/tests" component={Tests} />
     </Switch>

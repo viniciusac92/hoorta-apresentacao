@@ -12,6 +12,10 @@ export const CardStyled = styled.div`
   background-position: center;
 `;
 
+CardStyled.Container = styled.div`
+  padding: 19px;
+`;
+
 CardStyled.Background = styled.div`
   background-color: #09b44dc7;
   height: 100%;

@@ -24,7 +24,7 @@ const CardProfileMobile = () => {
   ];
 
   return (
-    <div>
+    <CardStyled.Container>
       <CardStyled>
         <CardStyled.Background>
           <CardStyled.Title>
@@ -50,7 +50,7 @@ const CardProfileMobile = () => {
           </Text>
         ))}
       </CardInfoUserProfile>
-    </div>
+    </CardStyled.Container>
   );
 };
 export default CardProfileMobile;

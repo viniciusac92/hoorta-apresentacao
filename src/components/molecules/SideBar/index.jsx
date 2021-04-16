@@ -18,13 +18,16 @@ import { useEffect } from "react";
 const Sidebar = () => {
   const { userData } = useData();
 
-<<<<<<< HEAD
   const links = [
     { icon: homeIcon, text: "Home", path: "/dashboard" },
     { icon: favoritesIcon, text: "Favoritos", path: "/profile" },
     { icon: carIcon, text: "Carrinho", path: "/cart" },
     { icon: profileIcon, text: "Perfil", path: "/profile" },
-    // { icon: storeIcon, text: "Minha Loja", path: `/store/${userData.storeId}` },
+    {
+      icon: storeIcon,
+      text: "Minha Loja",
+      path: `/store/1`,
+    },
   ];
 
   return (
@@ -34,7 +37,7 @@ const Sidebar = () => {
         <SideBarStyledWrap>
           {links.map(({ icon, text, path }, key) => (
             <div key={key} className="IconWrap">
-              <Icon src={icon} display={["block"]} />
+              <Icon src={icon} display={["block", "block"]} />
               <Link to={path}>{text}</Link>
             </div>
           ))}
@@ -42,35 +45,6 @@ const Sidebar = () => {
       </SideBarStyledContainer>
     </SideBarStyled>
   );
-=======
-	const links = [
-		{icon: homeIcon, text: "Home", path: "/dashboard"},
-		{icon: favoritesIcon, text: "Favoritos", path: "/profile"},
-		{icon: carIcon, text: "Carrinho", path: "/cart"},
-		{icon: profileIcon, text: "Perfil", path: "/profile"},
-		{
-			icon: storeIcon,
-			text: "Minha Loja",
-			path: `/store/1`,
-		},
-	];
-
-	return (
-		<SideBarStyled>
-			<SideBarStyledContainer>
-				<Logo />
-				<SideBarStyledWrap>
-					{links.map(({icon, text, path}, key) => (
-						<div key={key} className="IconWrap">
-							<Icon src={icon} display={["block", "block"]} />
-							<Link to={path}>{text}</Link>
-						</div>
-					))}
-				</SideBarStyledWrap>
-			</SideBarStyledContainer>
-		</SideBarStyled>
-	);
->>>>>>> 1d249fbefaed3bda6274c98adb2358cc8f657dae
 };
 
 export default Sidebar;
