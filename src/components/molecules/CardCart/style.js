@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 const CardCartStyled = styled.div`
-  width: 50%;
+  width: 100%;
   max-width: 620px;
   height: 280px;
   border-radius: ${theme.radius};
@@ -10,6 +10,11 @@ const CardCartStyled = styled.div`
   box-shadow: ${theme.shadow.under};
   display: flex;
   justify-content: space-around;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 CardCartStyled.Wrap = styled.div`
