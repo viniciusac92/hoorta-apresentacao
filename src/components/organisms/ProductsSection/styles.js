@@ -41,18 +41,28 @@ export const BottomContainerStyled = styled.div`
   justify-content: space-between;
   width: 61vw;
 
-  button::first {
+  div {
     height: 5vw;
-    width: 5vw;
+    width: 10vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
-  button::first > img {
-    padding: none;
+  p {
+    margin: 0rem 0rem 0rem 0rem;
+  }
+
+  img {
+    padding: 0px;
   }
 
   > button {
-    height: 1.4rem;
+    height: 1.9rem;
     padding: 0vw;
+    width: 25vw;
+    font-size: 13px;
   }
 
   > p {
