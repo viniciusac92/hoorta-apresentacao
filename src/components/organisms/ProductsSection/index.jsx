@@ -13,12 +13,11 @@ import organic from "../../../assets/images/organic/organic.png";
 import alface from "../../../assets/images/products/alface.jpg";
 import TomateCereja from "../../../assets/images/products/tomateCereja.jpg";
 import Abobora from "../../../assets/images/products/abobora.jpg";
-import threeDots from "../../../assets/images/icons/threeDots.svg";
 import Button from "../../atoms/Button";
 import ButtonCount from "../../molecules/ButtonCount";
 import Link from "../../atoms/Link";
-import Icon from "../../atoms/Icon";
 import ModalCreateProduct from "../ModalCreateProduct";
+import MenuEditDelete from "../../molecules/MenuEditDelte";
 
 const ProductsSection = ({ productsData, currentStoreId }) => {
   const productImg = [{ img: alface }, { img: TomateCereja }, { img: Abobora }];
@@ -71,11 +70,7 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
                       position={["relative"]}
                     />
                   </TitleDivStyled>
-                  <Icon
-                    src={threeDots}
-                    display={["block", "block"]}
-                    height={["3vw", "6vw"]}
-                  />
+                  <MenuEditDelete id={product.id} />
                 </TopContainerStyled>
                 <TextProduct size={"medium"} color={"black"}>
                   {product.info.description}
