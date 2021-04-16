@@ -12,8 +12,6 @@ import carIcon from "../../../assets/images/icons/shoppingCart.svg";
 import profileIcon from "../../../assets/images/icons/profile.svg";
 import storeIcon from "../../../assets/images/icons/store.svg";
 import { useData } from "../../../providers/UserContext";
-import { getUserStore } from "../../../helper/stores";
-import { useEffect } from "react";
 
 const Sidebar = () => {
   const { userData } = useData();
@@ -23,10 +21,10 @@ const Sidebar = () => {
     { icon: favoritesIcon, text: "Favoritos", path: "/profile" },
     { icon: carIcon, text: "Carrinho", path: "/cart" },
     { icon: profileIcon, text: "Perfil", path: "/profile" },
-    {
+    userData.productor && {
       icon: storeIcon,
       text: "Minha Loja",
-      path: `/store/${userData?.storeId || 0}`,
+      path: `/store/${userData.storeId}`,
     },
   ];
 
@@ -37,7 +35,7 @@ const Sidebar = () => {
         <SideBarStyledWrap>
           {links.map(({ icon, text, path }, key) => (
             <div key={key} className="IconWrap">
-              <Icon src={icon} display={["block"]} />
+              <Icon src={icon} display={["block", "block"]} />
               <Link to={path}>{text}</Link>
             </div>
           ))}

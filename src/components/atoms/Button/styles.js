@@ -48,6 +48,8 @@ const handleSizeTypes = (size) => {
         lineHeight: "34px",
         weight: theme.weight.medium,
       };
+    default:
+      console.log("default");
   }
 };
 

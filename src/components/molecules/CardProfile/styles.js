@@ -2,9 +2,9 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 import card_placeholder from "../../../assets/images/card_placeholder.png";
 
-export const CardStyled = styled.div`
-  height: 220px;
-  width: 48vw;
+const CardStyled = styled.div`
+  height: 268px;
+  width: 59vw;
   margin: 20px;
   border-radius: ${theme.radius};
   background-position: center;
@@ -13,7 +13,7 @@ export const CardStyled = styled.div`
   overflow: hidden;
 
   p {
-    margin-top: 9px;
+    margin-top: 12px;
     color: ${theme.color.white};
   }
 `;
@@ -25,21 +25,12 @@ CardStyled.Background = styled.div`
 `;
 
 CardStyled.Container = styled.div`
-  margin: -226px 0 0 190px;
-
-  img {
-    margin: -10px 0 0 321px;
-    width: 20px;
-  }
-
-  @media (max-width: 1024px) {
-    img {
-      margin: -12px 0 0 124px;
-    }
-  }
+  margin: -268px 0 0 196px;
 `;
 
 CardStyled.Image = styled.img`
-  height: 225px;
-  width: 170px;
+  height: 279px;
+  width: 179px;
 `;
+
+export default CardStyled;

@@ -25,7 +25,6 @@ const FormUpdateStore = () => {
       businessName: businessName || userStore.businessName,
       description: description || userStore.description,
     };
-    console.log(defaultData);
     try {
       const response = await API.patch(patchStore(1), defaultData, {
         headers: {
@@ -59,7 +58,7 @@ const FormUpdateStore = () => {
       />
       <p>{errors.description?.message}</p>
 
-      <Button type="submit" color="primary">
+      <Button type="submit" color="primary" size="medium">
         Atualizar
       </Button>
     </form>

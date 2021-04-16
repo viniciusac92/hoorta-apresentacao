@@ -10,31 +10,21 @@ const CardProfileMobile = () => {
   const { userData } = useData();
 
   const text = [
-    { dice: ["Rua Bragança", " - ", "135, apto 401"] },
-    { dice: ["Maringá", " - ", "PR"] },
-    { dice: "87020220" },
-    { dice: "junia@mail.com" },
-    { dice: "(44) 00000-0000" },
-
-    // { dice: [userData.address.road, " - ", userData.address.number] },
-    // { dice: [userData.address.city, " - ", userData.address.state] },
-    // { dice: userData.address.cep },
-    // { dice: userData.email },
-    // { dice: userData.phone },
+    { dice: [userData.address.road, " - ", userData.address.number] },
+    { dice: [userData.address.city, " - ", userData.address.state] },
+    { dice: userData.address.cep },
+    { dice: userData.email },
+    { dice: userData.phone },
   ];
 
   return (
-    <div>
+    <CardStyled.Container>
       <CardStyled>
         <CardStyled.Background>
           <CardStyled.Title>
-            <Text size="medium" weigth="semiBold">
+            <Text size="mediumPlus" weigth="semiBold">
               Junia - 26
             </Text>
-
-            <CardStyled.Icon>
-              <Icon src={IconEdit} alt="" />
-            </CardStyled.Icon>
           </CardStyled.Title>
         </CardStyled.Background>
       </CardStyled>
@@ -50,7 +40,7 @@ const CardProfileMobile = () => {
           </Text>
         ))}
       </CardInfoUserProfile>
-    </div>
+    </CardStyled.Container>
   );
 };
 export default CardProfileMobile;

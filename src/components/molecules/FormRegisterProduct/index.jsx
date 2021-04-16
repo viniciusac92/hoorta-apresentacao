@@ -77,7 +77,7 @@ const FormRegisterProduct = ({ currentStoreId }) => {
       />
       <p>{errors.description?.message}</p>
 
-      <Button type="submit" color="primary">
+      <Button type="submit" color="primary" size="medium">
         Cadastrar
       </Button>
     </StyledForm>
