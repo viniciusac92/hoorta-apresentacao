@@ -2,8 +2,15 @@ import styled from "styled-components";
 import ProductCard from "../../atoms/ProductCard";
 
 export const ProductCardStyled = styled(ProductCard)`
-	div > {
-		background-color: red;
+	display: flex;
+	flex-direction: row;
+	/* flex-wrap: wrap; */
+
+	div:first-child {
+		background-repeat: repeat;
+		border-radius: 50%;
+		object-position: right;
+		object-fit: cover;
 	}
 `;
 
@@ -47,6 +54,7 @@ export const BottomContainerStyled = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	width: 57vw;
+	margin-top: 1vh;
 
 	div {
 		height: 5vw;
@@ -105,15 +113,20 @@ export const ContainerInfoStyled = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	padding-left: 26vw;
-	height: 25vw;
+	height: 14vh;
+	left: 29vw;
+	position: absolute;
 
 	div > p:nth-child(2) {
 		margin-bottom: 0.6vh;
+		width: 60vw;
 	}
 
 	div > p:nth-child(3) {
 		margin-bottom: 0.3vh;
+	}
+	div:nth-child(2) > div > p {
+		margin-bottom: 0vh;
 	}
 
 	@media screen and (min-width: 800px) {
@@ -131,11 +144,9 @@ export const TopContainerStyled = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 64vw;
+	width: 71vw;
 	height: 5vh;
 	align-items: center;
-	margin-top: 1vh;
-	margin-bottom: 0.2vh;
 
 	div > button > span > img {
 		height: 3vh;

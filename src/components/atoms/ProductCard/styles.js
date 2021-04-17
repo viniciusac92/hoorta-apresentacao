@@ -6,12 +6,8 @@ export const CardStyled = styled.div`
 	margin-bottom: 15px;
 	border: none;
 	box-shadow: ${theme.shadow.under};
-	width: 97%;
-	height: 26vw;
-	/* background-image: url(${Hortifruti});
-	background-position: left;
-	background-size: 6rem;
-	background-repeat: no-repeat; */
+	width: 98%;
+	height: 16vh;
 
 	@media screen and (min-width: 800px) {
 		width: 99%;
