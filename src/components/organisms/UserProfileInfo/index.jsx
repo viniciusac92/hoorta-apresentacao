@@ -46,7 +46,7 @@ const UserProfileInfo = () => {
           <div>Excluir Loja</div>
         ) : (
           <Link to="/register-store">
-            Quer vender seus produtos? Então, torne-se um vendedor!
+            Quer vender seus produtos? Então, <span>torne-se um vendedor!</span>
           </Link>
         )}
       </ContainerStyled.Register>
