@@ -7,13 +7,8 @@ const InfoCC = () => {
   const { userData } = useData();
 
   const infos = [
-    // { dice: "Nome: Junia" },
-    // { dice: "Número: 5252 4545 2323 0101" },
-
     { dice: ["Nome: ", userData.owner] },
     { dice: ["Número: ", userData.cc.cc_number] },
-    // { dice: ["Validade: ", userData.cc.expiration] },
-    // { dice: ["CVV", userData.cc.cvv] },
   ];
 
   return (
