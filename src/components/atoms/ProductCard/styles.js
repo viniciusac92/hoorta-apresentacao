@@ -8,10 +8,10 @@ export const CardStyled = styled.div`
 	box-shadow: ${theme.shadow.under};
 	width: 97%;
 	height: 26vw;
-	background-image: url(${Hortifruti});
+	/* background-image: url(${Hortifruti});
 	background-position: left;
 	background-size: 6rem;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
 
 	@media screen and (min-width: 800px) {
 		width: 99%;

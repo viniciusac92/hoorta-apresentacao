@@ -7,6 +7,7 @@ import {
 	BottomContainerStyled,
 	ContainerInfoStyled,
 	TopContainerStyled,
+	ProductCardStyled,
 } from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
 import alface from "../../../assets/images/products/alface.jpg";
@@ -64,7 +65,15 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 
 			{productsData &&
 				productsData.map((product, index) => (
-					<ProductCard size={"large"} key={index}>
+					<ProductCardStyled size={"large"} key={index}>
+						<Picture
+							image={TomateCereja}
+							width={["91px", "58px"]}
+							height={["99px", "65px"]}
+							top={["39px"]}
+							left={["23px"]}
+							position={["relative"]}
+						/>
 						<ContainerInfoStyled>
 							<div>
 								<TopContainerStyled>
@@ -107,7 +116,7 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 								</Button>
 							</BottomContainerStyled>
 						</ContainerInfoStyled>
-					</ProductCard>
+					</ProductCardStyled>
 				))}
 		</ProductsListStyled>
 	);

@@ -2,8 +2,8 @@ import styled from "styled-components";
 import ProductCard from "../../atoms/ProductCard";
 
 export const ProductCardStyled = styled(ProductCard)`
-	p::first > {
-		font-size: 2vw;
+	div > {
+		background-color: red;
 	}
 `;
 
