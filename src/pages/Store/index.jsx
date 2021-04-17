@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router";
-import { getOneStore, getProducts } from "../../helper/stores";
+import { getOneStore } from "../../helper/stores";
+import { getProducts } from "../../helper/products";
 import { useStores } from "../../providers/StoresContext";
 import API from "../../services/api";
 import ProductsSection from "../../components/organisms/ProductsSection";

@@ -77,31 +77,38 @@ const FormLogin = () => {
   };
 
   return (
-    <FormStyled onSubmit={handleSubmit(handleForm)}>
-      <Text weigth="semiBold" size="large">
-        Login
-      </Text>
-      <Input
-        ref={ref}
-        type="text"
-        placeholder="Email"
-        size="large"
-        {...register("email")}
-      />
-      <p>{errors.email?.message}</p>
-      <Input
-        ref={ref}
-        type="password"
-        placeholder="Senha"
-        size="large"
-        {...register("password")}
-      />
-      <p>{errors.password?.message}</p>
-      <p>{error && error}</p>
-      <Button type="submit" color="primary" size="large">
-        Entrar
-      </Button>
-    </FormStyled>
+    <FormStyled.Container>
+      <FormStyled onSubmit={handleSubmit(handleForm)}>
+        <Text weigth="semiBold" size="large">
+          Login
+        </Text>
+        <Input
+          ref={ref}
+          type="text"
+          placeholder="Email"
+          size="large"
+          {...register("email")}
+        />
+        <p>{errors.email?.message}</p>
+        <Input
+          ref={ref}
+          type="password"
+          placeholder="Senha"
+          size="large"
+          {...register("password")}
+        />
+        <p>{errors.password?.message}</p>
+        <p>{error && error}</p>
+        <Button type="submit" color="primary" size="large">
+          Entrar
+        </Button>
+      </FormStyled>{" "}
+      <FormStyled.Text>
+        <p onClick={() => history.push("/register")}>
+          Não é membro? <span>Registre-se</span>
+        </p>
+      </FormStyled.Text>
+    </FormStyled.Container>
   );
 };
 

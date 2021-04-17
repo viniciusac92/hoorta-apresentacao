@@ -11,16 +11,22 @@ const HeaderNavBar = () => {
       linkText: "Sobre nós",
       path: "/about",
     },
-    { linkText: "Contato", path: "/contact" },
+    { linkText: "Entrar", path: "/login" },
   ];
 
   return (
     <HeaderNavBarStyled>
-      {links.map(({ linkText, path }, key) => (
-        <Link key={key} to={path}>
-          {linkText}
-        </Link>
-      ))}
+      {links.map(({ linkText, path }, key) =>
+        linkText !== "Entrar" ? (
+          <Link key={key} to={path}>
+            {linkText}
+          </Link>
+        ) : (
+          <Link key={key} to={path} color="primary">
+            {linkText}
+          </Link>
+        )
+      )}
     </HeaderNavBarStyled>
   );
 };
