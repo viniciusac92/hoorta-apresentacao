@@ -16,29 +16,29 @@ const STATE_REGEX = /^[A-Z]{2}$/;
 const CVV_REGEX = /^[0-9]{3}$/;
 
 // Error Messages
-const required = "Campo obrigatório!";
+const required = "é obrigatório!";
 
 // Schemas
 export const loginSchema = yup.object().shape({
-  email: yup.string().email("Email inválido").required(required),
+  email: yup.string().email("Email inválido").required(`Email ${required}`),
   password: yup
     .string()
     .min(6, "A senha deve conter no mínimo 6 caracteres")
-    .required(required),
+    .required(`Senha ${required}`),
 });
 
 export const registerSchema = yup.object().shape({
-  email: yup.string().email("Email inválido").required(required),
+  email: yup.string().email("Email inválido").required(`Email ${required}`),
   password: yup
     .string()
     .min(6, "A senha deve conter no mínimo 6 caracteres")
-    .required(required),
+    .required(`Senha ${required}`),
   name: yup
     .string()
     .strict()
     .max(20, "Máximo 10 caracteres")
-    .required(required),
-  age: yup.number().min(18, "Mínimo 18 anos").required(required),
+    .required(`Nome ${required}`),
+  age: yup.number().min(18, "Mínimo 18 anos").required(`Idade ${required}`),
 });
 
 export const updateUserSchema = yup.object().shape({

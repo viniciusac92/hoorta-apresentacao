@@ -46,7 +46,7 @@ export const BottomContainerStyled = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 61vw;
+	width: 57vw;
 
 	div {
 		height: 5vw;
@@ -66,10 +66,13 @@ export const BottomContainerStyled = styled.div`
 	}
 
 	> button {
-		height: 1.9rem;
-		padding: 0vw;
+		height: min-content;
+		padding: 0vh;
 		width: 25vw;
-		font-size: 13px;
+		font-size: 12px;
+		position: relative;
+		top: 0vh;
+		left: 0vw;
 	}
 
 	> p {
@@ -105,6 +108,14 @@ export const ContainerInfoStyled = styled.div`
 	padding-left: 26vw;
 	height: 25vw;
 
+	div > p:nth-child(2) {
+		margin-bottom: 0.6vh;
+	}
+
+	div > p:nth-child(3) {
+		margin-bottom: 0.3vh;
+	}
+
 	@media screen and (min-width: 800px) {
 		padding-left: 18rem;
 		height: 22vw;
@@ -120,12 +131,14 @@ export const TopContainerStyled = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 74vw;
-	height: 5vw;
+	width: 64vw;
+	height: 5vh;
 	align-items: center;
-	margin-bottom: 2.5vw;
-	> img {
-		height: 4vw;
+	margin-top: 1vh;
+	margin-bottom: 0.2vh;
+
+	div > button > span > img {
+		height: 3vh;
 	}
 
 	@media screen and (min-width: 800px) {
@@ -133,7 +146,7 @@ export const TopContainerStyled = styled.div`
 		height: fit-content;
 		margin-bottom: 0vw;
 		> img {
-			height: 2vw;
+			height: 5vh;
 		}
 	} ;
 `;
