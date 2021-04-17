@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../../styles/theme";
 
 export const ContainerStyled = styled.div`
   /* display: flex;
@@ -26,6 +27,10 @@ ContainerStyled.Register = styled.div`
   padding: 10px;
   font-size: 25px;
   text-align: center;
+
+  span {
+    color: ${theme.color.primary};
+  }
 `;
 
 ContainerStyled.IconModal = styled.div`
