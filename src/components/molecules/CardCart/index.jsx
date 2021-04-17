@@ -14,7 +14,7 @@ const CardCart = ({amount, price, productName, productorName}) => {
 				<CardCartStyled.Price>R$ {price}</CardCartStyled.Price>
 			</CardCartStyled.Wrap>
 			<CardCartStyled.Wrap>
-				<Icon src={closeIcon} display={["block", "block"]} isRadius />
+				<Icon src={closeIcon} display={["block", "block"]} />
 			</CardCartStyled.Wrap>
 		</CardCartStyled>
 	);
