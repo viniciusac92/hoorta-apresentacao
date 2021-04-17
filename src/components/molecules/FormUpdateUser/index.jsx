@@ -29,41 +29,22 @@ const FormUpdateUser = () => {
   });
 
   const handleForm = async (data) => {
-    const {
-      name,
-      phone,
-      road,
-      number,
-      city,
-      state,
-      cep,
-      cc_number,
-      expiration,
-      cvv,
-      owner,
-    } = data;
     const defaultData = {
-      name: name || userData.name,
-      phone: phone || userData.phone,
-      address:
-        {
-          road,
-          number,
-          city,
-          state,
-          cep,
-        } ||
-        userData.address ||
-        [],
-      cc:
-        {
-          cc_number,
-          expiration,
-          cvv,
-          owner,
-        } ||
-        userData.cc ||
-        [],
+      name: data.name || userData.name,
+      phone: data.phone || userData.phone,
+      address: {
+        road: data.road || userData.address.road,
+        number: data.number || userData.address.number,
+        city: data.city || userData.address.city,
+        state: data.state || userData.address.state,
+        cep: data.cep || userData.address.cep,
+      },
+      cc: {
+        cc_number: data.cc_number || userData.cc.cc_number,
+        expiration: data.expiration || userData.cc.expiration,
+        cvv: data.cvv || userData.cc.cvv,
+        owner: data.owner || userData.cc.owner,
+      },
     };
 
     try {
@@ -84,7 +65,7 @@ const FormUpdateUser = () => {
       <Input
         type="text"
         ref={ref}
-        placeholder="Alterar Nome"
+        placeholder={userData.name || "Nome"}
         size="large"
         {...register("name")}
       />
@@ -92,7 +73,7 @@ const FormUpdateUser = () => {
       <Input
         type="text"
         ref={ref}
-        placeholder="Alterar Telefone"
+        placeholder={userData.phone || "Telefone"}
         size="large"
         {...register("phone")}
       />
@@ -104,7 +85,7 @@ const FormUpdateUser = () => {
         <Input
           type="text"
           ref={ref}
-          placeholder="Alterar Endereço"
+          placeholder={userData.address.road || "Endereço"}
           size="large"
           {...register("road")}
         />
@@ -112,7 +93,7 @@ const FormUpdateUser = () => {
         <Input
           type="text"
           ref={ref}
-          placeholder="Alterar Número"
+          placeholder={userData.address.number || "Número"}
           size="large"
           {...register("number")}
         />
@@ -120,7 +101,7 @@ const FormUpdateUser = () => {
         <Input
           type="text"
           ref={ref}
-          placeholder="Alterar Cidade"
+          placeholder={userData.address.city || "Cidade"}
           size="large"
           {...register("city")}
         />
@@ -128,7 +109,7 @@ const FormUpdateUser = () => {
         <Input
           type="text"
           ref={ref}
-          placeholder="Alterar Estado"
+          placeholder={userData.address.state || "Estado"}
           size="large"
           {...register("state")}
         />
@@ -136,7 +117,7 @@ const FormUpdateUser = () => {
         <Input
           type="text"
           ref={ref}
-          placeholder="Alterar CEP"
+          placeholder={userData.address.cep || "CEP"}
           size="large"
           {...register("cep")}
         />
@@ -147,9 +128,11 @@ const FormUpdateUser = () => {
           Dados do Cartão
         </Text>
         <Input
-          type="text"
           ref={ref}
-          placeholder="Alterar Número"
+          type="number"
+          placeholder={
+            `XXXX XXXX XXXX ${userData.cc.cc_number.slice(-4)}` || "Número"
+          }
           size="large"
           {...register("cc_number")}
         />
@@ -157,15 +140,15 @@ const FormUpdateUser = () => {
         <Input
           type="text"
           ref={ref}
-          placeholder="Alterar Validade"
+          placeholder={userData.cc.expiration || "Validade"}
           size="large"
           {...register("expiration")}
         />
         <p>{errors.expiration?.message}</p>
         <Input
-          type="text"
+          type="number"
           ref={ref}
-          placeholder="Alterar CVV"
+          placeholder={userData.cc.cvv || "CVV"}
           size="large"
           {...register("cvv")}
         />
@@ -173,7 +156,7 @@ const FormUpdateUser = () => {
         <Input
           type="text"
           ref={ref}
-          placeholder="Alterar Titular"
+          placeholder={userData.cc.owner || "Titular"}
           size="large"
           {...register("owner")}
         />
