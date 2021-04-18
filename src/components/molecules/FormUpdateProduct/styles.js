@@ -18,6 +18,11 @@ export const StyledForm = styled.form`
     margin-top: 10px;
   }
 
+  input {
+    width: 38vw;
+    height: 45px;
+  }
+
   textarea {
     width: 38vw;
     height: 45px;
