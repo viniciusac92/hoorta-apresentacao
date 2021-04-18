@@ -6,7 +6,7 @@ import footerPicture from "../../../assets/images/footerPicture.png";
 import { useHistory } from "react-router";
 import { useMediaQuery } from "react-responsive";
 
-const MenuDashboard = ({ children }) => {
+const MenuDashboard = ({ children, id }) => {
   const history = useHistory();
   const location = history.location.pathname;
   const isDesktop2 = useMediaQuery({
@@ -14,7 +14,10 @@ const MenuDashboard = ({ children }) => {
   });
 
   const show2 = () => {
-    if (isDesktop2 && location === "/profile") {
+    if (
+      (isDesktop2 && location === "/profile") ||
+      (isDesktop2 && location === `/store/profile/${id}`)
+    ) {
       return false;
     } else {
       return true;
@@ -29,7 +32,9 @@ const MenuDashboard = ({ children }) => {
           <Sidebar />
         </div>
       </div>
-      <div className="HeaderContainer">{show2() && <DashboardHeader />}</div>
+      <div className="HeaderContainer">
+        {show2() && <DashboardHeader id={id} />}
+      </div>
       <div className="SectionContainer">{children}</div>
       {/* <Picture
 				image={footerPicture}
