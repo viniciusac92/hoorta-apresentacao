@@ -1,9 +1,11 @@
 import CardInfoStyled from "./style";
 import TextHeader from "../../atoms/TextHeader";
 import Button from "../../atoms/Button";
+import { useHistory } from "react-router-dom";
 
 const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
   const purchasesPrice = purchases && purchases.map(({ info }) => info.price);
+  const history = useHistory();
 
   return (
     <CardInfoStyled>
@@ -46,7 +48,11 @@ const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
         <Button color="primary" size="medium" onClick={() => finishPurchase()}>
           Finalizar compra
         </Button>
-        <Button color="secondary" size="medium">
+        <Button
+          color="secondary"
+          size="medium"
+          onClick={history.push("/dashboard")}
+        >
           Continuar comprando
         </Button>
       </CardInfoStyled.Wrap>
