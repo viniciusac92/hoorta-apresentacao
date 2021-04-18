@@ -43,7 +43,8 @@ const FormLogin = () => {
       mounted.current = true;
       return;
     }
-    errors && setSnackOpen(true);
+    errors[Object.keys(errors)[0]]?.message && setSnackOpen(true);
+    console.log(errors);
   }, [errors, error]);
 
   const handleCloseSnack = (event, reason) => {
