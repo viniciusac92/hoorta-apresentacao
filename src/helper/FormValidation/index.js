@@ -3,7 +3,7 @@ import * as yup from "yup";
 // REGEX
 const PHONE_REGEX = /^\([1-9]{2}\) [9]{1}[6-9]{1}[0-9]{3}\-[0-9]{4}$/;
 
-const CNPJ_REGEX = /[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/;
+const CNPJ_REGEX = /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/;
 
 const CEP_REGEX = /^\d{5}-\d{3}$/;
 
@@ -66,12 +66,10 @@ export const updateUserSchema = yup.object().shape({
     message: "Data inválida, formato requerido: XX/XXXX",
     excludeEmptyString: true,
   }),
-  cvv: yup
-    .string()
-    .matches(CVV_REGEX, {
-      message: "Número inválido",
-      excludeEmptyString: true,
-    }),
+  cvv: yup.string().matches(CVV_REGEX, {
+    message: "Número inválido",
+    excludeEmptyString: true,
+  }),
 });
 
 export const registerStoreSchema = yup.object().shape({

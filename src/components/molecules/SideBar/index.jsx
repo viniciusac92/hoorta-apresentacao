@@ -24,7 +24,7 @@ const Sidebar = () => {
     userData.productor && {
       icon: storeIcon,
       text: "Minha Loja",
-      path: `/store/${userData.storeId}`,
+      path: `/store/${userData?.storeId}`,
     },
   ];
 
