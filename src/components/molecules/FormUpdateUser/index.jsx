@@ -32,6 +32,7 @@ const FormUpdateUser = () => {
     const defaultData = {
       name: data.name || userData.name,
       phone: data.phone || userData.phone,
+      age: data.age || userData.age,
       address: {
         road: data.road || userData.address.road,
         number: data.number || userData.address.number,
@@ -70,6 +71,14 @@ const FormUpdateUser = () => {
         {...register("name")}
       />
       <p>{errors.name?.message}</p>
+      <Input
+        type="text"
+        ref={ref}
+        placeholder={userData.age || "Age"}
+        size="large"
+        {...register("age")}
+      />
+      <p>{errors.age?.message}</p>
       <Input
         type="text"
         ref={ref}
@@ -131,7 +140,8 @@ const FormUpdateUser = () => {
           ref={ref}
           type="number"
           placeholder={
-            `XXXX XXXX XXXX ${userData.cc.cc_number.slice(-4)}` || "Número"
+            // `XXXX XXXX XXXX ${userData.cc.cc_number.slice(-4)}` ||
+            "Número"
           }
           size="large"
           {...register("cc_number")}
