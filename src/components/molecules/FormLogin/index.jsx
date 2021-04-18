@@ -126,7 +126,7 @@ const FormLogin = () => {
         <Button type="submit" color="primary" size="large">
           Entrar
         </Button>
-      </FormStyled>{" "}
+      </FormStyled>
       <FormStyled.Text>
         <p onClick={() => history.push("/register")}>
           Não é membro? <span>Registre-se</span>
