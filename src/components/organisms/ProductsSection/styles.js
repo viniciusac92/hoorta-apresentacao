@@ -1,16 +1,32 @@
 import styled from "styled-components";
+import theme from "../../../styles/theme";
 import ProductCard from "../../atoms/ProductCard";
+import ButtonCount from "../../molecules/ButtonCount";
 
 export const ProductCardStyled = styled(ProductCard)`
 	display: flex;
 	flex-direction: row;
-	/* flex-wrap: wrap; */
 
 	div:first-child {
 		background-repeat: repeat;
 		border-radius: 50%;
 		object-position: right;
 		object-fit: cover;
+	}
+
+	@media screen and (min-width: 800px) {
+		border-radius: ${theme.radius};
+
+		> div:nth-child(1) {
+			background-repeat: no-repeat;
+			border-radius: ${theme.radius} 0px 0px ${theme.radius};
+			object-position: right;
+			object-fit: cover;
+			width: 224px;
+			height: 336px;
+			top: 0px;
+			left: 0px;
+		}
 	}
 `;
 
@@ -22,9 +38,11 @@ export const ProductsListStyled = styled.div`
 
 	@media screen and (min-width: 800px) {
 		max-width: 1046px;
-		a {
+
+		> a {
+			font-size: 2.5vh;
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: 3fr 1fr 1fr;
 			align-items: center;
 		}
 	}
@@ -36,7 +54,7 @@ export const TitleDivStyled = styled.div`
 	align-content: center;
 	justify-content: center;
 
-	> div {
+	div {
 		top: 5px;
 		left: 35px;
 	}
@@ -54,8 +72,8 @@ export const BottomContainerStyled = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	width: 57vw;
-	margin-top: 1vh;
-
+	/* margin-top: 1vh; */
+	align-items: center;
 	div {
 		height: 5vw;
 		width: 10vw;
@@ -70,10 +88,10 @@ export const BottomContainerStyled = styled.div`
 	}
 
 	img {
-		padding: 0px;
+		padding: 0px !important;
 	}
 
-	> button {
+	button {
 		height: min-content;
 		padding: 0vh;
 		width: 25vw;
@@ -83,29 +101,27 @@ export const BottomContainerStyled = styled.div`
 		left: 0vw;
 	}
 
-	> p {
+	p {
 		margin: 0rem 0rem 0rem 0rem;
 	}
 
 	@media screen and (min-width: 800px) {
 		height: 2vw;
-		width: 38vw;
+		width: 33vw;
 		align-items: center;
+		/* position: relative;
+		top: -1vh; */
 
-		div {
+		> div {
 			height: 2vw;
 		}
 
-		button:nth-child(2) {
-			height: 2.67vw;
-			width: 9vw;
+		> button:nth-child(2) {
+			height: 3.67vw;
+			width: 16vw;
 			font-size: 15px;
 			font-size: 23px;
 		}
-	}
-
-	@media screen and (min-width: 1500px) {
-		width: 28vw;
 	}
 `;
 
@@ -115,9 +131,8 @@ export const ContainerInfoStyled = styled.div`
 	justify-content: space-around;
 	height: 14vh;
 	left: 29vw;
-	position: absolute;
 
-	div > p:nth-child(2) {
+	> div > p:nth-child(2) {
 		margin-bottom: 0.6vh;
 		width: 60vw;
 	}
@@ -125,18 +140,38 @@ export const ContainerInfoStyled = styled.div`
 	div > p:nth-child(3) {
 		margin-bottom: 0.3vh;
 	}
+
 	div:nth-child(2) > div > p {
 		margin-bottom: 0vh;
 	}
 
 	@media screen and (min-width: 800px) {
-		padding-left: 18rem;
-		height: 22vw;
-		width: 38vw;
+		padding-left: 1.5vw;
+		height: 37vh;
+		width: 35vw;
+		overflow: hidden;
+
+		> div > p:nth-child(2) {
+			width: 35vw;
+		}
+
+		> div:nth-child(2) > div > p {
+			margin-bottom: 0vh !important;
+		}
+
+		> div > p:nth-child(3) {
+			margin-bottom: 0.3vh;
+			font-size: 2.5vh;
+		}
 	}
-	@media screen and (min-width: 1500px) {
-		height: 12.5vw;
-		width: 28vw;
+`;
+
+export const ButtonCountStyled = styled(ButtonCount)`
+	@media screen and (min-width: 800px) {
+		> div {
+			height: 37vh !important;
+			width: 35vw !important;
+		}
 	}
 `;
 
@@ -147,15 +182,22 @@ export const TopContainerStyled = styled.div`
 	width: 71vw;
 	height: 5vh;
 	align-items: center;
+	margin-top: 2vh;
 
-	div > button > span > img {
+	> div > button > span > img {
 		height: 3vh;
 	}
 
 	@media screen and (min-width: 800px) {
-		width: 40vw;
-		height: fit-content;
+		width: 43vw !important;
+		height: 8vh !important;
 		margin-bottom: 0vw;
+
+		> div {
+			width: 14vw !important;
+			height: 8vh !important;
+		}
+
 		> img {
 			height: 5vh;
 		}
