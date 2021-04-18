@@ -36,7 +36,9 @@ const MenuDashboard = ({ children, id }) => {
       <div className="HeaderContainer">
         {show2() && <DashboardHeader id={id} />}
       </div>
-      <div className="SectionContainer">{children}</div>
+      <div className="SectionContainer">
+        <div className="scroll">{children}</div>
+      </div>
       {/* <Picture
 				image={footerPicture}
 				width={["320px", "444px"]}
