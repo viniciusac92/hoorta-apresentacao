@@ -1,5 +1,4 @@
 import Picture from "../../atoms/Picture";
-import ProductCard from "../../atoms/ProductCard";
 import TextProduct from "../../atoms/TextProduct";
 import {
 	ProductsListStyled,
@@ -8,13 +7,13 @@ import {
 	ContainerInfoStyled,
 	TopContainerStyled,
 	ProductCardStyled,
+	ButtonCountStyled,
 } from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
 import alface from "../../../assets/images/products/alface.jpg";
 import TomateCereja from "../../../assets/images/products/tomateCereja.jpg";
 import Abobora from "../../../assets/images/products/abobora.jpg";
 import Button from "../../atoms/Button";
-import ButtonCount from "../../molecules/ButtonCount";
 import Link from "../../atoms/Link";
 import ModalCreateProduct from "../ModalCreateProduct";
 import {useState} from "react";
@@ -103,11 +102,11 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 								</TextProduct>
 							</div>
 							<BottomContainerStyled>
-								<ButtonCount
+								<ButtonCountStyled
 									amountOfProduct={amountOfProduct}
 									setAmountOfProduct={setAmountOfProduct}>
 									{amountOfProduct}
-								</ButtonCount>
+								</ButtonCountStyled>
 								<Button
 									color={"primary"}
 									onClick={() => addCart(product)}

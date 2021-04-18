@@ -24,7 +24,10 @@ export const GridContainer = styled.div`
 
   .SectionContainer {
     grid-area: Section;
+<<<<<<< HEAD
     padding-left: 7vw;
+=======
+>>>>>>> 3412dcd8065434eb9e25b9ff8512145fc1b380a5
     overflow-y: auto;
   }
 

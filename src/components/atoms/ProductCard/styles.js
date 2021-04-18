@@ -12,10 +12,5 @@ export const CardStyled = styled.div`
 	@media screen and (min-width: 800px) {
 		width: 99%;
 		height: 21rem;
-		border-radius: ${theme.radius};
-		background-image: url(${Hortifruti});
-		background-position: left;
-		background-size: contain;
-		background-repeat: repeat-y;
 	}
 `;
