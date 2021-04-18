@@ -13,10 +13,17 @@ import {useProducts} from "../../../providers/ProductsContext";
 import {useData} from "../../../providers/UserContext";
 // Components
 import TextArea from "../../atoms/TextArea";
+import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 import {StyledForm} from "./styles";
 
-const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
+const FormUpdateProduct = ({
+	currentProductId,
+	currentStoreId,
+	productName,
+	productPrice,
+	productDescription,
+}) => {
 	const {userData} = useData();
 	const {productsData, setProductsData} = useProducts();
 	const ref = createRef();
@@ -66,15 +73,15 @@ const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 			<TextArea
 				type="text"
 				ref={ref}
-				placeholder="Tomate Cereja"
+				placeholder={productName}
 				size="large"
 				{...register("name")}
 			/>
 			<p>{errors.name?.message}</p>
-			<TextArea
+			<Input
 				type="number"
 				ref={ref}
-				placeholder="Preço"
+				placeholder={productPrice}
 				size="large"
 				{...register("price")}
 			/>
@@ -82,7 +89,7 @@ const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 			<TextArea
 				type="text"
 				ref={ref}
-				placeholder="Produto livre de conservantes e agrotóxicos"
+				placeholder={productDescription}
 				size="large"
 				{...register("description")}
 			/>

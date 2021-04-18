@@ -2,6 +2,7 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 export const TextAreaStyled = styled.textarea`
+	resize: none;
 	overflow: hidden;
 	border: none;
 	margin: 5px;

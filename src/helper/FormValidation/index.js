@@ -97,6 +97,6 @@ export const registerProductSchema = yup.object().shape({
 
 export const updateProductSchema = yup.object().shape({
 	name: yup.string(),
-	price: yup.number(),
+	price: yup.number().nullable().default(0),
 	description: yup.string(),
 });

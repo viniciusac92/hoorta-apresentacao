@@ -10,7 +10,13 @@ import ModalEditProduct from "../../molecules/ModalEditProduct";
 
 const ITEM_HEIGHT = 48;
 
-export default function MenuEditDelete({currentProductId, currentStoreId}) {
+export default function MenuEditDelete({
+	currentProductId,
+	currentStoreId,
+	productName,
+	productPrice,
+	productDescription,
+}) {
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
 
@@ -49,6 +55,9 @@ export default function MenuEditDelete({currentProductId, currentStoreId}) {
 						<ModalEditProduct
 							currentProductId={currentProductId}
 							currentStoreId={currentStoreId}
+							productName={productName}
+							productPrice={productPrice}
+							productDescription={productDescription}
 						/>
 					</Item>
 					<Item type="button" onClick={handleClose}>
