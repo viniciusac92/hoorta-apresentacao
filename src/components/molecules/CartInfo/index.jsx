@@ -2,8 +2,8 @@ import CardInfoStyled from "./style";
 import TextHeader from "../../atoms/TextHeader";
 import Button from "../../atoms/Button";
 
-const CartInfo = ({ deliveryPrice = 0, purchases = [] }) => {
-  const purchasesPrice = purchases.map(({ info }) => info.price);
+const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
+  const purchasesPrice = purchases && purchases.map(({ info }) => info.price);
 
   return (
     <CardInfoStyled>
@@ -28,23 +28,22 @@ const CartInfo = ({ deliveryPrice = 0, purchases = [] }) => {
         </CardInfoStyled.TextWrap>
 
         <CardInfoStyled.TextWrap>
-          <TextHeader>Compras</TextHeader>
-          {purchasesPrice.map((price = 0, key) => (
-            <TextHeader key={key}>R$ {price}</TextHeader>
-          ))}
+          <TextHeader>Compras</TextHeader> R${" "}
+          {purchasesPrice && purchasesPrice.reduce((acc, cur) => acc + cur, 0)}
         </CardInfoStyled.TextWrap>
 
         <CardInfoStyled.TextWrap>
           <TextHeader>Total</TextHeader>
           <TextHeader>
             R${" "}
-            {purchasesPrice.reduce((acc, cur) => acc + cur, 0) +
-              Number(deliveryPrice)}
+            {purchasesPrice &&
+              purchasesPrice.reduce((acc, cur) => acc + cur, 0) +
+                Number(deliveryPrice)}
           </TextHeader>
         </CardInfoStyled.TextWrap>
       </CardInfoStyled.Wrap>
       <CardInfoStyled.Wrap>
-        <Button color="primary" size="medium">
+        <Button color="primary" size="medium" onClick={() => finishPurchase()}>
           Finalizar compra
         </Button>
         <Button color="secondary" size="medium">
