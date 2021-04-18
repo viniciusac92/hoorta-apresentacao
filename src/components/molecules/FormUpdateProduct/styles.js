@@ -1,25 +1,32 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-	input {
-		margin: 8px 0;
-		width: 100%;
-	}
-
-	button {
-		margin-top: 20px;
-		width: 100%;
-	}
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 
+	button {
+		margin-top: 20px;
+		width: 38vw;
+		height: 88px;
+	}
+
 	div {
 		width: 100%;
 		text-align: center;
 		margin-top: 10px;
+	}
+
+	input {
+		width: 38vw;
+		height: 45px;
+	}
+
+	textarea {
+		width: 38vw;
+		height: 45px;
+		padding: 7px;
 	}
 
 	.addressContainer p:nth-child(1),
