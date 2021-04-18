@@ -5,7 +5,8 @@ import Icon from "../../atoms/Icon";
 import Link from "../../atoms/Link";
 import threeDots from "../../../assets/images/icons/threeDots.svg";
 import {GroupLink, Item} from "./styles";
-import ModalDeleteProduct from "../../organisms/ModalDeleteProduct";
+import ModalDeleteProduct from "../../molecules/ModalDeleteProduct";
+import ModalEditProduct from "../../molecules/ModalEditProduct";
 
 const ITEM_HEIGHT = 48;
 
@@ -45,7 +46,7 @@ export default function MenuEditDelete({id}) {
 				}}>
 				<GroupLink>
 					<Item type="button" onClick={handleClose}>
-						Editar
+						<ModalEditProduct id={id} />
 					</Item>
 					<Item type="button" onClick={handleClose}>
 						<ModalDeleteProduct id={id} />

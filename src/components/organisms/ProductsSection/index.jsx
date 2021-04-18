@@ -19,7 +19,7 @@ import ModalCreateProduct from "../ModalCreateProduct";
 import {useState} from "react";
 import {useData} from "../../../providers/UserContext";
 import {useStores} from "../../../providers/StoresContext";
-import MenuEditDelete from "../../molecules/MenuEditDelte";
+import MenuEditDelete from "../MenuEditDelete";
 
 const ProductsSection = ({productsData, currentStoreId}) => {
 	const productImg = [{img: alface}, {img: TomateCereja}, {img: Abobora}];

@@ -12,11 +12,11 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {useProducts} from "../../../providers/ProductsContext";
 import {useData} from "../../../providers/UserContext";
 // Components
-import TextArea from "../../atoms/TextArea";
+import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 import {StyledForm} from "./styles";
 
-const FormRegisterProduct = ({currentStoreId}) => {
+const FormUpdateProduct = ({currentStoreId}) => {
 	const {userData} = useData();
 	const {productsData, setProductsData} = useProducts();
 	const ref = createRef();
@@ -52,7 +52,7 @@ const FormRegisterProduct = ({currentStoreId}) => {
 
 	return (
 		<StyledForm onSubmit={handleSubmit(handleForm)}>
-			<TextArea
+			<Input
 				type="text"
 				ref={ref}
 				placeholder="Nome"
@@ -60,7 +60,7 @@ const FormRegisterProduct = ({currentStoreId}) => {
 				{...register("name")}
 			/>
 			<p>{errors.name?.message}</p>
-			<TextArea
+			<Input
 				type="text"
 				ref={ref}
 				placeholder="Preço"
@@ -68,7 +68,7 @@ const FormRegisterProduct = ({currentStoreId}) => {
 				{...register("price")}
 			/>
 			<p>{errors.price?.message}</p>
-			<TextArea
+			<Input
 				type="text"
 				ref={ref}
 				placeholder="Descrição"
@@ -84,4 +84,4 @@ const FormRegisterProduct = ({currentStoreId}) => {
 	);
 };
 
-export default FormRegisterProduct;
+export default FormUpdateProduct;

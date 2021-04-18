@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import theme from "../../../styles/theme";
 
-export const InputStyled = styled.input`
+export const TextAreaStyled = styled.textarea`
 	border: none;
 	margin: 5px;
 	outline: none;
