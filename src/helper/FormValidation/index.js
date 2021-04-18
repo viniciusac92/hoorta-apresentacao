@@ -38,7 +38,11 @@ export const registerSchema = yup.object().shape({
     .strict()
     .max(20, "Máximo 10 caracteres")
     .required(`Nome ${required}`),
-  age: yup.number().min(18, "Mínimo 18 anos").required(`Idade ${required}`),
+  age: yup
+    .number()
+    .transform((ageData) => (isNaN(ageData) ? undefined : ageData))
+    .required(`Idade ${required}`)
+    .min(18, "Mínimo 18 anos"),
 });
 
 export const updateUserSchema = yup.object().shape({
