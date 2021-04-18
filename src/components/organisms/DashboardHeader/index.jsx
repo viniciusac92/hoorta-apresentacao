@@ -2,6 +2,7 @@ import HeaderDashboard from "../../molecules/HeaderDashboard";
 import Search from "../../molecules/Search";
 import { HeaderContainer } from "./styles";
 import { useHistory } from "react-router";
+import { useMediaQuery } from "react-responsive";
 
 const DashboardHeader = () => {
   const history = useHistory();
@@ -15,7 +16,6 @@ const DashboardHeader = () => {
     }
   };
 
-  console.log(location);
   return (
     <HeaderContainer>
       <HeaderDashboard />

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 export const GridContainer = styled.div`
-  height: 100vh;
   width: 100%;
   display: grid;
   grid-template-columns: 30% 1fr 1fr;
@@ -25,12 +24,12 @@ export const GridContainer = styled.div`
   .SectionContainer {
     grid-area: Section;
     margin: 0px auto;
-    overflow-y: auto;
   }
 
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 
     .SidebarContainer {
       display: none;
@@ -39,7 +38,7 @@ export const GridContainer = styled.div`
     .SectionContainer {
       grid-area: Section;
       padding-left: 0vw;
-      overflow-y: auto;
+      margin: 0px;
     }
   }
 `;

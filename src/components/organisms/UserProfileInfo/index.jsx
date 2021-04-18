@@ -28,29 +28,33 @@ const UserProfileInfo = () => {
   };
 
   return (
-    <ContainerStyled>
-      <ContainerStyled.IconModal>
-        <ModalUser />
-      </ContainerStyled.IconModal>
-      {isMobile && <CardProfileMobile />}
-      {isDesktop && <CardProfile />}
-      <ContainerStyled.Text>
-        <InfoCC />
-        <Button color="primary" size="medium" onClick={() => handleLogOut("/")}>
-          Sair
-        </Button>
-      </ContainerStyled.Text>
+    <div>
+      <ContainerStyled>
+        {isMobile && <CardProfileMobile />}
+        {isDesktop && <CardProfile />}
+        <ContainerStyled.Text>
+          <InfoCC />
+          <Button
+            color="primary"
+            size="medium"
+            onClick={() => handleLogOut("/")}
+          >
+            Sair
+          </Button>
+        </ContainerStyled.Text>
 
-      <ContainerStyled.Register>
-        {userData.productor ? (
-          <div>Excluir Loja</div>
-        ) : (
-          <Link to="/register-store">
-            Quer vender seus produtos? Então, <span>torne-se um vendedor!</span>
-          </Link>
-        )}
-      </ContainerStyled.Register>
-    </ContainerStyled>
+        <ContainerStyled.Register>
+          {userData.productor ? (
+            <div>Excluir Loja</div>
+          ) : (
+            <Link to="/register-store">
+              Quer vender seus produtos? Então,{" "}
+              <span>torne-se um vendedor!</span>
+            </Link>
+          )}
+        </ContainerStyled.Register>
+      </ContainerStyled>
+    </div>
   );
 };
 export default UserProfileInfo;

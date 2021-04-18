@@ -2,8 +2,14 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 
 export const ContainerStyled = styled.div`
-  /* display: flex;
-  flex-flow: column; */
+  width: 56vw;
+  display: flex;
+  flex-flow: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 ContainerStyled.Text = styled.div`
