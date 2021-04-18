@@ -9,7 +9,7 @@ export const ProductCardStyled = styled(ProductCard)`
 
   div:first-child {
     background-repeat: repeat;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     object-position: right;
     object-fit: cover;
   }
@@ -106,7 +106,7 @@ export const BottomContainerStyled = styled.div`
   }
 
   @media screen and (min-width: 800px) {
-    height: 2vw;
+    height: 5vw;
     width: 33vw;
     align-items: center;
     /* position: relative;
@@ -126,7 +126,7 @@ export const BottomContainerStyled = styled.div`
 `;
 
 export const ContainerInfoStyled = styled.div`
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-around;
   height: 14vh;
@@ -147,7 +147,7 @@ export const ContainerInfoStyled = styled.div`
 
   @media screen and (min-width: 800px) {
     padding-left: 1.5vw;
-    height: 37vh;
+    height: 330px;
     width: 35vw;
     overflow: hidden;
 
