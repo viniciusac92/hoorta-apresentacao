@@ -50,10 +50,10 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 		<ProductsListStyled>
 			<div>
 				<div className="iconPlus">
-					<ModalCreateProduct currentStoreId={currentStoreId} />
+					<ModalEditStore currentStoreId={currentStoreId} />
 				</div>
 				<div className="iconPlus">
-					<ModalEditStore currentStoreId={currentStoreId} />
+					<ModalCreateProduct currentStoreId={currentStoreId} />
 				</div>
 				<TextProduct size={"large"} color={"black"}>
 					{storeData?.businessName}
