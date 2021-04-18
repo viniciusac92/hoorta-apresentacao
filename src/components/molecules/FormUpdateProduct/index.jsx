@@ -3,7 +3,7 @@ import {createRef, useEffect} from "react";
 // API
 import API from "../../../services/api";
 // Helpers
-import {postProduct} from "../../../helper/products";
+import {patchProduct, getProducts} from "../../../helper/products";
 import {registerProductSchema} from "../../../helper/FormValidation";
 // Dependencies
 import {useForm} from "react-hook-form";
@@ -12,11 +12,11 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {useProducts} from "../../../providers/ProductsContext";
 import {useData} from "../../../providers/UserContext";
 // Components
-import Input from "../../atoms/Input";
+import TextArea from "../../atoms/TextArea";
 import Button from "../../atoms/Button";
 import {StyledForm} from "./styles";
 
-const FormUpdateProduct = ({currentStoreId}) => {
+const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 	const {userData} = useData();
 	const {productsData, setProductsData} = useProducts();
 	const ref = createRef();
@@ -32,8 +32,8 @@ const FormUpdateProduct = ({currentStoreId}) => {
 	const handleForm = async (data) => {
 		const info = {...data};
 		try {
-			const response = await API.post(
-				postProduct(),
+			await API.patch(
+				patchProduct(currentProductId),
 				{info, storeId: currentStoreId, userId: userData.id},
 				{
 					headers: {
@@ -43,7 +43,18 @@ const FormUpdateProduct = ({currentStoreId}) => {
 					},
 				}
 			);
-			setProductsData([...productsData, response.data]);
+			const response = await API.get(
+				getProducts(userData.id, userData.storeId),
+				{
+					headers: {
+						Authorization: `Bearer ${JSON.parse(
+							localStorage.getItem("token")
+						)}`,
+					},
+				}
+			);
+
+			setProductsData(response.data);
 			reset();
 		} catch (e) {
 			console.log(e);
@@ -52,15 +63,15 @@ const FormUpdateProduct = ({currentStoreId}) => {
 
 	return (
 		<StyledForm onSubmit={handleSubmit(handleForm)}>
-			<Input
+			<TextArea
 				type="text"
 				ref={ref}
-				placeholder="Nome"
+				placeholder="Tomate Cereja"
 				size="large"
 				{...register("name")}
 			/>
 			<p>{errors.name?.message}</p>
-			<Input
+			<TextArea
 				type="text"
 				ref={ref}
 				placeholder="Preço"
@@ -68,17 +79,17 @@ const FormUpdateProduct = ({currentStoreId}) => {
 				{...register("price")}
 			/>
 			<p>{errors.price?.message}</p>
-			<Input
+			<TextArea
 				type="text"
 				ref={ref}
-				placeholder="Descrição"
+				placeholder="Produto livre de conservantes e agrotóxicos"
 				size="large"
 				{...register("description")}
 			/>
 			<p>{errors.description?.message}</p>
 
 			<Button type="submit" color="primary" size="medium">
-				Cadastrar
+				Salvar
 			</Button>
 		</StyledForm>
 	);

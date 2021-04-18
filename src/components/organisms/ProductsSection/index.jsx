@@ -45,6 +45,8 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 		setAmountOfProduct(1);
 	};
 
+	console.log(currentStoreId);
+
 	return (
 		<ProductsListStyled>
 			<div>
@@ -92,7 +94,10 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 											position={["relative"]}
 										/>
 									</TitleDivStyled>
-									<MenuEditDelete id={product.id} />
+									<MenuEditDelete
+										currentProductId={product.id}
+										currentStoreId={currentStoreId}
+									/>
 								</TopContainerStyled>
 								<TextProduct size={"medium"} color={"black"}>
 									{product.info.description}

@@ -43,6 +43,8 @@ const FormRegisterProduct = ({currentStoreId}) => {
 					},
 				}
 			);
+			console.log(userData.id);
+			console.log(response.data);
 			setProductsData([...productsData, response.data]);
 			reset();
 		} catch (e) {

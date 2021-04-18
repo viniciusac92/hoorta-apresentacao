@@ -8,7 +8,7 @@ import API from "../../../services/api";
 import {useProducts} from "../../../providers/ProductsContext";
 import {useData} from "../../../providers/UserContext";
 
-const ModalDeleteProduct = ({id}) => {
+const ModalDeleteProduct = ({currentProductId}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const {setProductsData} = useProducts();
@@ -19,7 +19,7 @@ const ModalDeleteProduct = ({id}) => {
 
 	const handleDelete = async () => {
 		try {
-			await API.delete(deleteProduct(id), {
+			await API.delete(deleteProduct(currentProductId), {
 				headers: {
 					Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
 				},

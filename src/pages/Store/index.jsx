@@ -39,7 +39,7 @@ const Store = () => {
 					},
 				}
 			);
-
+			console.log(productsResponse.data);
 			setProductsData(productsResponse.data);
 		} catch (e) {
 			console.log(e);
@@ -52,8 +52,9 @@ const Store = () => {
 
 	useEffect(() => {
 		getStoreProductsData(id);
-	}, [storeData]);
+	}, [storeData, productsData]);
 
+	console.log(id);
 	return (
 		<MenuDashboard>
 			<ProductsSection productsData={productsData} currentStoreId={id} />

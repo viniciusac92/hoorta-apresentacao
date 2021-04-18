@@ -1,14 +1,17 @@
 import {useState} from "react";
 import TextHeader from "../../atoms/TextHeader";
 import {Modal, Fade} from "@material-ui/core";
-import {GroupButton, StyledModal} from "./styles";
+import {EditButton, StyledModal} from "./styles";
 import Button from "../../atoms/Button";
 import {deleteProduct, getProducts} from "../../../helper/products/index";
 import API from "../../../services/api";
 import {useProducts} from "../../../providers/ProductsContext";
 import {useData} from "../../../providers/UserContext";
+import FormUpdateProduct from "../FormUpdateProduct";
+import Icon from "../../atoms/Icon";
+import Close from "../../../assets/images/icons/close.svg";
 
-const ModalEditProduct = ({id}) => {
+const ModalEditProduct = ({currentProductId, currentStoreId}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const {setProductsData} = useProducts();
@@ -17,49 +20,21 @@ const ModalEditProduct = ({id}) => {
 
 	const toggleModal = () => setIsOpen(!isOpen);
 
-	const handleDelete = async () => {
-		try {
-			await API.delete(deleteProduct(id), {
-				headers: {
-					Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
-				},
-			});
-			const response = await API.get(
-				getProducts(userData.id, userData.storeId),
-				{
-					headers: {
-						Authorization: `Bearer ${JSON.parse(
-							localStorage.getItem("token")
-						)}`,
-					},
-				}
-			);
-			setProductsData(response.data);
-		} catch (e) {
-			console.log(e);
-		}
-		toggleModal();
-	};
-
 	const body = (
 		<StyledModal>
-			<TextHeader color="primary" size="medium" fontWeight="medium">
-				Deseja Excluir ?
-			</TextHeader>
-			<GroupButton>
-				<Button onClick={toggleModal} color="secondary" size="small">
-					Não
-				</Button>
-				<Button onClick={handleDelete} color="primary" size="small">
-					Sim
-				</Button>
-			</GroupButton>
+			<EditButton onClick={toggleModal}>
+				<Icon src={Close} alt="Botão Fechar" display={["block", "block"]} />
+			</EditButton>
+			<FormUpdateProduct
+				currentProductId={currentProductId}
+				currentStoreId={currentStoreId}
+			/>
 		</StyledModal>
 	);
 
 	return (
 		<>
-			<p onClick={toggleModal}>Excluir</p>
+			<p onClick={toggleModal}>Editar</p>
 			<Modal
 				open={isOpen}
 				onClose={toggleModal}
