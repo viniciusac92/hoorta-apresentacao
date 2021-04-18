@@ -47,18 +47,20 @@ export const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 1rem 5rem;
+    min-width: 55vw;
+    margin: 4rem;
+
     .HeaderContainer {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
     .InfoContainer {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 100%;
-      grid-gap: 3rem;
-
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
       .Picture {
-        height: 100%;
+        margin-right: 4rem;
+        height: 20rem;
+        width: 80%;
         background-image: url(${perfilProdutor});
         background-position: center;
         background-size: cover;
@@ -67,6 +69,8 @@ export const StyledContainer = styled.div`
       }
 
       p {
+        width: 35%;
+        grid-area: Text;
         height: 100%;
       }
     }
