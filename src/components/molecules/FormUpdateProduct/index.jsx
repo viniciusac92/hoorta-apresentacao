@@ -70,7 +70,7 @@ const FormUpdateProduct = ({
 
 	return (
 		<StyledForm onSubmit={handleSubmit(handleForm)}>
-			<TextArea
+			<Input
 				type="text"
 				ref={ref}
 				placeholder={productName}
