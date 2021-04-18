@@ -11,7 +11,13 @@ import FormUpdateProduct from "../FormUpdateProduct";
 import Icon from "../../atoms/Icon";
 import Close from "../../../assets/images/icons/close.svg";
 
-const ModalEditProduct = ({currentProductId, currentStoreId}) => {
+const ModalEditProduct = ({
+	currentProductId,
+	currentStoreId,
+	productName,
+	productPrice,
+	productDescription,
+}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const {setProductsData} = useProducts();
@@ -28,6 +34,9 @@ const ModalEditProduct = ({currentProductId, currentStoreId}) => {
 			<FormUpdateProduct
 				currentProductId={currentProductId}
 				currentStoreId={currentStoreId}
+				productName={productName}
+				productPrice={productPrice}
+				productDescription={productDescription}
 			/>
 		</StyledModal>
 	);

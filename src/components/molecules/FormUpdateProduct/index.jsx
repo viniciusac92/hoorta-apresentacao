@@ -4,7 +4,7 @@ import {createRef, useEffect} from "react";
 import API from "../../../services/api";
 // Helpers
 import {patchProduct, getProducts} from "../../../helper/products";
-import {registerProductSchema} from "../../../helper/FormValidation";
+import {updateProductSchema} from "../../../helper/FormValidation";
 // Dependencies
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
@@ -13,10 +13,17 @@ import {useProducts} from "../../../providers/ProductsContext";
 import {useData} from "../../../providers/UserContext";
 // Components
 import TextArea from "../../atoms/TextArea";
+import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 import {StyledForm} from "./styles";
 
-const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
+const FormUpdateProduct = ({
+	currentProductId,
+	currentStoreId,
+	productName,
+	productPrice,
+	productDescription,
+}) => {
 	const {userData} = useData();
 	const {productsData, setProductsData} = useProducts();
 	const ref = createRef();
@@ -26,7 +33,7 @@ const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 		formState: {errors},
 		reset,
 	} = useForm({
-		resolver: yupResolver(registerProductSchema),
+		resolver: yupResolver(updateProductSchema),
 	});
 
 	const handleForm = async (data) => {
@@ -63,18 +70,18 @@ const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 
 	return (
 		<StyledForm onSubmit={handleSubmit(handleForm)}>
-			<TextArea
+			<Input
 				type="text"
 				ref={ref}
-				placeholder="Tomate Cereja"
+				placeholder={productName}
 				size="large"
 				{...register("name")}
 			/>
 			<p>{errors.name?.message}</p>
-			<TextArea
-				type="text"
+			<Input
+				type="number"
 				ref={ref}
-				placeholder="Preço"
+				placeholder={productPrice}
 				size="large"
 				{...register("price")}
 			/>
@@ -82,7 +89,7 @@ const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 			<TextArea
 				type="text"
 				ref={ref}
-				placeholder="Produto livre de conservantes e agrotóxicos"
+				placeholder={productDescription}
 				size="large"
 				{...register("description")}
 			/>
