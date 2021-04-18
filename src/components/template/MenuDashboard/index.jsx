@@ -5,6 +5,7 @@ import Picture from "../../atoms/Picture";
 import footerPicture from "../../../assets/images/footerPicture.png";
 import { useHistory } from "react-router";
 import { useMediaQuery } from "react-responsive";
+import AppBar from "../../organisms/Appbar/AppBar";
 
 const MenuDashboard = ({ children, id }) => {
   const history = useHistory();
@@ -35,7 +36,9 @@ const MenuDashboard = ({ children, id }) => {
       <div className="HeaderContainer">
         {show2() && <DashboardHeader id={id} />}
       </div>
-      <div className="SectionContainer">{children}</div>
+      <div className="SectionContainer">
+        <div className="scroll">{children}</div>
+      </div>
       {/* <Picture
 				image={footerPicture}
 				width={["320px", "444px"]}
@@ -44,6 +47,11 @@ const MenuDashboard = ({ children, id }) => {
 				top={["0px", "calc(100% - 215px)"]}
 				left={["-37px"]}
 			/> */}
+      {isDesktop2 && (
+        <div className="appBar">
+          <AppBar />
+        </div>
+      )}
     </GridContainer>
   );
 };
