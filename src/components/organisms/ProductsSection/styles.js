@@ -152,7 +152,7 @@ export const ContainerInfoStyled = styled.div`
     overflow: hidden;
 
     > div > p:nth-child(2) {
-      width: 35vw;
+      width: 34vw;
     }
 
     > div:nth-child(2) > div > p {
