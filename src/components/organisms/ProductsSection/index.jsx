@@ -50,6 +50,9 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
   return (
     <ProductsListStyled>
       <div>
+        <div className="iconPlus">
+          <ModalCreateProduct currentStoreId={currentStoreId} />
+        </div>
         <TextProduct size={"large"} color={"black"}>
           Nome da loja - Produtor
         </TextProduct>
@@ -61,9 +64,6 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
           Conheça mais sobre o produtor
         </Link>
       </div>
-      <div>
-        <ModalCreateProduct currentStoreId={currentStoreId} />
-      </div>
 
       {productsData &&
         productsData.map((product, index) => (
@@ -72,43 +72,41 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
               image={TomateCereja}
               width={["61px", "58px"]}
               height={["61px", "65px"]}
-              top={["42px"]}
-              left={["12px"]}
+              top={[""]}
+              left={[""]}
               position={["relative"]}
             />
             <ContainerInfoStyled>
-              <div>
-                <TopContainerStyled>
-                  <TitleDivStyled>
-                    <TextProduct
-                      weigth={"semiBold"}
-                      size={"large"}
-                      color={"primary"}
-                    >
-                      {product.info.name}
-                    </TextProduct>
-                    <Picture
-                      image={organic}
-                      width={["15px", "58px"]}
-                      height={["15px", "65px"]}
-                      top={["20px"]}
-                      left={["85px"]}
-                      position={["relative"]}
-                    />
-                  </TitleDivStyled>
-                  <MenuEditDelete
-                    currentProductId={product.id}
-                    currentStoreId={currentStoreId}
+              <TopContainerStyled>
+                <TitleDivStyled>
+                  <TextProduct
+                    weigth={"semiBold"}
+                    size={"large"}
+                    color={"primary"}
+                  >
+                    {product.info.name}
+                  </TextProduct>
+                  <Picture
+                    image={organic}
+                    width={["", ""]}
+                    height={["", ""]}
+                    top={[""]}
+                    left={[""]}
+                    position={["relative"]}
                   />
-                </TopContainerStyled>
-                <TextProduct size={"medium"} color={"black"}>
-                  {product.info.description}
-                </TextProduct>
+                </TitleDivStyled>
+                <MenuEditDelete
+                  currentProductId={product.id}
+                  currentStoreId={currentStoreId}
+                />
+              </TopContainerStyled>
+              <TextProduct size={"medium"} color={"black"}>
+                {product.info.description}
+              </TextProduct>
+              <BottomContainerStyled>
                 <TextProduct weigth={"semiBold"}>
                   R$ {product.info.price}
                 </TextProduct>
-              </div>
-              <BottomContainerStyled>
                 <ButtonCountStyled
                   amountOfProduct={amountOfProduct}
                   setAmountOfProduct={setAmountOfProduct}
@@ -118,7 +116,7 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
                 <Button
                   color={"primary"}
                   onClick={() => addCart(product)}
-                  size="medium"
+                  size={"small"}
                 >
                   Adicionar
                 </Button>
