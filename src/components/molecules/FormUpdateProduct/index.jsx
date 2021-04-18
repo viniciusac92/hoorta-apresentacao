@@ -4,7 +4,7 @@ import {createRef, useEffect} from "react";
 import API from "../../../services/api";
 // Helpers
 import {patchProduct, getProducts} from "../../../helper/products";
-import {registerProductSchema} from "../../../helper/FormValidation";
+import {updateProductSchema} from "../../../helper/FormValidation";
 // Dependencies
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
@@ -26,7 +26,7 @@ const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 		formState: {errors},
 		reset,
 	} = useForm({
-		resolver: yupResolver(registerProductSchema),
+		resolver: yupResolver(updateProductSchema),
 	});
 
 	const handleForm = async (data) => {
@@ -72,7 +72,7 @@ const FormUpdateProduct = ({currentProductId, currentStoreId}) => {
 			/>
 			<p>{errors.name?.message}</p>
 			<TextArea
-				type="text"
+				type="number"
 				ref={ref}
 				placeholder="Preço"
 				size="large"

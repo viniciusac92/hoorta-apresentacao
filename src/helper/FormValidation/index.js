@@ -20,77 +20,83 @@ const required = "é obrigatório!";
 
 // Schemas
 export const loginSchema = yup.object().shape({
-  email: yup.string().email("Email inválido").required(`Email ${required}`),
-  password: yup
-    .string()
-    .min(6, "A senha deve conter no mínimo 6 caracteres")
-    .required(`Senha ${required}`),
+	email: yup.string().email("Email inválido").required(`Email ${required}`),
+	password: yup
+		.string()
+		.min(6, "A senha deve conter no mínimo 6 caracteres")
+		.required(`Senha ${required}`),
 });
 
 export const registerSchema = yup.object().shape({
-  email: yup.string().email("Email inválido").required(`Email ${required}`),
-  password: yup
-    .string()
-    .min(6, "A senha deve conter no mínimo 6 caracteres")
-    .required(`Senha ${required}`),
-  name: yup
-    .string()
-    .strict()
-    .max(20, "Máximo 10 caracteres")
-    .required(`Nome ${required}`),
-  age: yup.number().min(18, "Mínimo 18 anos").required(`Idade ${required}`),
+	email: yup.string().email("Email inválido").required(`Email ${required}`),
+	password: yup
+		.string()
+		.min(6, "A senha deve conter no mínimo 6 caracteres")
+		.required(`Senha ${required}`),
+	name: yup
+		.string()
+		.strict()
+		.max(20, "Máximo 10 caracteres")
+		.required(`Nome ${required}`),
+	age: yup.number().min(18, "Mínimo 18 anos").required(`Idade ${required}`),
 });
 
 export const updateUserSchema = yup.object().shape({
-  name: yup.string().max(20, "Máximo 10 caracteres"),
-  phone: yup.string().matches(PHONE_REGEX, {
-    message: "Número inválido, formato requerido: (XX) 9XXXX-XXXX",
-    excludeEmptyString: true,
-  }),
-  road: yup.string(),
-  number: yup.string().max(4, "Máximo de 4 dígitos"),
-  city: yup.string(),
-  state: yup.string().matches(STATE_REGEX, {
-    message: "Estado Inválido",
-    excludeEmptyString: true,
-  }),
-  cep: yup.string().matches(CEP_REGEX, {
-    message: "Cep inválido, formato requerido: XXXXX-XXX",
-    excludeEmptyString: true,
-  }),
-  cc_number: yup.string().matches(CC_REGEX, {
-    message: "Número inválido",
-    excludeEmptyString: true,
-  }),
-  expiration: yup.string().matches(EXPIRATION_REGEX, {
-    message: "Data inválida, formato requerido: XX/XXXX",
-    excludeEmptyString: true,
-  }),
-  cvv: yup.string().matches(CVV_REGEX, {
-    message: "Número inválido",
-    excludeEmptyString: true,
-  }),
+	name: yup.string().max(20, "Máximo 10 caracteres"),
+	phone: yup.string().matches(PHONE_REGEX, {
+		message: "Número inválido, formato requerido: (XX) 9XXXX-XXXX",
+		excludeEmptyString: true,
+	}),
+	road: yup.string(),
+	number: yup.string().max(4, "Máximo de 4 dígitos"),
+	city: yup.string(),
+	state: yup.string().matches(STATE_REGEX, {
+		message: "Estado Inválido",
+		excludeEmptyString: true,
+	}),
+	cep: yup.string().matches(CEP_REGEX, {
+		message: "Cep inválido, formato requerido: XXXXX-XXX",
+		excludeEmptyString: true,
+	}),
+	cc_number: yup.string().matches(CC_REGEX, {
+		message: "Número inválido",
+		excludeEmptyString: true,
+	}),
+	expiration: yup.string().matches(EXPIRATION_REGEX, {
+		message: "Data inválida, formato requerido: XX/XXXX",
+		excludeEmptyString: true,
+	}),
+	cvv: yup.string().matches(CVV_REGEX, {
+		message: "Número inválido",
+		excludeEmptyString: true,
+	}),
 });
 
 export const registerStoreSchema = yup.object().shape({
-  businessName: yup.string().required(required),
-  registeredName: yup.string().required(required),
-  cnpj: yup
-    .string()
-    .matches(CNPJ_REGEX, {
-      message: "Número inválido, formato requerido: XX.XXX.XXX/0001-XX",
-    })
-    .required(required),
-  description: yup.string().required(required),
+	businessName: yup.string().required(required),
+	registeredName: yup.string().required(required),
+	cnpj: yup
+		.string()
+		.matches(CNPJ_REGEX, {
+			message: "Número inválido, formato requerido: XX.XXX.XXX/0001-XX",
+		})
+		.required(required),
+	description: yup.string().required(required),
 });
 
 export const updateStoreSchema = yup.object().shape({
-  businessName: yup.string(),
-  description: yup.string(),
+	businessName: yup.string(),
+	description: yup.string(),
 });
 
 export const registerProductSchema = yup.object().shape({
-  name: yup.string().required(required),
-  price: yup.number().required(required),
-  description: yup.string().required(required),
+	name: yup.string().required(required),
+	price: yup.number().required(required),
+	description: yup.string().required(required),
+});
+
+export const updateProductSchema = yup.object().shape({
+	name: yup.string(),
+	price: yup.number(),
+	description: yup.string(),
 });
