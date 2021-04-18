@@ -12,6 +12,11 @@ export const GridContainer = styled.div`
     "Sidebar Section Section";
   gap: 0px 0px;
 
+  .appBar {
+    position: fixed;
+    bottom: 0px;
+  }
+
   .SidebarContainer {
     grid-area: Sidebar;
     box-shadow: ${theme.shadow};
@@ -24,6 +29,7 @@ export const GridContainer = styled.div`
   .SectionContainer {
     grid-area: Section;
     margin: 0px auto;
+    padding-bottom: 40px;
   }
 
   @media screen and (max-width: 768px) {

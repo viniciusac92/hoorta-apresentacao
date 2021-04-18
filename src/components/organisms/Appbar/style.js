@@ -7,4 +7,10 @@ export const AppBarStyled = styled.div`
   background-color: ${theme.color.light};
   display: flex;
   box-shadow: ${theme.shadow.on};
+  justify-content: space-around;
+
+  div {
+    display: flex;
+    height: 7vh;
+  }
 `;
