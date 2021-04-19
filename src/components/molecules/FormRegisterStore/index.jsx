@@ -22,7 +22,7 @@ const FormRegisterStore = () => {
     return JSON.parse(sessionToken);
   });
   const history = useHistory();
-  const { userData } = useData();
+  const { userData, setUserData } = useData();
 
   const ref = createRef();
   const {
@@ -41,13 +41,15 @@ const FormRegisterStore = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      await API.patch(
+      const response = await API.patch(
         patchUser(userData.id),
         { productor: true },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
+
+      setUserData(response.data);
       reset();
       history.push("/profile");
     } catch (e) {
