@@ -24,6 +24,8 @@ ContainerStyled.Text = styled.div`
   }
 
   @media (min-width: 1024px) {
+    flex-direction: row;
+
     button {
       margin: 45px 20px 0 87px;
     }

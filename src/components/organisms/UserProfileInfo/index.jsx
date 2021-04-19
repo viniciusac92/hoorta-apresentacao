@@ -10,10 +10,13 @@ import Icon from "../../atoms/Icon";
 import IconEdit from "../../../assets/images/icons/editPencil.svg";
 import ModalUser from "../ModalUser";
 import { useData } from "../../../providers/UserContext";
+import { useStores } from "../../../providers/StoresContext";
+import StoreCard from "../../atoms/StoreCard";
 
 const UserProfileInfo = () => {
   const history = useHistory();
   const { userData } = useData();
+  const { storeData } = useStores();
   const isDesktop = useMediaQuery({
     minWidth: 769,
   });
@@ -45,7 +48,7 @@ const UserProfileInfo = () => {
 
         <ContainerStyled.Register>
           {userData.productor ? (
-            <div>Excluir Loja</div>
+            <StoreCard store={storeData} />
           ) : (
             <Link to="/register-store">
               Quer vender seus produtos? Então,{" "}
