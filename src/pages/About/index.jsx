@@ -1,12 +1,7 @@
 import AboutInfo from "../../components/molecules/AboutInfo";
-import HeaderNavBar from "../../components/molecules/HeaderNavBar";
-
-import Figure from "../../components/atoms/Figure";
 
 import Picture from "../../components/atoms/Picture";
 
-import heartImage from "../../assets/images/heartImage.png";
-import vegetablePack from "../../assets/images/vegetablePack.png";
 import footerPicture from "../../assets/images/footerPicture.png";
 import Header from "../../components/organisms/Header";
 
