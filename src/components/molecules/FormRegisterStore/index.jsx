@@ -4,6 +4,7 @@ import { createRef, useState } from "react";
 import API from "../../../services/api";
 //ContextAPI
 import { useData } from "../../../providers/UserContext";
+import { useStores } from "../../../providers/StoresContext";
 //Dependencias
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -23,6 +24,7 @@ const FormRegisterStore = () => {
   });
   const history = useHistory();
   const { userData, setUserData } = useData();
+  const { getAllStores } = useStores();
 
   const ref = createRef();
   const {
@@ -50,6 +52,8 @@ const FormRegisterStore = () => {
       );
 
       setUserData(response.data);
+
+      getAllStores();
       reset();
       history.push("/profile");
     } catch (e) {
