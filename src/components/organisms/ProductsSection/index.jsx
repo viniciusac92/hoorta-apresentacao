@@ -8,6 +8,7 @@ import {
   TopContainerStyled,
   ProductCardStyled,
   ButtonCountStyled,
+  SnackBar,
 } from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
 import DefaultProductImage from "../../../assets/images/products/DefaultProductImage.jpg";
@@ -19,10 +20,11 @@ import { useState } from "react";
 import { useData } from "../../../providers/UserContext";
 import { useStores } from "../../../providers/StoresContext";
 import MenuEditDelete from "../MenuEditDelete";
+import { useEffect } from "react";
 
 const ProductsSection = ({ productsData, currentStoreId }) => {
   const [amountOfProduct, setAmountOfProduct] = useState(1);
-
+  const [snackOpen, setSnackOpen] = useState(false);
   const { checkOwner } = useData();
   const { storeData } = useStores();
 
@@ -43,8 +45,17 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
     setAmountOfProduct(1);
   };
 
+  useEffect(() => {
+    setTimeout(() => setSnackOpen(false), 3000);
+  }, [snackOpen]);
+
   return (
     <ProductsListStyled>
+      <SnackBar
+        open={snackOpen}
+        onClose={!snackOpen}
+        message="Produto Adicionado ao carrinho!"
+      />
       <div>
         {checkOwner(currentStoreId) && (
           <>
@@ -120,7 +131,10 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
                 </ButtonCountStyled>
                 <Button
                   color={"primary"}
-                  onClick={() => addCart(product)}
+                  onClick={() => {
+                    addCart(product);
+                    setSnackOpen(true);
+                  }}
                   size={"small"}
                 >
                   Adicionar
