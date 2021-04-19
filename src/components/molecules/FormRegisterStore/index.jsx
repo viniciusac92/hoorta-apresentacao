@@ -11,7 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useHistory } from "react-router";
 //Helpers
 import { registerStoreSchema } from "../../../helper/FormValidation";
-import { postStore } from "../../../helper/stores";
+import { postStore, getUserStore } from "../../../helper/stores";
 import { patchUser } from "../../../helper/user";
 //Components
 import Input from "../../atoms/Input";
@@ -51,7 +51,15 @@ const FormRegisterStore = () => {
         }
       );
 
-      setUserData(response.data);
+      const storeResponse = await API.get(getUserStore(userData.id), {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      });
+
+      const userStoreData = storeResponse.data[0];
+
+      setUserData({ ...response.data, storeId: userStoreData.id });
 
       getAllStores();
       reset();
