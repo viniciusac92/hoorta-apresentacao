@@ -39,7 +39,8 @@ const FormRegister = () => {
       return;
     }
     errors[Object.keys(errors)[0]]?.message && setSnackOpen(true);
-  }, [errors]);
+    error && setSnackOpen(true);
+  }, [errors, error]);
 
   const handleCloseSnack = (event, reason) => {
     if (reason === "clickaway") {
@@ -62,8 +63,8 @@ const FormRegister = () => {
       reset();
       history.push("/login");
     } catch (e) {
-      console.log(e);
-      if (e.response.data === "Email already exists") {
+      console.log(e.message);
+      if (e.message === "Request failed with status code 400") {
         setError("Email já cadastrado");
       }
     }
@@ -75,7 +76,10 @@ const FormRegister = () => {
         open={snackOpen}
         autoHideDuration={5000}
         onClose={handleCloseSnack}
-        message={errors && errors[Object.keys(errors)[0]]?.message}
+        message={
+          (errors && errors[Object.keys(errors)[0]]?.message) ||
+          (error && error)
+        }
       />
       <FormStyled
         onSubmit={handleSubmit(handleForm)}
