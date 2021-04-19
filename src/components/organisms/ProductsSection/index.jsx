@@ -99,6 +99,9 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 									<MenuEditDelete
 										currentProductId={product.id}
 										currentStoreId={currentStoreId}
+										productName={product.info.name}
+										productPrice={product.info.price}
+										productDescription={product.info.description}
 									/>
 								)}
 							</TopContainerStyled>
