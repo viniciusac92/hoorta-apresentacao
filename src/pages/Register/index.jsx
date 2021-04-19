@@ -23,8 +23,8 @@ const Register = () => {
       <Figure type="square">
         <Picture
           image={heartImage}
-          width={["0px", "437px"]}
-          height={["0px", "412px"]}
+          width={["218px", "437px"]}
+          height={["206px", "412px"]}
           top={["30px"]}
           left={["-40px", "-130px"]}
           position={["relative"]}
