@@ -3,6 +3,7 @@ import TextHeader from "../../atoms/TextHeader";
 import Button from "../../atoms/Button";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import ModalCart from "../ModalCart";
 
 const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
   const purchasesPrice =
@@ -57,9 +58,7 @@ const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
         </CardInfoStyled.TextWrap>
       </CardInfoStyled.Wrap>
       <CardInfoStyled.Wrap>
-        <Button color="primary" size="medium" onClick={() => finishPurchase()}>
-          Finalizar compra
-        </Button>
+        <ModalCart />
         <Button
           color="secondary"
           size="medium"
