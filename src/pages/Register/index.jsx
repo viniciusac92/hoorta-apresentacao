@@ -9,12 +9,17 @@ import heartImage from "../../assets/images/heartImage.png";
 import vegetablePack from "../../assets/images/vegetablePack.png";
 import footerPicture from "../../assets/images/footerPicture.png";
 import FormRegister from "../../components/molecules/FormRegister";
+import { useMediaQuery } from "react-responsive";
+import { RegisterStyled } from "./styles";
 
 const Register = () => {
+  const isDesktop = useMediaQuery({
+    minWidth: 769,
+  });
+
   return (
     <div>
       <Header />
-      <FormRegister />
       <Figure type="square">
         <Picture
           image={heartImage}
@@ -25,6 +30,9 @@ const Register = () => {
           position={["relative"]}
         />
       </Figure>
+      <RegisterStyled>
+        <FormRegister />
+      </RegisterStyled>
       <Figure type="rectangle">
         <Picture
           image={vegetablePack}
@@ -37,13 +45,13 @@ const Register = () => {
       </Figure>
       <Picture
         image={footerPicture}
-        width={["320px", "444px"]}
-        height={["155px", "215px"]}
-        position={["relative", "absolute"]}
-        top={["0px", "calc(100% - 215px)"]}
-        left={["0", "0"]}
+        width={[null, "444px"]}
+        height={[null, "215px"]}
+        position={[null, "absolute"]}
+        top={[null, "calc(100% - 215px)"]}
+        left={[null, "0"]}
       />
-      <HomeInfo />
+      {isDesktop && <HomeInfo />}
     </div>
   );
 };
