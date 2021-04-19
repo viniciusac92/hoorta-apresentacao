@@ -15,8 +15,8 @@ const About = () => {
         image={footerPicture}
         width={["320px", "444px"]}
         height={["155px", "215px"]}
-        position={["relative", "relative"]}
-        top={["0px", "calc(100% - 215px)"]}
+        position={["absolute", "absolute"]}
+        top={["520vw", "42.9vw"]}
         left={["0", "0"]}
       />
     </div>

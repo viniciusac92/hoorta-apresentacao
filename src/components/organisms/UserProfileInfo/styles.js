@@ -16,17 +16,18 @@ ContainerStyled.Text = styled.div`
   display: flex;
   justify-content: center;
   font-size: 20px;
+  flex-direction: column;
 
   button {
-    margin: 45px 20px 0 87px;
+    margin: 20px auto;
     width: 140px;
   }
 
-  /* @media (max-width: 1024px) {
+  @media (min-width: 1024px) {
     button {
       margin: 45px 20px 0 87px;
     }
-  } */
+  }
 `;
 
 ContainerStyled.Register = styled.div`

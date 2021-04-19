@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const InfosCCStyled = styled.div`
+  max-width: 300px;
+  margin-left: 5px;
+
   p {
     font-size: 20px;
     padding: 12px 34px;

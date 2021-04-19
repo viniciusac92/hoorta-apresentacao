@@ -18,8 +18,8 @@ const Register = () => {
       <Figure type="square">
         <Picture
           image={heartImage}
-          width={["218px", "437px"]}
-          height={["206px", "412px"]}
+          width={["0px", "437px"]}
+          height={["0px", "412px"]}
           top={["30px"]}
           left={["-40px", "-130px"]}
           position={["relative"]}
@@ -28,8 +28,8 @@ const Register = () => {
       <Figure type="rectangle">
         <Picture
           image={vegetablePack}
-          width={["305px"]}
-          height={["444px"]}
+          width={["0px", "305px"]}
+          height={["0px", "444px"]}
           top={["100px"]}
           left={["85px"]}
           position={["relative"]}
