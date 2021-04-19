@@ -31,6 +31,7 @@ FormStyled.Text = styled.div`
 FormStyled.Container = styled.div`
   text-align: center;
   max-width: 550px;
+  height: 440px;
 `;
 
 FormStyled.Snackbar = styled(Snackbar)`
