@@ -5,7 +5,8 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
-  const purchasesPrice = purchases && purchases.map(({ info }) => info.price);
+  const purchasesPrice =
+    purchases && purchases.map(({ info }) => info.price * info.amount);
   const history = useHistory();
   const [deliveryPriceInput, setDeliveryPrice] = useState(deliveryPrice);
 
