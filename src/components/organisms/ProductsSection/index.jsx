@@ -58,14 +58,10 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
       />
       <div>
         {checkOwner(currentStoreId) && (
-          <>
-            <div className="iconPlus">
-              <ModalEditStore currentStoreId={currentStoreId} />
-            </div>
-            <div className="iconPlus">
-              <ModalCreateProduct currentStoreId={currentStoreId} />
-            </div>
-          </>
+          <div className="iconPlus">
+            <ModalCreateProduct currentStoreId={currentStoreId} />
+            <ModalEditStore currentStoreId={currentStoreId} />
+          </div>
         )}
         <TextProduct size={"large"} color={"black"}>
           {storeData?.businessName}
@@ -113,6 +109,9 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
                   <MenuEditDelete
                     currentProductId={product.id}
                     currentStoreId={currentStoreId}
+                    productName={product.info.name}
+                    productPrice={product.info.price}
+                    productDescription={product.info.description}
                   />
                 )}
               </TopContainerStyled>

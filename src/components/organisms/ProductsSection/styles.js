@@ -15,8 +15,15 @@ export const ProductsListStyled = styled.div`
   }
 
   .iconPlus {
+    display: flex;
     float: right;
     padding-right: 30px;
+  }
+
+  .iconPlus button:last-child img {
+    height: auto;
+    max-width: 28px;
+    height: auto;
   }
 
   @media screen and (min-width: 800px) {
@@ -79,7 +86,6 @@ export const ContainerInfoStyled = styled.div`
 
   @media screen and (min-width: 800px) {
     padding: 0 1.5vw;
-    width: 35vw;
 
     > p {
       margin: 20px 0px;

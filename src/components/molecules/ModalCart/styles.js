@@ -44,5 +44,6 @@ export const GroupButton = styled.div`
 
   button {
     margin: 20px 25px 0px 25px;
+    max-width: 200px;
   }
 `;
