@@ -18,7 +18,6 @@ const Sidebar = () => {
 
   const links = [
     { icon: homeIcon, text: "Home", path: "/dashboard" },
-    { icon: heartGreen, text: "Favoritos", path: "/favorites" },
     { icon: carIcon, text: "Carrinho", path: "/cart" },
     { icon: profileIcon, text: "Perfil", path: "/profile" },
     userData.productor && {
