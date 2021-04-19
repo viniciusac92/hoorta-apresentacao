@@ -10,9 +10,7 @@ import {
   ButtonCountStyled,
 } from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
-import alface from "../../../assets/images/products/alface.jpg";
-import TomateCereja from "../../../assets/images/products/tomateCereja.jpg";
-import Abobora from "../../../assets/images/products/abobora.jpg";
+import DefaultProductImage from "../../../assets/images/products/DefaultProductImage.jpg";
 import Button from "../../atoms/Button";
 import Link from "../../atoms/Link";
 import ModalCreateProduct from "../ModalCreateProduct";
@@ -23,7 +21,6 @@ import { useStores } from "../../../providers/StoresContext";
 import MenuEditDelete from "../MenuEditDelete";
 
 const ProductsSection = ({ productsData, currentStoreId }) => {
-  const productImg = [{ img: alface }, { img: TomateCereja }, { img: Abobora }];
   const [amountOfProduct, setAmountOfProduct] = useState(1);
 
   const { checkOwner } = useData();
@@ -75,7 +72,7 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
         productsData.map((product, index) => (
           <ProductCardStyled size={"large"} key={index}>
             <Picture
-              image={TomateCereja}
+              image={DefaultProductImage}
               width={["61px", "58px"]}
               height={["61px", "65px"]}
               top={[""]}
