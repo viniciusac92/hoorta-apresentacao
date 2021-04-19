@@ -16,6 +16,7 @@ import Abobora from "../../../assets/images/products/abobora.jpg";
 import Button from "../../atoms/Button";
 import Link from "../../atoms/Link";
 import ModalCreateProduct from "../ModalCreateProduct";
+import ModalEditStore from "../ModalEditStore";
 import { useState } from "react";
 import { useData } from "../../../providers/UserContext";
 import { useStores } from "../../../providers/StoresContext";
@@ -45,19 +46,17 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
     setAmountOfProduct(1);
   };
 
-  console.log(currentStoreId);
-
   return (
     <ProductsListStyled>
       <div>
-        {checkOwner(currentStoreId) && (
-          <div className="iconPlus">
-            <ModalCreateProduct currentStoreId={currentStoreId} />
-          </div>
-        )}
-
+        <div className="iconPlus">
+          <ModalEditStore currentStoreId={currentStoreId} />
+        </div>
+        <div className="iconPlus">
+          <ModalCreateProduct currentStoreId={currentStoreId} />
+        </div>
         <TextProduct size={"large"} color={"black"}>
-          Nome da loja - Produtor
+          {storeData?.businessName}
         </TextProduct>
         <Link
           size={"large"}
@@ -98,12 +97,10 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
                     position={["relative"]}
                   />
                 </TitleDivStyled>
-                {checkOwner(currentStoreId) && (
-                  <MenuEditDelete
-                    currentProductId={product.id}
-                    currentStoreId={currentStoreId}
-                  />
-                )}
+                <MenuEditDelete
+                  currentProductId={product.id}
+                  currentStoreId={currentStoreId}
+                />
               </TopContainerStyled>
               <TextProduct size={"medium"} color={"black"}>
                 {product.info.description}

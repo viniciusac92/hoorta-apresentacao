@@ -2,10 +2,12 @@ import CardInfoStyled from "./style";
 import TextHeader from "../../atoms/TextHeader";
 import Button from "../../atoms/Button";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 
 const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
   const purchasesPrice = purchases && purchases.map(({ info }) => info.price);
   const history = useHistory();
+  const [deliveryPriceInput, setDeliveryPrice] = useState(deliveryPrice);
 
   return (
     <CardInfoStyled>
@@ -15,18 +17,27 @@ const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
         </TextHeader>
 
         <CardInfoStyled.InputWrap>
-          <input type="radio" name="deliveryType" checked />
+          <input
+            type="radio"
+            name="deliveryType"
+            checked
+            onClick={() => setDeliveryPrice(deliveryPrice)}
+          />
           <span>Eu quero receber em minha casa</span>
         </CardInfoStyled.InputWrap>
 
         <CardInfoStyled.InputWrap>
-          <input type="radio" name="deliveryType" />
+          <input
+            type="radio"
+            name="deliveryType"
+            onClick={() => setDeliveryPrice("0")}
+          />
           <span>Eu quero ir até lá buscar</span>
         </CardInfoStyled.InputWrap>
 
         <CardInfoStyled.TextWrap>
           <TextHeader>Delivery</TextHeader>
-          <TextHeader>R$ {deliveryPrice}</TextHeader>
+          <TextHeader>R$ {deliveryPriceInput}</TextHeader>
         </CardInfoStyled.TextWrap>
 
         <CardInfoStyled.TextWrap>
@@ -40,7 +51,7 @@ const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
             R${" "}
             {purchasesPrice &&
               purchasesPrice.reduce((acc, cur) => acc + cur, 0) +
-                Number(deliveryPrice)}
+                Number(deliveryPriceInput)}
           </TextHeader>
         </CardInfoStyled.TextWrap>
       </CardInfoStyled.Wrap>
@@ -51,7 +62,7 @@ const CartInfo = ({ deliveryPrice = 0, purchases, finishPurchase }) => {
         <Button
           color="secondary"
           size="medium"
-          onClick={history.push("/dashboard")}
+          onClick={() => history.push("/dashboard")}
         >
           Continuar comprando
         </Button>
