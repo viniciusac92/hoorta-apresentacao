@@ -3,7 +3,7 @@ import TextHeader from "../../atoms/TextHeader";
 import {Modal, Fade} from "@material-ui/core";
 import {StyledModal, EditButton} from "./styles";
 import Icon from "../../atoms/Icon";
-import EditPencilIcon from "../../../assets/images/icons/editPencil.svg";
+import PencilBlackIcon from "../../../assets/images/icons/pencilBlack.svg";
 import Close from "../../../assets/images/icons/close.svg";
 import FormEditStore from "../../molecules/FormEditStore";
 
@@ -30,8 +30,8 @@ const ModalEditStore = ({currentStoreId}) => {
 		<>
 			<EditButton onClick={toggleModal}>
 				<Icon
-					src={EditPencilIcon}
-					alt="Cadastrar Produto"
+					src={PencilBlackIcon}
+					alt="Editar Loja"
 					display={["block", "block"]}
 				/>
 			</EditButton>
