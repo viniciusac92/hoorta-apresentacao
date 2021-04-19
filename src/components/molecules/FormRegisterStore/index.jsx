@@ -24,7 +24,7 @@ const FormRegisterStore = () => {
   });
   const history = useHistory();
   const { userData, setUserData } = useData();
-  const { getAllStores } = useStores();
+  const { getAllStores, setStoreData } = useStores();
 
   const ref = createRef();
   const {
@@ -60,6 +60,7 @@ const FormRegisterStore = () => {
       const userStoreData = storeResponse.data[0];
 
       setUserData({ ...response.data, storeId: userStoreData.id });
+      setStoreData(userStoreData);
 
       getAllStores();
       reset();
