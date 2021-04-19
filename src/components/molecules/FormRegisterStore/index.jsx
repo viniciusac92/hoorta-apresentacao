@@ -4,6 +4,7 @@ import { createRef, useState } from "react";
 import API from "../../../services/api";
 //ContextAPI
 import { useData } from "../../../providers/UserContext";
+import { useStores } from "../../../providers/StoresContext";
 //Dependencias
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -22,7 +23,8 @@ const FormRegisterStore = () => {
     return JSON.parse(sessionToken);
   });
   const history = useHistory();
-  const { userData } = useData();
+  const { userData, setUserData } = useData();
+  const { getAllStores } = useStores();
 
   const ref = createRef();
   const {
@@ -41,13 +43,17 @@ const FormRegisterStore = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      await API.patch(
+      const response = await API.patch(
         patchUser(userData.id),
         { productor: true },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
+
+      setUserData(response.data);
+
+      getAllStores();
       reset();
       history.push("/profile");
     } catch (e) {

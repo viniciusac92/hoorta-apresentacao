@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import theme from "../../../styles/theme";
-import Hortifruti from "../../../assets/images/products/tomateCereja.jpg";
 
 export const CardStyled = styled.div`
   margin-bottom: 15px;
