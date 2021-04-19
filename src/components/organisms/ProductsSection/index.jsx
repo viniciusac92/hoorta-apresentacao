@@ -49,7 +49,7 @@ const ProductsSection = ({productsData, currentStoreId}) => {
 	return (
 		<ProductsListStyled>
 			<div>
-				<div className="iconPlus">
+				<div className="pencil">
 					<ModalEditStore currentStoreId={currentStoreId} />
 				</div>
 				<div className="iconPlus">
