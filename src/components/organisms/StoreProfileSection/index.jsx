@@ -40,7 +40,7 @@ const StoreProfileSection = () => {
             </div>
             <div className="Picture" />
             <TextHeader size="large" color="black">
-              {userData.name}
+              {storeData.businessName}
             </TextHeader>
           </div>
           <div className="InfoContainer">
@@ -55,7 +55,7 @@ const StoreProfileSection = () => {
           {console.log(storeData)}
           <div className="HeaderContainer">
             <TextHeader size="large" color="black">
-              {userData.name}
+              {storeData.businessName}
             </TextHeader>
           </div>
           <div className="InfoContainer">
