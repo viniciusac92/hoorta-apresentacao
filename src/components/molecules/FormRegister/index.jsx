@@ -38,7 +38,7 @@ const FormRegister = () => {
       mounted.current = true;
       return;
     }
-    errors && setSnackOpen(true);
+    errors[Object.keys(errors)[0]]?.message && setSnackOpen(true);
   }, [errors]);
 
   const handleCloseSnack = (event, reason) => {
