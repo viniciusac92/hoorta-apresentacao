@@ -49,12 +49,16 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
   return (
     <ProductsListStyled>
       <div>
-        <div className="iconPlus">
-          <ModalEditStore currentStoreId={currentStoreId} />
-        </div>
-        <div className="iconPlus">
-          <ModalCreateProduct currentStoreId={currentStoreId} />
-        </div>
+        {checkOwner(currentStoreId) && (
+          <>
+            <div className="iconPlus">
+              <ModalEditStore currentStoreId={currentStoreId} />
+            </div>
+            <div className="iconPlus">
+              <ModalCreateProduct currentStoreId={currentStoreId} />
+            </div>
+          </>
+        )}
         <TextProduct size={"large"} color={"black"}>
           {storeData?.businessName}
         </TextProduct>
@@ -97,10 +101,12 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
                     position={["relative"]}
                   />
                 </TitleDivStyled>
-                <MenuEditDelete
-                  currentProductId={product.id}
-                  currentStoreId={currentStoreId}
-                />
+                {checkOwner(currentStoreId) && (
+                  <MenuEditDelete
+                    currentProductId={product.id}
+                    currentStoreId={currentStoreId}
+                  />
+                )}
               </TopContainerStyled>
               <TextProduct size={"medium"} color={"black"}>
                 {product.info.description}
