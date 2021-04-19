@@ -84,6 +84,7 @@ const FormLogin = () => {
 
       reset();
       getAllStores();
+      localStorage.setItem("cart", JSON.stringify([]));
       history.push("/dashboard");
     } catch (e) {
       console.log(e);
