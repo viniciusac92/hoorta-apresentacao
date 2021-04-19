@@ -7,6 +7,6 @@ export const CardContainerStyled = styled.div`
   @media screen and (min-width: 1470px) {
     flex-direction: row;
     width: 90%;
-    margin: 2.75rem 0 2.75rem 7vw;
+    margin: 2.75rem 0 2.75rem 6vw;
   }
 `;
