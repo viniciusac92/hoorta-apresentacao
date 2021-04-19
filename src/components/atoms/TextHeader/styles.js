@@ -8,6 +8,7 @@ export const TextHeaderStyled = styled.p`
       : fontWeight === "semiBold"
       ? theme.weight.semiBold
       : null};
+  text-align: center;
 
   font-size: ${({ size }) =>
     size === "large" ? "50px" : size === "medium" ? "36px" : null};

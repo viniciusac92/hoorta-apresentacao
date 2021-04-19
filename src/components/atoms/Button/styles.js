@@ -65,6 +65,7 @@ export const ButtonStyled = styled.button`
   font-size: ${({ size }) => handleSizeTypes(size).fontSize};
   line-height: ${({ size }) => handleSizeTypes(size).lineHeight};
   font-weight: ${({ size }) => handleSizeTypes(size).weight};
+  margin: 0 auto;
   @media screen and (min-width: 780px) {
     line-height: ${({ size }) => size === "large" && "54px"};
     font-size: ${({ size }) => (size === "large" ? "36px" : "20px")};

@@ -42,6 +42,7 @@ export const ProductCardStyled = styled(ProductCard)`
   display: flex;
   align-items: center;
   box-shadow: ${theme.shadow};
+  border-radius: 20px;
 
   > div:first-child {
     border-radius: 50%;

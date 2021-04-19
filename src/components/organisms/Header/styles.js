@@ -9,12 +9,12 @@ export const HeaderStyled = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   height: 15vh;
+  margin: 30px 0 30px 5%;
 
   @media screen and (min-width: 780px) {
     justify-content: space-between;
     max-width: 1000px;
     align-items: center;
-    margin: 30px 0 30px 5%;
     flex-direction: row;
   }
 `;

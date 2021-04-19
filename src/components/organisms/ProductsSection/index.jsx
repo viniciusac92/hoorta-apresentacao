@@ -80,7 +80,7 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
           <ProductCardStyled size={"large"} key={index}>
             <Picture
               image={DefaultProductImage}
-              width={["61px", "58px"]}
+              width={["101px", "58px"]}
               height={["61px", "65px"]}
               top={[""]}
               left={[""]}
