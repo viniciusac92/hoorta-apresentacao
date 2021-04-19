@@ -2,6 +2,7 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 import ProductCard from "../../atoms/ProductCard";
 import ButtonCount from "../../molecules/ButtonCount";
+import Snackbar from "@material-ui/core/Snackbar";
 
 export const ProductsListStyled = styled.div`
   height: auto;
@@ -240,4 +241,19 @@ export const TopContainerStyled = styled.div`
       height: 5vh;
     }
   } ;
+`;
+
+export const SnackBar = styled(Snackbar)`
+  top: -538px !important;
+  right: 5% !important;
+  left: auto !important;
+  z-index: -1 !important;
+
+  .MuiPaper-root {
+    background-color: ${theme.color.primary};
+  }
+
+  .MuiSnackbarContent-root {
+    justify-content: center !important;
+  }
 `;

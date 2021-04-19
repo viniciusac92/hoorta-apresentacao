@@ -8,11 +8,10 @@ import {
   TopContainerStyled,
   ProductCardStyled,
   ButtonCountStyled,
+  SnackBar,
 } from "./styles";
 import organic from "../../../assets/images/organic/organic.png";
-import alface from "../../../assets/images/products/alface.jpg";
-import TomateCereja from "../../../assets/images/products/tomateCereja.jpg";
-import Abobora from "../../../assets/images/products/abobora.jpg";
+import DefaultProductImage from "../../../assets/images/products/DefaultProductImage.jpg";
 import Button from "../../atoms/Button";
 import Link from "../../atoms/Link";
 import ModalCreateProduct from "../ModalCreateProduct";
@@ -21,11 +20,11 @@ import { useState } from "react";
 import { useData } from "../../../providers/UserContext";
 import { useStores } from "../../../providers/StoresContext";
 import MenuEditDelete from "../MenuEditDelete";
+import { useEffect } from "react";
 
 const ProductsSection = ({ productsData, currentStoreId }) => {
-  const productImg = [{ img: alface }, { img: TomateCereja }, { img: Abobora }];
   const [amountOfProduct, setAmountOfProduct] = useState(1);
-
+  const [snackOpen, setSnackOpen] = useState(false);
   const { checkOwner } = useData();
   const { storeData } = useStores();
 
@@ -46,13 +45,24 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
     setAmountOfProduct(1);
   };
 
+  useEffect(() => {
+    setTimeout(() => setSnackOpen(false), 3000);
+  }, [snackOpen]);
+
   return (
     <ProductsListStyled>
+      <SnackBar
+        open={snackOpen}
+        onClose={!snackOpen}
+        message="Produto Adicionado ao carrinho!"
+      />
       <div>
-        <div className="iconPlus">
-          <ModalCreateProduct currentStoreId={currentStoreId} />
-          <ModalEditStore currentStoreId={currentStoreId} />
-        </div>
+        {checkOwner(currentStoreId) && (
+          <div className="iconPlus">
+            <ModalCreateProduct currentStoreId={currentStoreId} />
+            <ModalEditStore currentStoreId={currentStoreId} />
+          </div>
+        )}
         <TextProduct size={"large"} color={"black"}>
           {storeData?.businessName}
         </TextProduct>
@@ -69,7 +79,7 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
         productsData.map((product, index) => (
           <ProductCardStyled size={"large"} key={index}>
             <Picture
-              image={TomateCereja}
+              image={DefaultProductImage}
               width={["61px", "58px"]}
               height={["61px", "65px"]}
               top={[""]}
@@ -120,7 +130,10 @@ const ProductsSection = ({ productsData, currentStoreId }) => {
                 </ButtonCountStyled>
                 <Button
                   color={"primary"}
-                  onClick={() => addCart(product)}
+                  onClick={() => {
+                    addCart(product);
+                    setSnackOpen(true);
+                  }}
                   size={"small"}
                 >
                   Adicionar
