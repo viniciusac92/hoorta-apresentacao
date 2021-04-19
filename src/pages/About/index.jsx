@@ -1,6 +1,30 @@
-import MenuDashboard from "../../components/template/MenuDashboard";
+import AboutInfo from "../../components/molecules/AboutInfo";
+import HeaderNavBar from "../../components/molecules/HeaderNavBar";
+
+import Figure from "../../components/atoms/Figure";
+
+import Picture from "../../components/atoms/Picture";
+
+import heartImage from "../../assets/images/heartImage.png";
+import vegetablePack from "../../assets/images/vegetablePack.png";
+import footerPicture from "../../assets/images/footerPicture.png";
+import Header from "../../components/organisms/Header";
 
 const About = () => {
-  return <MenuDashboard>oi</MenuDashboard>;
+  return (
+    <div>
+      <Header />
+      <AboutInfo />
+
+      <Picture
+        image={footerPicture}
+        width={["320px", "444px"]}
+        height={["155px", "215px"]}
+        position={["relative", "relative"]}
+        top={["0px", "calc(100% - 215px)"]}
+        left={["0", "0"]}
+      />
+    </div>
+  );
 };
 export default About;
